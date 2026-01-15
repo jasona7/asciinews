@@ -11,6 +11,7 @@ const COLORS = {
   blue: { main: '#00d4ff', dim: '#003d4d', glow: 'rgba(0,212,255,0.6)', bg: '#020608' },
   red: { main: '#ff4444', dim: '#4d0000', glow: 'rgba(255,68,68,0.6)', bg: '#0a0202' }
 };
+type ColorScheme = keyof typeof COLORS;
 
 const TICKERS = ['AAPL','MSFT','GOOGL','GOOG','AMZN','NVDA','META','TSLA','JPM','V','MA','DIS','NFLX','ADBE','CRM','INTC','AMD','QCOM','AVGO','ORCL','IBM','BA','XOM','CVX','GS','MS','BAC','BTC','ETH','SOL','XRP','DOGE','COIN','GME','AMC','PLTR','AI','SMCI','ARM','WMT','KO','PEP','MCD','NKE','SBUX','HD','LOW','TGT','COST'];
 
@@ -31,30 +32,31 @@ const TICKER_LOGO_SLUGS = {
 };
 
 // Function to get local logo path
-function getLocalLogoPath(ticker) {
-  const slug = TICKER_LOGO_SLUGS[ticker?.toUpperCase()];
+function getLocalLogoPath(ticker: string | null): string | null {
+  if (!ticker) return null;
+  const slug = TICKER_LOGO_SLUGS[ticker.toUpperCase() as keyof typeof TICKER_LOGO_SLUGS];
   if (!slug) return null;
   return `/logos/${slug}.png`;
 }
 
-const CRYPTO_MAP = { BTC:'BTC-USD',ETH:'ETH-USD',SOL:'SOL-USD',XRP:'XRP-USD',DOGE:'DOGE-USD' };
-const INDEX_MAP = { 'S&P':'.INX',DOW:'.DJI',NASDAQ:'.IXIC' };
+const CRYPTO_MAP: Record<string, string> = { BTC:'BTC-USD',ETH:'ETH-USD',SOL:'SOL-USD',XRP:'XRP-USD',DOGE:'DOGE-USD' };
+const INDEX_MAP: Record<string, string> = { 'S&P':'.INX',DOW:'.DJI',NASDAQ:'.IXIC' };
 
-function getGoogleFinanceUrl(t) {
+function getGoogleFinanceUrl(t: string): string {
   if (CRYPTO_MAP[t]) return `https://www.google.com/finance/quote/${CRYPTO_MAP[t]}`;
   if (INDEX_MAP[t]) return `https://www.google.com/finance/quote/${INDEX_MAP[t]}`;
   return `https://www.google.com/finance/quote/${t}:NASDAQ`;
 }
 
-function extractTickers(headline) {
-  const found = [];
+function extractTickers(headline: string): string[] {
+  const found: string[] = [];
   const words = headline.toUpperCase().replace(/[^A-Z0-9\s]/g,' ').split(/\s+/);
-  words.forEach(w => { if (TICKERS.includes(w) && !found.includes(w)) found.push(w); });
+  words.forEach((w: string) => { if (TICKERS.includes(w) && !found.includes(w)) found.push(w); });
   return found;
 }
 
-function parseHeadlineWithTickers(headline) {
-  const parts = [];
+function parseHeadlineWithTickers(headline: string): Array<{text: string, isTicker: boolean}> {
+  const parts: Array<{text: string, isTicker: boolean}> = [];
   const regex = new RegExp(`\\b(${TICKERS.join('|')})\\b`, 'gi');
   let match, lastIdx = 0;
   while ((match = regex.exec(headline)) !== null) {
@@ -67,8 +69,8 @@ function parseHeadlineWithTickers(headline) {
 }
 
 // Logo/Symbol Display Component
-function TickerLogo({ ticker, color, category }) {
-  const t = ticker?.toUpperCase();
+function TickerLogo({ ticker, color, category }: { ticker: string | null, color: string, category: string }) {
+  const t = ticker?.toUpperCase() ?? null;
   const localLogoPath = getLocalLogoPath(t);
   const [imgError, setImgError] = useState(false);
 
@@ -79,7 +81,7 @@ function TickerLogo({ ticker, color, category }) {
 
   // Fallback component when no logo available
   const FallbackLogo = () => {
-    const symbols = {
+    const symbols: Record<string, string> = {
       crypto: '₿', bullish: '📈', bearish: '📉', macro: '🏛️',
       earnings: '📊', markets: '💹'
     };
@@ -115,8 +117,8 @@ function TickerLogo({ ticker, color, category }) {
       boxShadow: `0 0 20px ${color}`
     }}>
       <img
-        src={localLogoPath}
-        alt={t}
+        src={localLogoPath ?? ''}
+        alt={t ?? ''}
         onError={() => setImgError(true)}
         style={{ maxWidth: '80%', maxHeight: '80%', objectFit: 'contain' }}
       />
@@ -125,9 +127,9 @@ function TickerLogo({ ticker, color, category }) {
 }
 
 // 3D spinning logo for header
-function HeaderLogo({ color }) {
-  const asciiRef = useRef(null);
-  const frameRef = useRef(null);
+function HeaderLogo({ color }: { color: string }) {
+  const asciiRef = useRef<HTMLPreElement>(null);
+  const frameRef = useRef<number | null>(null);
 
   useEffect(() => {
     const scene = new THREE.Scene();
@@ -148,6 +150,7 @@ function HeaderLogo({ color }) {
     const ctx = canvas.getContext('2d');
     const w = 24, h = 18;
     canvas.width = w; canvas.height = h;
+    if (!ctx) return;
 
     const animate = () => {
       mesh.rotation.x += 0.015; mesh.rotation.y += 0.02;
@@ -167,14 +170,14 @@ function HeaderLogo({ color }) {
       frameRef.current = requestAnimationFrame(animate);
     };
     animate();
-    return () => { cancelAnimationFrame(frameRef.current); renderer.dispose(); geo.dispose(); mat.dispose(); };
+    return () => { if (frameRef.current !== null) cancelAnimationFrame(frameRef.current); renderer.dispose(); geo.dispose(); mat.dispose(); };
   }, []);
 
   return <pre ref={asciiRef} style={{ margin:0,fontSize:6,lineHeight:0.9,color,textShadow:`0 0 8px ${color}`,letterSpacing:'1px' }} />;
 }
 
 // Crypto Quote Display Component - Large retro terminal style
-function CryptoQuoteDisplay({ quote, color, lastUpdated }) {
+function CryptoQuoteDisplay({ quote, color, lastUpdated }: { quote: any, color: string, lastUpdated: Date | null }) {
   if (!quote) return null;
 
   const isPositive = quote.changePercent >= 0;
@@ -258,21 +261,35 @@ function CryptoQuoteDisplay({ quote, color, lastUpdated }) {
 }
 
 export default function FinancialASCIITerminal() {
-  const [news, setNews] = useState([]);
-  const [cryptoQuotes, setCryptoQuotes] = useState([]);
+  const [news, setNews] = useState<any[]>([]);
+  const [cryptoQuotes, setCryptoQuotes] = useState<any[]>([]);
   const [cryptoLastUpdated, setCryptoLastUpdated] = useState<Date | null>(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
   const [idx, setIdx] = useState(0);
   const [text, setText] = useState('');
-  const [colorScheme, setColorScheme] = useState('green');
+  const [colorScheme, setColorScheme] = useState<ColorScheme>('green');
   const [typing, setTyping] = useState(false);
   const [crtOn, setCrtOn] = useState(true);
   const [noiseOpacity, setNoiseOpacity] = useState(0.03);
-  const typingRef = useRef(null);
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
+  const typingRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const colors = COLORS[colorScheme];
 
-  const categorize = (h) => {
+  // Check for first-time visitor
+  useEffect(() => {
+    const acknowledged = localStorage.getItem('asciinews-disclaimer-acknowledged');
+    if (!acknowledged) {
+      setShowDisclaimer(true);
+    }
+  }, []);
+
+  const acknowledgeDisclaimer = () => {
+    localStorage.setItem('asciinews-disclaimer-acknowledged', 'true');
+    setShowDisclaimer(false);
+  };
+
+  const categorize = (h: string): string => {
     const l = h.toLowerCase();
     if (/bitcoin|btc|crypto|ethereum|eth|solana|sol|doge|xrp|coin|token|blockchain/.test(l)) return 'crypto';
     if (/fed|rate|inflation|cpi|treasury|bond|yield/.test(l)) return 'macro';
@@ -333,7 +350,7 @@ export default function FinancialASCIITerminal() {
 
       // Insert 2-3 random quotes at random positions
       const quotesToInsert = shuffledQuotes.slice(0, Math.min(3, shuffledQuotes.length));
-      quotesToInsert.forEach((quote, i) => {
+      quotesToInsert.forEach((quote: any, i: number) => {
         const insertPos = Math.floor(Math.random() * (combined.length - 1)) + 1 + i;
         combined.splice(Math.min(insertPos, combined.length), 0, quote);
       });
@@ -384,9 +401,9 @@ export default function FinancialASCIITerminal() {
     if (typingRef.current) clearInterval(typingRef.current);
     typingRef.current = setInterval(() => {
       if (i < currentItem.headline.length) setText(currentItem.headline.slice(0, ++i));
-      else { clearInterval(typingRef.current); setTyping(false); }
+      else { if (typingRef.current) clearInterval(typingRef.current); setTyping(false); }
     }, 30);
-    return () => clearInterval(typingRef.current);
+    return () => { if (typingRef.current) clearInterval(typingRef.current); };
   }, [idx, news]);
 
   useEffect(() => {
@@ -402,7 +419,7 @@ export default function FinancialASCIITerminal() {
 
   const current = news[idx] || {headline:'',category:'markets',tickers:[]};
   const displayTicker = current.tickers?.[0] || null;
-  const catColors = {crypto:'#f7931a',bullish:'#00ff88',bearish:'#ff4444',macro:'#00d4ff',earnings:'#ffb000',markets:'#33ff33'};
+  const catColors: Record<string, string> = {crypto:'#f7931a',bullish:'#00ff88',bearish:'#ff4444',macro:'#00d4ff',earnings:'#ffb000',markets:'#33ff33'};
 
   return (
     <div style={{
@@ -410,6 +427,49 @@ export default function FinancialASCIITerminal() {
       minHeight:'100vh', padding:10, fontFamily:'"Courier New",monospace',
       color:colors.main, position:'relative', overflow:'hidden'
     }}>
+      {/* Disclaimer Modal */}
+      {showDisclaimer && (
+        <div style={{
+          position:'fixed', inset:0, zIndex:100,
+          background:'rgba(0,0,0,0.95)',
+          display:'flex', alignItems:'center', justifyContent:'center',
+          padding:20
+        }}>
+          <div style={{
+            background:colors.bg, border:`2px solid ${colors.main}`,
+            padding:30, maxWidth:500, textAlign:'center',
+            boxShadow:`0 0 30px ${colors.glow}, inset 0 0 20px rgba(0,0,0,0.5)`
+          }}>
+            <div style={{fontSize:14,fontWeight:'bold',marginBottom:20,color:colors.main,textShadow:`0 0 10px ${colors.glow}`}}>
+              DISCLAIMER
+            </div>
+            <div style={{fontSize:10,lineHeight:1.6,marginBottom:20,color:colors.main}}>
+              This application is for <span style={{fontWeight:'bold'}}>EDUCATIONAL AND INFORMATIONAL PURPOSES ONLY</span>.
+            </div>
+            <div style={{fontSize:9,lineHeight:1.5,marginBottom:20,color:colors.dim}}>
+              The content displayed does not constitute financial advice, investment recommendations,
+              or an offer to buy or sell any securities or cryptocurrencies. All information is provided
+              &quot;as is&quot; without warranty of any kind. Past performance is not indicative of future results.
+              Always consult a qualified financial advisor before making investment decisions.
+            </div>
+            <div style={{fontSize:9,lineHeight:1.5,marginBottom:25,color:colors.dim}}>
+              By continuing, you acknowledge that you understand and accept these terms.
+            </div>
+            <button
+              onClick={acknowledgeDisclaimer}
+              style={{
+                background:colors.main, color:'#000', border:'none',
+                padding:'10px 30px', fontSize:11, fontWeight:'bold',
+                cursor:'pointer', fontFamily:'inherit',
+                boxShadow:`0 0 15px ${colors.glow}`
+              }}
+            >
+              I UNDERSTAND
+            </button>
+          </div>
+        </div>
+      )}
+
       {crtOn && <>
         <div style={{position:'absolute',inset:0,pointerEvents:'none',zIndex:10,background:'repeating-linear-gradient(0deg,rgba(0,0,0,0.15) 0px,rgba(0,0,0,0.15) 1px,transparent 1px,transparent 3px)'}} />
         <div style={{position:'absolute',inset:0,pointerEvents:'none',zIndex:11,background:'radial-gradient(ellipse at center,transparent 0%,transparent 60%,rgba(0,0,0,0.8) 100%)',borderRadius:30}} />
@@ -440,7 +500,7 @@ export default function FinancialASCIITerminal() {
         {/* Controls */}
         <div style={{display:'flex',gap:4,marginBottom:8,flexWrap:'wrap',justifyContent:'center'}}>
           <button onClick={fetchNews} disabled={loading} style={{background:loading?colors.main:'transparent',border:`1px solid ${colors.main}`,color:loading?'#000':colors.main,padding:'3px 10px',cursor:'pointer',fontFamily:'inherit',fontSize:8}}>{loading?'◌ SYNC':'▶ REFRESH'}</button>
-          {Object.keys(COLORS).map(c=>(
+          {(Object.keys(COLORS) as ColorScheme[]).map(c=>(
             <button key={c} onClick={()=>setColorScheme(c)} style={{background:colorScheme===c?COLORS[c].main:'transparent',border:`1px solid ${COLORS[c].main}`,color:colorScheme===c?'#000':COLORS[c].main,padding:'3px 7px',cursor:'pointer',fontFamily:'inherit',fontSize:7,textTransform:'uppercase'}}>{c}</button>
           ))}
           <button onClick={()=>setCrtOn(v=>!v)} style={{background:'transparent',border:`1px solid ${colors.dim}`,color:colors.dim,padding:'3px 7px',cursor:'pointer',fontFamily:'inherit',fontSize:7}}>CRT {crtOn?'●':'○'}</button>
@@ -479,8 +539,8 @@ export default function FinancialASCIITerminal() {
                   p.isTicker ? (
                     <a key={i} href={getGoogleFinanceUrl(p.text)} target="_blank" rel="noopener noreferrer"
                       style={{color:'#00ff88',textDecoration:'none',fontWeight:'bold',textShadow:'0 0 10px #00ff88',borderBottom:'1px dashed #00ff88',cursor:'pointer'}}
-                      onMouseOver={e=>{e.target.style.color='#88ffbb';e.target.style.textShadow='0 0 15px #88ffbb'}}
-                      onMouseOut={e=>{e.target.style.color='#00ff88';e.target.style.textShadow='0 0 10px #00ff88'}}
+                      onMouseOver={e=>{(e.target as HTMLElement).style.color='#88ffbb';(e.target as HTMLElement).style.textShadow='0 0 15px #88ffbb'}}
+                      onMouseOut={e=>{(e.target as HTMLElement).style.color='#00ff88';(e.target as HTMLElement).style.textShadow='0 0 10px #00ff88'}}
                     >${p.text}</a>
                   ) : <span key={i}>{p.text}</span>
                 )}
