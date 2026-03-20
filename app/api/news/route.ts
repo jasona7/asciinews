@@ -1,9 +1,13 @@
 import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
-export const revalidate = 0;
 
 const FINNHUB_API_KEY = process.env.FINNHUB_API_KEY || 'demo';
+
+// Server-side cache (5 minutes)
+let cachedHeadlines: any[] | null = null;
+let cacheTimestamp: number = 0;
+const CACHE_DURATION = 5 * 60 * 1000;
 
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
@@ -57,16 +61,23 @@ export async function GET() {
     });
   }
 
+  const now = Date.now();
+  if (cachedHeadlines && (now - cacheTimestamp) < CACHE_DURATION) {
+    return NextResponse.json({
+      headlines: cachedHeadlines,
+      source: 'finnhub',
+      cached: true,
+    });
+  }
+
   try {
     // Fetch general news, crypto news, and company-specific news in parallel
     const [generalResponse, cryptoResponse, ...companyNews] = await Promise.all([
       fetch(
-        `https://finnhub.io/api/v1/news?category=general&token=${FINNHUB_API_KEY}`,
-        { next: { revalidate: 300 } }
+        `https://finnhub.io/api/v1/news?category=general&token=${FINNHUB_API_KEY}`
       ),
       fetch(
-        `https://finnhub.io/api/v1/news?category=crypto&token=${FINNHUB_API_KEY}`,
-        { next: { revalidate: 300 } }
+        `https://finnhub.io/api/v1/news?category=crypto&token=${FINNHUB_API_KEY}`
       ),
       ...KEY_TICKERS.slice(0, 5).map(ticker => fetchCompanyNews(ticker)) // Limit to 5 to avoid rate limits
     ]);
@@ -163,12 +174,24 @@ export async function GET() {
       ...withoutTickers.slice(0, 8 - Math.min(withTickers.length, 5))
     ];
 
+    cachedHeadlines = sorted;
+    cacheTimestamp = now;
+
     return NextResponse.json({
       headlines: sorted,
       source: 'finnhub',
+      cached: false,
     });
   } catch (error) {
     console.error('News API error:', error);
+    if (cachedHeadlines) {
+      return NextResponse.json({
+        headlines: cachedHeadlines,
+        source: 'finnhub',
+        cached: true,
+        stale: true,
+      });
+    }
     return NextResponse.json({
       headlines: FALLBACK_NEWS,
       source: 'fallback',
