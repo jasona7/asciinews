@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-03 09:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-03 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Trump\'s anger over Iran thrusts NATO into fresh crisis', category: 'general', related: '' },
-  { headline: 'Drones hit Kuwait\'s Mina al-Ahmadi refinery, fires reported, no injuries', category: 'general', related: '' },
-  { headline: 'BOJ keeps rate-hike door open even as Iran war squeezes firms', category: 'general', related: '' },
-  { headline: 'Zelenskiy offers Ukraine\'s maritime expertise with Strait of Hormuz', category: 'general', related: '' },
-  { headline: 'Crypto hackers steal $169M from 34 DeFi protocols in Q1', category: 'crypto', related: '' },
-  { headline: 'Bitcoin supply in profit heads to \'true bear market\' levels', category: 'crypto', related: 'BTC' },
-  { headline: 'Todd Blanche, author of DOJ crypto enforcement memo, is now interim AG', category: 'crypto', related: '' },
-  { headline: 'Stablecoin supply reaches $315B in Q1 as USDC rises, USDT declines', category: 'crypto', related: '' },
-  { headline: 'Bitcoin heads into holiday weekend exposed as ETF and CME flows go offline', category: 'crypto', related: 'BTC' },
-  { headline: 'Tesla eyes Japan\'s top imported-car spot as it expands store, service network', category: 'company', related: 'TSLA' },
-  { headline: 'Microsoft to invest $10 billion in Japan on AI infrastructure, cybersecurity', category: 'company', related: 'MSFT' },
-  { headline: 'Apple at 50 weighs AI partnerships, satellite ties, and succession', category: 'company', related: 'AAPL' },
-  { headline: 'Corning Meta fiber expansion tests high valuation and AI growth story', category: 'company', related: 'META' },
+  { headline: 'Trump vows to hit more Iranian infrastructure as nations seek to open Hormuz', category: 'general', related: '' },
+  { headline: 'World food price rise set to continue if Iran war lasts, FAO says', category: 'general', related: '' },
+  { headline: 'A year after \'Liberation Day,\' Trump sets new drug tariffs, adjusts metals duties', category: 'general', related: '' },
+  { headline: 'Wall Street ends mixed as worries linger before Good Friday break', category: 'general', related: '' },
+  { headline: 'Ethereum Foundation stakes another $93 million ether, reaching its 70,000 ETH target', category: 'crypto', related: 'ETH' },
+  { headline: 'Bitcoin \'done\' with 85% crashes, says Cathie Wood amid new $34K target', category: 'crypto', related: 'BTC' },
+  { headline: 'Crypto consolidates as volatility cools and futures markets tilt bearish', category: 'crypto', related: '' },
+  { headline: 'Drift sends onchain message to wallets tied to $280M exploit', category: 'crypto', related: '' },
+  { headline: 'South Korean brokerage Korea Investment & Securities eyes Coinone stake', category: 'crypto', related: '' },
+  { headline: 'AI Infrastructure Costs Soar As Deployment Expenses Climb', category: 'company', related: 'NVDA' },
+  { headline: 'Microsoft Plots $10 Billion AI Push. This Stock Jumped 20% on the Plan.', category: 'company', related: 'MSFT' },
+  { headline: 'Electric Vehicles Today - Rising Demand Fuels Growth In Magnet Market', category: 'company', related: 'TSLA' },
+  { headline: 'Big Tech H-1B Filings Plunge As Amazon, Google, Meta And Microsoft Slash Jobs', category: 'company', related: 'META' },
 ];
 
 // Get date string in YYYY-MM-DD format
