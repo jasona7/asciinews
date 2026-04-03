@@ -21,3 +21,10 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 .vercel
+
+# Temp/debug data files
+.tmp_*
+
+# Generated media output (videos, decks, banners, images, articles)
+/media/
+!media/.gitkeep

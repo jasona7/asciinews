@@ -12,16 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key
+// Fallback headlines when API fails or no key (updated 2026-04-03 05:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'NVDA surges 8% as AI chip demand hits all-time high', category: 'technology', related: 'NVDA' },
-  { headline: 'Federal Reserve signals potential rate cut amid cooling inflation', category: 'economy', related: '' },
-  { headline: 'BTC breaks through $95,000 resistance level on ETF inflows', category: 'crypto', related: 'BTC' },
-  { headline: 'AAPL announces record $110B stock buyback program', category: 'technology', related: 'AAPL' },
-  { headline: 'AMZN AWS revenue beats Wall Street estimates by 15%', category: 'technology', related: 'AMZN' },
-  { headline: 'TSLA shares drop 5% on Q4 delivery miss', category: 'technology', related: 'TSLA' },
-  { headline: 'ETH staking yields surge following network upgrade', category: 'crypto', related: 'ETH' },
-  { headline: 'MSFT Azure growth accelerates to 31% year-over-year', category: 'technology', related: 'MSFT' },
+  { headline: 'Trump threatens to strike Iran\'s bridges and electric power plants', category: 'general', related: '' },
+  { headline: 'Near-term oil prices hit record premium over later deliveries after Trump vows more attacks on Iran', category: 'general', related: '' },
+  { headline: 'Wall Street ends mixed as worries linger before Good Friday break', category: 'general', related: '' },
+  { headline: 'A year after \'Liberation Day,\' Trump sets new drug tariffs, adjusts metals duties', category: 'general', related: '' },
+  { headline: 'Bitcoin heads into holiday weekend exposed as ETF and CME flows go offline', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin miner Riot sold 3,778 BTC during Q1 amid profitability pressures', category: 'crypto', related: 'BTC' },
+  { headline: 'Circle to launch cirBTC wrapped Bitcoin, challenging BitGo and Coinbase', category: 'crypto', related: 'BTC' },
+  { headline: 'Stablecoins flip automated clearing house volume in February', category: 'crypto', related: '' },
+  { headline: 'Microsoft to invest $10 billion in Japan for AI and cyber defence expansion', category: 'company', related: 'MSFT' },
+  { headline: 'Apple at 50 weighs AI partnerships, satellite ties, and succession', category: 'company', related: 'AAPL' },
+  { headline: 'SpaceX IPO could be the largest-ever public offering as Starlink revenue surges', category: 'general', related: '' },
+  { headline: 'Crypto market structure bill release pushed back as stablecoin yield compromise reviewed', category: 'crypto', related: '' },
+  { headline: 'Federal commission sues 3 states over prediction market regulation', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
