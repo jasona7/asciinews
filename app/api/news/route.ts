@@ -12,21 +12,20 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-03 17:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-03 21:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'US fighter jet shot down over Iran, search underway for crew, US officials say', category: 'general', related: '' },
-  { headline: 'Wall Street snapped its 5-week losing streak. Here are 3 themes that caught our eye', category: 'general', related: '' },
-  { headline: 'World food price rise set to continue if Iran war lasts, FAO says', category: 'general', related: '' },
-  { headline: 'Trump says US can take Strait of Hormuz with more time', category: 'general', related: '' },
-  { headline: 'Crypto Biz: Bitcoin treasuries break ranks as BTC dips below $70K', category: 'crypto', related: 'BTC' },
-  { headline: 'Ethereum L2s need responsive pricing to scale, says Offchain Labs', category: 'crypto', related: 'ETH' },
-  { headline: 'Price predictions 4/3: BTC, ETH, BNB, XRP, SOL, DOGE, HYPE, ADA, BCH, LINK', category: 'crypto', related: '' },
-  { headline: 'Binance leads derivatives in Q1 as Hyperliquid enters top 10: CoinGlass', category: 'crypto', related: '' },
-  { headline: 'Execution risk in crypto is the new custody risk', category: 'crypto', related: '' },
-  { headline: 'Nvidia Sets Sights on Every Layer of AI Factory With Physical AI Data Factory Blueprint', category: 'company', related: 'NVDA' },
-  { headline: 'Tesla Stock Drops on Deliveries. What Wall Street Is Saying.', category: 'company', related: 'TSLA' },
-  { headline: 'Microsoft Partners with Victoria University on Datacenter Community Pledge', category: 'company', related: 'MSFT' },
-  { headline: 'Meta Strengthens AI Strategy With New Glasses and Services', category: 'company', related: 'META' },
+  { headline: 'Second US Air Force plane crashed in Persian Gulf region, New York Times reports', category: 'general', related: '' },
+  { headline: 'US labor market posts largest jobs gain in 15 months, but clouds brewing from Iran war', category: 'general', related: '' },
+  { headline: 'Tehran rejected 48-hour ceasefire proposal from US, Iranian media says', category: 'general', related: '' },
+  { headline: 'Trump\'s anger over Iran thrusts NATO into fresh crisis', category: 'general', related: '' },
+  { headline: 'Is Bitcoin mispricing a prolonged Iran war? Ex-hedge fund manager weighs in', category: 'crypto', related: 'BTC' },
+  { headline: 'Schwab plans spot bitcoin, ether trading launch in first half of 2026', category: 'crypto', related: 'ETH' },
+  { headline: 'Circle under fire after $285 million Drift hack over inaction to freeze stolen USDC', category: 'crypto', related: '' },
+  { headline: 'ZachXBT accuses Circle of $420M in compliance failures since 2022', category: 'crypto', related: '' },
+  { headline: 'US community banks oppose OCC approval of Coinbase trust charter', category: 'crypto', related: '' },
+  { headline: 'Tesla\'s Q1 Delivery Miss And Storage Slowdown Test Cash Generation Hopes', category: 'company', related: 'TSLA' },
+  { headline: 'If Microsoft Get This One Thing Right, the Stock Could Explode', category: 'company', related: 'MSFT' },
+  { headline: 'Meta\'s VA Partnership Puts Clinical VR Therapy In Meta Platforms Story', category: 'company', related: 'META' },
 ];
 
 // Get date string in YYYY-MM-DD format
