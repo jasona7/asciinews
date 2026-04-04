@@ -12,20 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-04 17:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-04 21:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'US agents arrest relatives of Iran\'s Qassem Soleimani after revoking their green cards', category: 'general', related: '' },
-  { headline: 'Exclusive: Five EU countries call for windfall tax on energy companies', category: 'general', related: '' },
-  { headline: 'India makes first Iranian oil buy in seven years with no payment problems', category: 'general', related: '' },
-  { headline: 'Russia evacuates 198 more staff from Iran\'s Bushehr nuclear plant, agencies report', category: 'general', related: '' },
-  { headline: 'Bitcoin shorts risk $2.5 billion liquidation at $72K: Are bears in danger?', category: 'crypto', related: 'BTC' },
-  { headline: 'Solana\'s quantum-threat readiness reveals harsh tradeoff: security vs speed', category: 'crypto', related: 'SOL' },
-  { headline: 'Traders are the big winners as 24/7 stocks will finally end the after-hours price \'manipulation\'', category: 'crypto', related: '' },
-  { headline: 'Nevada judge extends ban on Kalshi, rejects event contract defense', category: 'crypto', related: '' },
-  { headline: 'Tesla Ends Model S, X Production As Elon Musk Calls It \'Ending Of An Era\'', category: 'company', related: 'TSLA' },
-  { headline: 'Apple Turns 50: From Garage Startup To $3.73 Trillion Giant', category: 'company', related: 'AAPL' },
-  { headline: 'Got $5,000? 3 AI Supercycle Growth Stocks at Every Layer of the Stack.', category: 'company', related: 'NVDA' },
-  { headline: 'The Smarter Way to Cash In on Meta\u2019s Vision for Smartglasses', category: 'company', related: 'META' },
+  { headline: 'Iran war enters 6th week as military searches for downed US jet crew member', category: 'general', related: '' },
+  { headline: 'Tehran rejects Trump\'s 48-hour ultimatum to reopen Strait of Hormuz', category: 'general', related: '' },
+  { headline: 'NASA Artemis II crew captures photos of Earth on journey to the Moon', category: 'general', related: '' },
+  { headline: 'White House to unveil record $1.5 trillion Pentagon budget request', category: 'general', related: '' },
+  { headline: 'Springs fire in Riverside County grows to 4,127 acres, evacuation orders issued', category: 'general', related: '' },
+  { headline: 'Bitcoin holds above $67K as crypto market cap reaches $2.38 trillion', category: 'crypto', related: 'BTC' },
+  { headline: 'Ethereum Foundation reaches 70,000 ETH staking target with $93M April deposit', category: 'crypto', related: 'ETH' },
+  { headline: 'Russia submits bill requiring residents to declare crypto wallet transactions to tax authorities', category: 'crypto', related: '' },
+  { headline: 'Chainlink unlocks 19 million LINK worth $165M, sends most to Binance', category: 'crypto', related: '' },
+  { headline: 'Tesla Q1 deliveries miss estimates despite 9% year-over-year growth', category: 'company', related: 'TSLA' },
+  { headline: 'Microsoft to invest $10 billion in Japan AI infrastructure through 2029', category: 'company', related: 'MSFT' },
+  { headline: 'Amazon pours $200B into AI capex, shares drop 10% on spending concerns', category: 'company', related: 'AMZN' },
+  { headline: 'Oracle begins job cuts as Big Tech reduces headcount amid heavy AI investment', category: 'company', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
