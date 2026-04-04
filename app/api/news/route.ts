@@ -12,20 +12,20 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-04 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-04 17:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Iran allows essential goods vessels to its ports via Hormuz strait, Tasnim says', category: 'general', related: '' },
-  { headline: 'Trump weighs broader cabinet shake-up as Iran war pressure grows', category: 'general', related: '' },
-  { headline: 'Iraq closes Shalamcheh crossing with Iran after airstrikes kill Iraqi', category: 'general', related: '' },
-  { headline: 'Five EU finance ministers call for tax on energy companies\' windfall profits', category: 'general', related: '' },
+  { headline: 'US agents arrest relatives of Iran\'s Qassem Soleimani after revoking their green cards', category: 'general', related: '' },
+  { headline: 'Exclusive: Five EU countries call for windfall tax on energy companies', category: 'general', related: '' },
+  { headline: 'India makes first Iranian oil buy in seven years with no payment problems', category: 'general', related: '' },
+  { headline: 'Russia evacuates 198 more staff from Iran\'s Bushehr nuclear plant, agencies report', category: 'general', related: '' },
   { headline: 'Bitcoin shorts risk $2.5 billion liquidation at $72K: Are bears in danger?', category: 'crypto', related: 'BTC' },
   { headline: 'Solana\'s quantum-threat readiness reveals harsh tradeoff: security vs speed', category: 'crypto', related: 'SOL' },
-  { headline: 'Five data sources say the same thing about bitcoin market. It\'s thinning from the inside', category: 'crypto', related: 'BTC' },
-  { headline: 'Prediction markets are testing legal limits in strict Asian markets', category: 'crypto', related: '' },
-  { headline: 'Polymarket takes down market on missing US pilot after backlash', category: 'crypto', related: '' },
+  { headline: 'Traders are the big winners as 24/7 stocks will finally end the after-hours price \'manipulation\'', category: 'crypto', related: '' },
+  { headline: 'Nevada judge extends ban on Kalshi, rejects event contract defense', category: 'crypto', related: '' },
+  { headline: 'Tesla Ends Model S, X Production As Elon Musk Calls It \'Ending Of An Era\'', category: 'company', related: 'TSLA' },
+  { headline: 'Apple Turns 50: From Garage Startup To $3.73 Trillion Giant', category: 'company', related: 'AAPL' },
+  { headline: 'Got $5,000? 3 AI Supercycle Growth Stocks at Every Layer of the Stack.', category: 'company', related: 'NVDA' },
   { headline: 'The Smarter Way to Cash In on Meta\u2019s Vision for Smartglasses', category: 'company', related: 'META' },
-  { headline: 'Is the "Magnificent Seven" Era Over? Here Are the Stocks That Replace Them', category: 'company', related: 'AAPL' },
-  { headline: 'Investors Are Rotating Out of Palantir. Here\'s the Growth Stock I\'m Buying Instead.', category: 'company', related: 'NVDA' },
 ];
 
 // Get date string in YYYY-MM-DD format
