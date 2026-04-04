@@ -12,20 +12,20 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-04 01:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-04 05:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'US fighter jet shot down over Iran, search underway for crew member, US officials say', category: 'general', related: '' },
-  { headline: 'Israel strikes Beirut, US warns Iran may hit Lebanese universities', category: 'general', related: '' },
-  { headline: 'Trump proposes "historic" defense spending budget, eyes 10% cut to other federal programs', category: 'general', related: '' },
-  { headline: 'US intelligence warns Iran unlikely to ease Hormuz Strait chokehold soon, sources say', category: 'general', related: '' },
+  { headline: 'Downed planes raise new perils for Trump as Tehran hunts for missing US pilot', category: 'general', related: '' },
+  { headline: 'Second US Air Force plane crashed in Persian Gulf region, New York Times reports', category: 'general', related: '' },
+  { headline: 'US labor market posts largest jobs gain in 15 months, but clouds brewing from Iran war', category: 'general', related: '' },
+  { headline: 'Tehran rejected 48-hour ceasefire proposal from US, Iranian media, citing source, says', category: 'general', related: '' },
+  { headline: 'Bitcoin ETFs \'will be larger\' than gold ETFs: Analyst', category: 'crypto', related: 'BTC' },
+  { headline: 'Here\'s what \'cracking\' bitcoin in 9 minutes by quantum computers actually means', category: 'crypto', related: 'BTC' },
   { headline: 'Ethereum Foundation nearly reaches 70,000 staked ETH goal', category: 'crypto', related: 'ETH' },
-  { headline: 'Is Bitcoin mispricing a prolonged Iran war? Ex-hedge fund manager weighs in', category: 'crypto', related: 'BTC' },
-  { headline: 'Schwab plans spot bitcoin, ether trading launch in first half of 2026', category: 'crypto', related: 'ETH' },
+  { headline: 'Schwab plans spot bitcoin, ether trading launch in first half of 2026', category: 'crypto', related: 'BTC' },
   { headline: 'Cambodian lawmakers propose severe prison time for crypto scammers', category: 'crypto', related: '' },
-  { headline: 'Circle under fire after $285 million Drift hack over inaction to freeze stolen USDC', category: 'crypto', related: '' },
-  { headline: 'Tesla\'s Texas factory workforce reportedly shrunk 22% in 2025', category: 'company', related: 'TSLA' },
-  { headline: 'Microsoft makes huge move in a crucial market', category: 'company', related: 'MSFT' },
-  { headline: 'Meta\'s Bay Area layoffs affect roughly 200 workers as company pours billions into AI infrastructure', category: 'company', related: 'META' },
+  { headline: 'BNP Paribas warns stakes \'couldn\'t be higher\' for Tesla stock investors', category: 'company', related: 'TSLA' },
+  { headline: 'SpaceX-xAI Merger at $1.25 Trillion Just Set the Stage for a Landmark IPO', category: 'company', related: 'TSLA' },
+  { headline: 'Microsoft Corporation (MSFT): Billionaire Steve Cohen Trims Position', category: 'company', related: 'MSFT' },
 ];
 
 // Get date string in YYYY-MM-DD format
