@@ -12,20 +12,20 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-03 21:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-04 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Second US Air Force plane crashed in Persian Gulf region, New York Times reports', category: 'general', related: '' },
-  { headline: 'US labor market posts largest jobs gain in 15 months, but clouds brewing from Iran war', category: 'general', related: '' },
-  { headline: 'Tehran rejected 48-hour ceasefire proposal from US, Iranian media says', category: 'general', related: '' },
-  { headline: 'Trump\'s anger over Iran thrusts NATO into fresh crisis', category: 'general', related: '' },
+  { headline: 'US fighter jet shot down over Iran, search underway for crew member, US officials say', category: 'general', related: '' },
+  { headline: 'Israel strikes Beirut, US warns Iran may hit Lebanese universities', category: 'general', related: '' },
+  { headline: 'Trump proposes "historic" defense spending budget, eyes 10% cut to other federal programs', category: 'general', related: '' },
+  { headline: 'US intelligence warns Iran unlikely to ease Hormuz Strait chokehold soon, sources say', category: 'general', related: '' },
+  { headline: 'Ethereum Foundation nearly reaches 70,000 staked ETH goal', category: 'crypto', related: 'ETH' },
   { headline: 'Is Bitcoin mispricing a prolonged Iran war? Ex-hedge fund manager weighs in', category: 'crypto', related: 'BTC' },
   { headline: 'Schwab plans spot bitcoin, ether trading launch in first half of 2026', category: 'crypto', related: 'ETH' },
+  { headline: 'Cambodian lawmakers propose severe prison time for crypto scammers', category: 'crypto', related: '' },
   { headline: 'Circle under fire after $285 million Drift hack over inaction to freeze stolen USDC', category: 'crypto', related: '' },
-  { headline: 'ZachXBT accuses Circle of $420M in compliance failures since 2022', category: 'crypto', related: '' },
-  { headline: 'US community banks oppose OCC approval of Coinbase trust charter', category: 'crypto', related: '' },
-  { headline: 'Tesla\'s Q1 Delivery Miss And Storage Slowdown Test Cash Generation Hopes', category: 'company', related: 'TSLA' },
-  { headline: 'If Microsoft Get This One Thing Right, the Stock Could Explode', category: 'company', related: 'MSFT' },
-  { headline: 'Meta\'s VA Partnership Puts Clinical VR Therapy In Meta Platforms Story', category: 'company', related: 'META' },
+  { headline: 'Tesla\'s Texas factory workforce reportedly shrunk 22% in 2025', category: 'company', related: 'TSLA' },
+  { headline: 'Microsoft makes huge move in a crucial market', category: 'company', related: 'MSFT' },
+  { headline: 'Meta\'s Bay Area layoffs affect roughly 200 workers as company pours billions into AI infrastructure', category: 'company', related: 'META' },
 ];
 
 // Get date string in YYYY-MM-DD format
