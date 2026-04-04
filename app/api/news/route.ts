@@ -12,20 +12,20 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-04 09:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-04 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'IMF urges BOJ to keep raising rates even as Iran war poses new risks', category: 'general', related: '' },
-  { headline: 'US fighter jet shot down over Iran, search underway for crew member, US officials say', category: 'general', related: '' },
-  { headline: 'Trump proposes "historic" defense spending budget, eyes 10% cut to other federal programs', category: 'general', related: '' },
-  { headline: 'Exclusive: US intelligence warns Iran unlikely to ease Hormuz Strait chokehold soon, sources say', category: 'general', related: '' },
-  { headline: 'Rich Bitcoin traders lost $337M daily in first quarter of 2026', category: 'crypto', related: 'BTC' },
-  { headline: 'Tether may delay fundraising if demand falls short at $500B valuation: Report', category: 'crypto', related: '' },
-  { headline: 'Bitcoin\'s \'no direction\' action may lead to heavier breakout: Analyst', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin ETFs \'will be larger\' than gold ETFs: Analyst', category: 'crypto', related: 'BTC' },
-  { headline: 'Judge continues Nevada ban on Kalshi sports markets', category: 'crypto', related: '' },
-  { headline: 'SpaceX IPO: Will It Be a Buy or a Bust?', category: 'company', related: 'TSLA' },
-  { headline: 'Microsoft\u2019s US$10b Japan AI Bet And What It Means For Investors', category: 'company', related: 'MSFT' },
-  { headline: 'Did Alphabet Just Say Checkmate to Micron?', category: 'company', related: 'NVDA' },
+  { headline: 'Iran allows essential goods vessels to its ports via Hormuz strait, Tasnim says', category: 'general', related: '' },
+  { headline: 'Trump weighs broader cabinet shake-up as Iran war pressure grows', category: 'general', related: '' },
+  { headline: 'Iraq closes Shalamcheh crossing with Iran after airstrikes kill Iraqi', category: 'general', related: '' },
+  { headline: 'Five EU finance ministers call for tax on energy companies\' windfall profits', category: 'general', related: '' },
+  { headline: 'Bitcoin shorts risk $2.5 billion liquidation at $72K: Are bears in danger?', category: 'crypto', related: 'BTC' },
+  { headline: 'Solana\'s quantum-threat readiness reveals harsh tradeoff: security vs speed', category: 'crypto', related: 'SOL' },
+  { headline: 'Five data sources say the same thing about bitcoin market. It\'s thinning from the inside', category: 'crypto', related: 'BTC' },
+  { headline: 'Prediction markets are testing legal limits in strict Asian markets', category: 'crypto', related: '' },
+  { headline: 'Polymarket takes down market on missing US pilot after backlash', category: 'crypto', related: '' },
+  { headline: 'The Smarter Way to Cash In on Meta\u2019s Vision for Smartglasses', category: 'company', related: 'META' },
+  { headline: 'Is the "Magnificent Seven" Era Over? Here Are the Stocks That Replace Them', category: 'company', related: 'AAPL' },
+  { headline: 'Investors Are Rotating Out of Palantir. Here\'s the Growth Stock I\'m Buying Instead.', category: 'company', related: 'NVDA' },
 ];
 
 // Get date string in YYYY-MM-DD format
