@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-05 05:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-05 09:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Satellite firm Planet Labs to indefinitely withhold Iran war images', category: 'general', related: '' },
+  { headline: 'Iran says several \'enemy aircraft\' destroyed during US pilot rescue mission', category: 'general', related: '' },
+  { headline: 'High-stakes US special forces mission rescues airman from Iran after F-15 crash', category: 'general', related: '' },
   { headline: 'Kuwait says Iranian drones strike oil sector complex, power, government sites', category: 'general', related: '' },
-  { headline: 'US rescues airman as Trump, Israel pressure Iran ahead of deadline', category: 'general', related: '' },
-  { headline: 'US says its agents arrested Qassem Soleimani\'s relatives after revoking green cards', category: 'general', related: '' },
-  { headline: 'Iran says Iraq exempt from any Strait of Hormuz restrictions', category: 'general', related: '' },
+  { headline: 'Iran says it hit Israel-linked vessel in Hormuz strait', category: 'general', related: '' },
+  { headline: 'Trump, Israel pressure Iran ahead of deadline', category: 'general', related: '' },
+  { headline: 'Anthropic launches PAC amid tensions with Trump administration over AI policy', category: 'crypto', related: '' },
+  { headline: 'Drift Protocol $280M exploit took \'months of deliberate preparation\'', category: 'crypto', related: '' },
+  { headline: 'Bitcoin tends to outperform gold and stocks after global shocks', category: 'crypto', related: 'BTC' },
   { headline: 'Bitcoin reaches highest level of bearish chatter in 5 weeks', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin\'s $1.3 trillion security race: key initiatives aimed at quantum-proofing the blockchain', category: 'crypto', related: 'BTC' },
-  { headline: 'Telegram founder Pavel Durov says Iranian government\'s ban backfired', category: 'crypto', related: '' },
-  { headline: 'Digital asset treasuries must now earn their keep', category: 'crypto', related: '' },
-  { headline: 'Wedbush keeps $600 Tesla stock price target despite Q1 miss', category: 'company', related: 'TSLA' },
+  { headline: 'Foxconn first-quarter revenue jumps 30% y/y', category: 'company', related: 'NVDA' },
+  { headline: 'Nvidia vs. CoreWeave: The Better AI Supercycle Stock Might Surprise You', category: 'company', related: 'NVDA' },
+  { headline: 'Prediction: Tesla Stock Is a Buy Before 2029 Due to This $10 Trillion Opportunity', category: 'company', related: 'TSLA' },
   { headline: 'Microsoft is on a new AI journey after reworked OpenAI deal', category: 'company', related: 'MSFT' },
-  { headline: 'Jim Cramer thinks new Apple CFO is settling well in his role', category: 'company', related: 'AAPL' },
-  { headline: 'Jim Cramer says he thinks Microsoft gets its act together', category: 'company', related: 'MSFT' },
 ];
 
 // Get date string in YYYY-MM-DD format
