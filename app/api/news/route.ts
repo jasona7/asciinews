@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-04 21:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-05 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Iran war enters 6th week as military searches for downed US jet crew member', category: 'general', related: '' },
-  { headline: 'Tehran rejects Trump\'s 48-hour ultimatum to reopen Strait of Hormuz', category: 'general', related: '' },
-  { headline: 'NASA Artemis II crew captures photos of Earth on journey to the Moon', category: 'general', related: '' },
-  { headline: 'White House to unveil record $1.5 trillion Pentagon budget request', category: 'general', related: '' },
-  { headline: 'Springs fire in Riverside County grows to 4,127 acres, evacuation orders issued', category: 'general', related: '' },
-  { headline: 'Bitcoin holds above $67K as crypto market cap reaches $2.38 trillion', category: 'crypto', related: 'BTC' },
-  { headline: 'Ethereum Foundation reaches 70,000 ETH staking target with $93M April deposit', category: 'crypto', related: 'ETH' },
-  { headline: 'Russia submits bill requiring residents to declare crypto wallet transactions to tax authorities', category: 'crypto', related: '' },
-  { headline: 'Chainlink unlocks 19 million LINK worth $165M, sends most to Binance', category: 'crypto', related: '' },
-  { headline: 'Tesla Q1 deliveries miss estimates despite 9% year-over-year growth', category: 'company', related: 'TSLA' },
-  { headline: 'Microsoft to invest $10 billion in Japan AI infrastructure through 2029', category: 'company', related: 'MSFT' },
-  { headline: 'Amazon pours $200B into AI capex, shares drop 10% on spending concerns', category: 'company', related: 'AMZN' },
-  { headline: 'Oracle begins job cuts as Big Tech reduces headcount amid heavy AI investment', category: 'company', related: '' },
+  { headline: 'Iran says it hit Israel-linked vessel in Hormuz strait', category: 'general', related: '' },
+  { headline: 'US pilot missing as Iran says it never ruled out talks', category: 'general', related: '' },
+  { headline: 'Israel preparing for attacks on Iranian energy sites, awaits US green light', category: 'general', related: '' },
+  { headline: 'Russia evacuates 198 more staff from Iran\'s Bushehr nuclear plant', category: 'general', related: '' },
+  { headline: 'Five EU countries call for windfall tax on energy companies', category: 'general', related: '' },
+  { headline: 'Bitcoin tends to outperform gold and stocks after global shocks, study finds', category: 'crypto', related: 'BTC' },
+  { headline: 'Ex-UK Chancellor backs bitcoin as alternative to failing systems', category: 'crypto', related: 'BTC' },
+  { headline: 'Telegram founder Pavel Durov says Iranian government\'s ban backfired', category: 'crypto', related: '' },
+  { headline: 'Digital asset treasuries must now earn their keep', category: 'crypto', related: '' },
+  { headline: 'Wedbush keeps $600 Tesla stock price target despite Q1 miss', category: 'company', related: 'TSLA' },
+  { headline: 'Microsoft is on a new AI journey after reworked OpenAI deal', category: 'company', related: 'MSFT' },
+  { headline: 'Jim Cramer says NVIDIA deserves a premium price-to-earnings multiple', category: 'company', related: 'NVDA' },
+  { headline: 'Jim Cramer thinks new Apple CFO is settling well in his role', category: 'company', related: 'AAPL' },
 ];
 
 // Get date string in YYYY-MM-DD format
