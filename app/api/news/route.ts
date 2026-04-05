@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-05 09:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-05 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Iran says several \'enemy aircraft\' destroyed during US pilot rescue mission', category: 'general', related: '' },
-  { headline: 'High-stakes US special forces mission rescues airman from Iran after F-15 crash', category: 'general', related: '' },
-  { headline: 'Kuwait says Iranian drones strike oil sector complex, power, government sites', category: 'general', related: '' },
-  { headline: 'Iran says it hit Israel-linked vessel in Hormuz strait', category: 'general', related: '' },
-  { headline: 'Trump, Israel pressure Iran ahead of deadline', category: 'general', related: '' },
-  { headline: 'Anthropic launches PAC amid tensions with Trump administration over AI policy', category: 'crypto', related: '' },
-  { headline: 'Drift Protocol $280M exploit took \'months of deliberate preparation\'', category: 'crypto', related: '' },
-  { headline: 'Bitcoin tends to outperform gold and stocks after global shocks', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin reaches highest level of bearish chatter in 5 weeks', category: 'crypto', related: 'BTC' },
-  { headline: 'Foxconn first-quarter revenue jumps 30% y/y', category: 'company', related: 'NVDA' },
-  { headline: 'Nvidia vs. CoreWeave: The Better AI Supercycle Stock Might Surprise You', category: 'company', related: 'NVDA' },
-  { headline: 'Prediction: Tesla Stock Is a Buy Before 2029 Due to This $10 Trillion Opportunity', category: 'company', related: 'TSLA' },
-  { headline: 'Microsoft is on a new AI journey after reworked OpenAI deal', category: 'company', related: 'MSFT' },
+  { headline: 'Trump says US will target Iran\'s infrastructure on Tuesday', category: 'general', related: '' },
+  { headline: 'OPEC+ agrees in principle on theoretical oil output hike amid Iran war paralysis', category: 'general', related: '' },
+  { headline: 'Kuwait Petroleum Corp reports damage at units after Iran drone attack', category: 'general', related: '' },
+  { headline: 'Satellite firm Planet Labs to indefinitely withhold Iran war images', category: 'general', related: '' },
+  { headline: 'US rescues airman as Trump, Israel pressure Iran ahead of deadline', category: 'general', related: '' },
+  { headline: 'Robert Kiyosaki recommends Bitcoin, gold as 1974 shift comes full circle', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin holds steady as sentiment hits worst levels since Iran war began', category: 'crypto', related: 'BTC' },
+  { headline: 'New Bitcoin price lows \'matter of time\' says trader with BTC stuck at $67K', category: 'crypto', related: 'BTC' },
+  { headline: 'Crypto faces \u2018existential\u2019 token problem as supply outpaces value creation', category: 'crypto', related: '' },
+  { headline: 'Foxconn Q1 revenue jumps 30% on AI tailwinds; cautions on Middle East "volatility"', category: 'company', related: 'AAPL' },
+  { headline: 'Tesla Shifts From Flagship Models To Japan Growth And Rich Valuation', category: 'company', related: 'TSLA' },
+  { headline: 'Microsoft AI Pivot And US$10b Japan Bet Shape Long Term Case', category: 'company', related: 'MSFT' },
+  { headline: 'Prediction: This Will Be Nvidia\'s Stock Price by the End of the Year', category: 'company', related: 'META' },
 ];
 
 // Get date string in YYYY-MM-DD format
