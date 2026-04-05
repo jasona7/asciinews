@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-05 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-05 17:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Trump says US will target Iran\'s infrastructure on Tuesday', category: 'general', related: '' },
-  { headline: 'OPEC+ agrees in principle on theoretical oil output hike amid Iran war paralysis', category: 'general', related: '' },
-  { headline: 'Kuwait Petroleum Corp reports damage at units after Iran drone attack', category: 'general', related: '' },
-  { headline: 'Satellite firm Planet Labs to indefinitely withhold Iran war images', category: 'general', related: '' },
-  { headline: 'US rescues airman as Trump, Israel pressure Iran ahead of deadline', category: 'general', related: '' },
+  { headline: 'OPEC+ agrees to boost oil output when Strait of Hormuz reopens', category: 'general', related: '' },
+  { headline: 'Here are the 3 big things we\'re watching in the stock market in the week ahead', category: 'general', related: '' },
+  { headline: 'Trump says deal with Iran possible by Monday, Fox News reports', category: 'general', related: '' },
+  { headline: 'Trump threatens to hit Iran infrastructure on Tuesday if Strait remains blocked', category: 'general', related: '' },
+  { headline: 'Iran\'s Revolutionary Guards say they targeted petrochemical facilities in the Gulf', category: 'general', related: '' },
+  { headline: 'Bitcoin is now front-running the Fed rather than reacting to it. ETFs are the cause', category: 'crypto', related: 'BTC' },
+  { headline: 'AI is making crypto\'s security problem even worse, Ledger CTO warns', category: 'crypto', related: '' },
+  { headline: 'Drift says $270 million exploit was a six-month North Korean intelligence operation', category: 'crypto', related: '' },
   { headline: 'Robert Kiyosaki recommends Bitcoin, gold as 1974 shift comes full circle', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin holds steady as sentiment hits worst levels since Iran war began', category: 'crypto', related: 'BTC' },
-  { headline: 'New Bitcoin price lows \'matter of time\' says trader with BTC stuck at $67K', category: 'crypto', related: 'BTC' },
-  { headline: 'Crypto faces \u2018existential\u2019 token problem as supply outpaces value creation', category: 'crypto', related: '' },
-  { headline: 'Foxconn Q1 revenue jumps 30% on AI tailwinds; cautions on Middle East "volatility"', category: 'company', related: 'AAPL' },
-  { headline: 'Tesla Shifts From Flagship Models To Japan Growth And Rich Valuation', category: 'company', related: 'TSLA' },
-  { headline: 'Microsoft AI Pivot And US$10b Japan Bet Shape Long Term Case', category: 'company', related: 'MSFT' },
-  { headline: 'Prediction: This Will Be Nvidia\'s Stock Price by the End of the Year', category: 'company', related: 'META' },
+  { headline: 'Globalstar Stock Pops More Than 15% After Report Claims Amazon In Talks To Acquire Apple-Backed Satellite Company', category: 'company', related: 'AAPL' },
+  { headline: 'TSLA Stock Bull Run Ahead? Eric Jackson Says Signal That Preceded Tesla\'s Biggest Runs Has Fired Again', category: 'company', related: 'TSLA' },
+  { headline: 'Is This ETF the Safest Way to Benefit From AI?', category: 'company', related: 'MSFT' },
+  { headline: 'Prediction: 1 AI Stock Will Quietly Double While the Market Panics Over TurboQuant', category: 'company', related: 'NVDA' },
 ];
 
 // Get date string in YYYY-MM-DD format
