@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-05 21:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-07 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Trump invokes religious rhetoric in praise of Iran rescue, drawing criticism', category: 'general', related: '' },
-  { headline: 'Oil prices open higher as US-Israeli war with Iran continues to disrupt supply', category: 'general', related: '' },
-  { headline: 'Trump gives Iran until Tuesday night to open Strait of Hormuz, WSJ reports', category: 'general', related: '' },
-  { headline: 'The mega IPOs of SpaceX, Anthropic and OpenAI alone can\'t fix this stock market', category: 'general', related: '' },
-  { headline: 'OPEC+ agrees to boost oil output when Strait of Hormuz reopens', category: 'general', related: '' },
-  { headline: 'A simple explainer on what quantum computing actually is, and why it is terrifying for bitcoin', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin and the US dollar have a \'symbiotic\' relationship: BPI exec', category: 'crypto', related: 'BTC' },
-  { headline: 'Polymarket odds of US invading Iran this year reach 63% after Trump\'s post', category: 'crypto', related: '' },
-  { headline: 'Crypto attorney says Drift incident may qualify as \'civil negligence\'', category: 'crypto', related: '' },
-  { headline: 'Apple China AI Setback Puts Regulatory Risk In Investor Focus', category: 'company', related: 'AAPL' },
-  { headline: 'Tesla Stock Keeps Falling - But 10% Lower TSLA Puts Yield 2.0% for One Month Out', category: 'company', related: 'TSLA' },
-  { headline: 'Got $1,000? This Agentic AI Growth Stock Is Down 87% From Its Highs', category: 'company', related: 'NVDA' },
-  { headline: 'Nebius Stock Jumped 15% on Its Meta Deal. Is This the Next CoreWeave -- or Something Better?', category: 'company', related: 'META' },
+  { headline: 'US and Iran receive 45-day ceasefire proposal from mediators including Strait of Hormuz reopening', category: 'general', related: '' },
+  { headline: 'Trump gives Iran until Tuesday night to reopen Strait of Hormuz or face attacks on power grid', category: 'general', related: '' },
+  { headline: 'Oil prices ease as ceasefire talks gain traction but Brent remains above $108 on supply fears', category: 'general', related: '' },
+  { headline: '$273.8 million in crypto liquidated in 24 hours as shorts outnumber longs nearly 3 to 1', category: 'general', related: '' },
+  { headline: 'Bitcoin pulls back to $68,683 after briefly touching $70,000 for the first time since March 26', category: 'crypto', related: 'BTC' },
+  { headline: 'Ethereum slips to $2,108 giving back ceasefire-driven gains as broader market cools overnight', category: 'crypto', related: 'ETH' },
+  { headline: 'Solana drops 3.1% to $79.78 as Alpenglow consensus overhaul discussion continues', category: 'crypto', related: 'SOL' },
+  { headline: 'XRP holds near $1.32 as Ripple Digital Asset Accounts see early corporate treasury adoption', category: 'crypto', related: 'XRP' },
+  { headline: 'JPMorgan reiterates Tesla as underweight and lowers estimates after Q1 delivery miss', category: 'company', related: 'TSLA' },
+  { headline: 'Bank of America reiterates Apple as buy, sees MacBook Neo as meaningful revenue tailwind', category: 'company', related: 'AAPL' },
+  { headline: 'Nvidia and Foxconn benefit as hyperscalers continue aggressive AI infrastructure buildout', category: 'company', related: 'NVDA' },
+  { headline: 'Apple CarPlay now supports voice-based ChatGPT interaction through latest iOS update', category: 'company', related: 'AAPL' },
+  { headline: 'Enterprise AI shifts from experimental to operational as task-specific agents gain traction in 2026', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
