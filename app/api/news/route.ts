@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-07 01:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-07 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'US and Iran receive 45-day ceasefire proposal from mediators including Strait of Hormuz reopening', category: 'general', related: '' },
-  { headline: 'Trump gives Iran until Tuesday night to reopen Strait of Hormuz or face attacks on power grid', category: 'general', related: '' },
-  { headline: 'Oil prices ease as ceasefire talks gain traction but Brent remains above $108 on supply fears', category: 'general', related: '' },
-  { headline: '$273.8 million in crypto liquidated in 24 hours as shorts outnumber longs nearly 3 to 1', category: 'general', related: '' },
-  { headline: 'Bitcoin pulls back to $68,683 after briefly touching $70,000 for the first time since March 26', category: 'crypto', related: 'BTC' },
-  { headline: 'Ethereum slips to $2,108 giving back ceasefire-driven gains as broader market cools overnight', category: 'crypto', related: 'ETH' },
-  { headline: 'Solana drops 3.1% to $79.78 as Alpenglow consensus overhaul discussion continues', category: 'crypto', related: 'SOL' },
-  { headline: 'XRP holds near $1.32 as Ripple Digital Asset Accounts see early corporate treasury adoption', category: 'crypto', related: 'XRP' },
-  { headline: 'JPMorgan reiterates Tesla as underweight and lowers estimates after Q1 delivery miss', category: 'company', related: 'TSLA' },
-  { headline: 'Bank of America reiterates Apple as buy, sees MacBook Neo as meaningful revenue tailwind', category: 'company', related: 'AAPL' },
-  { headline: 'Nvidia and Foxconn benefit as hyperscalers continue aggressive AI infrastructure buildout', category: 'company', related: 'NVDA' },
-  { headline: 'Apple CarPlay now supports voice-based ChatGPT interaction through latest iOS update', category: 'company', related: 'AAPL' },
-  { headline: 'Enterprise AI shifts from experimental to operational as task-specific agents gain traction in 2026', category: 'general', related: '' },
+  { headline: 'Stock futures choppy as traders await Trump Iran war deadline with Strait of Hormuz still closed', category: 'general', related: '' },
+  { headline: 'Oil prices climb toward $110 as Trump escalates threats against Iran ahead of Tuesday deadline', category: 'general', related: '' },
+  { headline: 'Fed officials signal inflation concerns flashing orange as energy costs surge on geopolitical crisis', category: 'general', related: '' },
+  { headline: 'Goldman Sachs warns global economy faces higher prices and slower growth from Iran conflict', category: 'general', related: '' },
+  { headline: 'Bitcoin slides to $68,396 as traders position defensively ahead of Trump Iran war deadline', category: 'crypto', related: 'BTC' },
+  { headline: 'Ethereum drops 2.6% to $2,086 as crypto markets trend lower with risk assets under pressure', category: 'crypto', related: 'ETH' },
+  { headline: 'Solana falls 3.8% to $79.13 as broad risk-off sentiment weighs on altcoins', category: 'crypto', related: 'SOL' },
+  { headline: 'XRP slips to $1.31 amid wider crypto sell-off driven by geopolitical uncertainty', category: 'crypto', related: 'XRP' },
+  { headline: 'Apple iPhone 17 outpaces iPhone 16 sales as upgrade cycle accelerates', category: 'company', related: 'AAPL' },
+  { headline: 'Broadcom expands AI chip partnership with Google and Anthropic', category: 'company', related: 'GOOGL' },
+  { headline: 'Samsung forecasts record profits driven by surging AI chip demand and production ramp', category: 'company', related: 'NVDA' },
+  { headline: 'Big Tech stocks suddenly look cheap as Goldman identifies generational buying opportunity', category: 'general', related: '' },
+  { headline: 'Airlines cancel more flights as Middle East conflict escalates and fuel costs rise', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
