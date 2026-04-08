@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-08 01:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-08 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Trump says he agrees to suspend bombing of Iran for two weeks as diplomacy gains traction', category: 'general', related: '' },
-  { headline: 'Wall Street closes mixed with signs of progress as Trump Iran deadline draws near', category: 'general', related: '' },
-  { headline: 'China and Russia veto UN resolution on protecting Hormuz shipping lanes', category: 'general', related: '' },
-  { headline: 'Iran war may boost inflation but not expectations per Dallas Fed research', category: 'general', related: '' },
-  { headline: 'Bitcoin vaults past $72,000 as U.S. stock futures surge on two-week U.S.-Iran ceasefire', category: 'crypto', related: 'BTC' },
-  { headline: 'Ethereum surges 6% past $2,230 as crypto markets rally on Iran ceasefire hopes', category: 'crypto', related: 'ETH' },
-  { headline: 'Solana jumps 6.2% to $84.70 as risk-on sentiment returns across crypto markets', category: 'crypto', related: 'SOL' },
-  { headline: 'XRP climbs 3.6% to $1.37 as broader crypto market recovers on geopolitical optimism', category: 'crypto', related: 'XRP' },
-  { headline: 'NVIDIA announces $2 billion AI partnership with Marvell Technology', category: 'company', related: 'NVDA' },
-  { headline: 'Analyst says Tesla will deliver 1.6 million vehicles this year as robotaxi scale becomes key driver', category: 'company', related: 'TSLA' },
-  { headline: 'Google CEO Sundar Pichai says AI shift opens opportunities to invest in startups', category: 'company', related: 'GOOGL' },
-  { headline: 'Levi Strauss beats expectations on top and bottom lines and raises guidance', category: 'general', related: '' },
-  { headline: 'Cramer says stock market action gives investors a glimpse of the economy fate if Iran war persists', category: 'general', related: '' },
+  { headline: 'Trump threatens tariffs of 50% on countries supplying military weapons to Iran', category: 'general', related: '' },
+  { headline: 'Global energy shares drop as oil plunges after US-Iran ceasefire', category: 'general', related: '' },
+  { headline: 'US stock index futures climb on relief from US-Iran ceasefire', category: 'general', related: '' },
+  { headline: 'US bank profits to rise on deals, but Iran war fuels outlook uncertainty', category: 'general', related: '' },
+  { headline: 'Trump says he believes China got Iran to negotiate, AFP reports', category: 'general', related: '' },
+  { headline: 'Bitcoin surges 5.5% past $72,000 as ceasefire rally extends across crypto markets', category: 'crypto', related: 'BTC' },
+  { headline: 'Ethereum jumps 8.3% to $2,258 as risk appetite returns on Iran ceasefire optimism', category: 'crypto', related: 'ETH' },
+  { headline: 'Solana rallies 6.9% to $84.60 as broader crypto market extends ceasefire gains', category: 'crypto', related: 'SOL' },
+  { headline: 'XRP climbs 5.6% to $1.38 tracking crypto-wide rally on geopolitical relief', category: 'crypto', related: 'XRP' },
+  { headline: 'Cybersecurity Stocks Climb Amid Anthropic\'s Project Glasswing Launch', category: 'company', related: 'NVDA' },
+  { headline: 'Retail investors are buying the dip in Tesla stock', category: 'company', related: 'TSLA' },
+  { headline: 'Nvidia and Google are safest AI bets in public markets: Intelligent Alpha CEO', category: 'company', related: 'GOOGL' },
+  { headline: 'Stablecoin yields won\'t harm banks, White House economists say', category: 'crypto', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
