@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-07 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-08 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Stock futures choppy as traders await Trump Iran war deadline with Strait of Hormuz still closed', category: 'general', related: '' },
-  { headline: 'Oil prices climb toward $110 as Trump escalates threats against Iran ahead of Tuesday deadline', category: 'general', related: '' },
-  { headline: 'Fed officials signal inflation concerns flashing orange as energy costs surge on geopolitical crisis', category: 'general', related: '' },
-  { headline: 'Goldman Sachs warns global economy faces higher prices and slower growth from Iran conflict', category: 'general', related: '' },
-  { headline: 'Bitcoin slides to $68,396 as traders position defensively ahead of Trump Iran war deadline', category: 'crypto', related: 'BTC' },
-  { headline: 'Ethereum drops 2.6% to $2,086 as crypto markets trend lower with risk assets under pressure', category: 'crypto', related: 'ETH' },
-  { headline: 'Solana falls 3.8% to $79.13 as broad risk-off sentiment weighs on altcoins', category: 'crypto', related: 'SOL' },
-  { headline: 'XRP slips to $1.31 amid wider crypto sell-off driven by geopolitical uncertainty', category: 'crypto', related: 'XRP' },
-  { headline: 'Apple iPhone 17 outpaces iPhone 16 sales as upgrade cycle accelerates', category: 'company', related: 'AAPL' },
-  { headline: 'Broadcom expands AI chip partnership with Google and Anthropic', category: 'company', related: 'GOOGL' },
-  { headline: 'Samsung forecasts record profits driven by surging AI chip demand and production ramp', category: 'company', related: 'NVDA' },
-  { headline: 'Big Tech stocks suddenly look cheap as Goldman identifies generational buying opportunity', category: 'general', related: '' },
-  { headline: 'Airlines cancel more flights as Middle East conflict escalates and fuel costs rise', category: 'general', related: '' },
+  { headline: 'Trump says he agrees to suspend bombing of Iran for two weeks as diplomacy gains traction', category: 'general', related: '' },
+  { headline: 'Wall Street closes mixed with signs of progress as Trump Iran deadline draws near', category: 'general', related: '' },
+  { headline: 'China and Russia veto UN resolution on protecting Hormuz shipping lanes', category: 'general', related: '' },
+  { headline: 'Iran war may boost inflation but not expectations per Dallas Fed research', category: 'general', related: '' },
+  { headline: 'Bitcoin vaults past $72,000 as U.S. stock futures surge on two-week U.S.-Iran ceasefire', category: 'crypto', related: 'BTC' },
+  { headline: 'Ethereum surges 6% past $2,230 as crypto markets rally on Iran ceasefire hopes', category: 'crypto', related: 'ETH' },
+  { headline: 'Solana jumps 6.2% to $84.70 as risk-on sentiment returns across crypto markets', category: 'crypto', related: 'SOL' },
+  { headline: 'XRP climbs 3.6% to $1.37 as broader crypto market recovers on geopolitical optimism', category: 'crypto', related: 'XRP' },
+  { headline: 'NVIDIA announces $2 billion AI partnership with Marvell Technology', category: 'company', related: 'NVDA' },
+  { headline: 'Analyst says Tesla will deliver 1.6 million vehicles this year as robotaxi scale becomes key driver', category: 'company', related: 'TSLA' },
+  { headline: 'Google CEO Sundar Pichai says AI shift opens opportunities to invest in startups', category: 'company', related: 'GOOGL' },
+  { headline: 'Levi Strauss beats expectations on top and bottom lines and raises guidance', category: 'general', related: '' },
+  { headline: 'Cramer says stock market action gives investors a glimpse of the economy fate if Iran war persists', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
