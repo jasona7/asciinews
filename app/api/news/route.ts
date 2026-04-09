@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-08 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-08 21:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Trump threatens tariffs of 50% on countries supplying military weapons to Iran', category: 'general', related: '' },
-  { headline: 'Global energy shares drop as oil plunges after US-Iran ceasefire', category: 'general', related: '' },
-  { headline: 'US stock index futures climb on relief from US-Iran ceasefire', category: 'general', related: '' },
-  { headline: 'US bank profits to rise on deals, but Iran war fuels outlook uncertainty', category: 'general', related: '' },
-  { headline: 'Trump says he believes China got Iran to negotiate, AFP reports', category: 'general', related: '' },
-  { headline: 'Bitcoin surges 5.5% past $72,000 as ceasefire rally extends across crypto markets', category: 'crypto', related: 'BTC' },
-  { headline: 'Ethereum jumps 8.3% to $2,258 as risk appetite returns on Iran ceasefire optimism', category: 'crypto', related: 'ETH' },
-  { headline: 'Solana rallies 6.9% to $84.60 as broader crypto market extends ceasefire gains', category: 'crypto', related: 'SOL' },
-  { headline: 'XRP climbs 5.6% to $1.38 tracking crypto-wide rally on geopolitical relief', category: 'crypto', related: 'XRP' },
-  { headline: 'Cybersecurity Stocks Climb Amid Anthropic\'s Project Glasswing Launch', category: 'company', related: 'NVDA' },
-  { headline: 'Retail investors are buying the dip in Tesla stock', category: 'company', related: 'TSLA' },
-  { headline: 'Nvidia and Google are safest AI bets in public markets: Intelligent Alpha CEO', category: 'company', related: 'GOOGL' },
-  { headline: 'Stablecoin yields won\'t harm banks, White House economists say', category: 'crypto', related: '' },
+  { headline: 'Iran says peace talks would be unreasonable following Israeli strikes', category: 'general', related: '' },
+  { headline: 'Trump\'s abrupt Iran reversal exposes limits of his leverage', category: 'general', related: '' },
+  { headline: 'US did not agree that ceasefire would cover Lebanon, Vance says', category: 'general', related: '' },
+  { headline: 'Jim Cramer says the market\'s rally is a peek into what stocks are worth buying', category: 'general', related: '' },
+  { headline: 'Bitcoin tops $72K after $280M liquidation targets bears', category: 'crypto', related: 'BTC' },
+  { headline: 'Morgan Stanley\'s bitcoin ETF draws $34 million on day one', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin has 3-5 years to prepare for quantum risk, says Bernstein', category: 'crypto', related: 'BTC' },
+  { headline: 'US Treasury moves forward with GENIUS Act, focusing on illicit finance', category: 'crypto', related: '' },
+  { headline: 'Nvidia vs. Micron: Which AI Chip Stock Has More Upside Potential?', category: 'company', related: 'NVDA' },
+  { headline: 'Morgan Stanley delivers blunt message to Tesla stock investors', category: 'company', related: 'TSLA' },
+  { headline: 'Apple\'s foldable iPhone remains on track for September debut', category: 'company', related: 'AAPL' },
+  { headline: 'Microsoft announces quarterly earnings release date', category: 'company', related: 'MSFT' },
+  { headline: 'US SEC taps new enforcement chief amid questions over predecessor\'s exit', category: 'crypto', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
