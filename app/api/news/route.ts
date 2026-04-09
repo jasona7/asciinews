@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-08 21:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-09 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Iran says peace talks would be unreasonable following Israeli strikes', category: 'general', related: '' },
-  { headline: 'Trump\'s abrupt Iran reversal exposes limits of his leverage', category: 'general', related: '' },
-  { headline: 'US did not agree that ceasefire would cover Lebanon, Vance says', category: 'general', related: '' },
-  { headline: 'Jim Cramer says the market\'s rally is a peek into what stocks are worth buying', category: 'general', related: '' },
-  { headline: 'Bitcoin tops $72K after $280M liquidation targets bears', category: 'crypto', related: 'BTC' },
-  { headline: 'Morgan Stanley\'s bitcoin ETF draws $34 million on day one', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin has 3-5 years to prepare for quantum risk, says Bernstein', category: 'crypto', related: 'BTC' },
-  { headline: 'US Treasury moves forward with GENIUS Act, focusing on illicit finance', category: 'crypto', related: '' },
-  { headline: 'Nvidia vs. Micron: Which AI Chip Stock Has More Upside Potential?', category: 'company', related: 'NVDA' },
-  { headline: 'Morgan Stanley delivers blunt message to Tesla stock investors', category: 'company', related: 'TSLA' },
-  { headline: 'Apple\'s foldable iPhone remains on track for September debut', category: 'company', related: 'AAPL' },
-  { headline: 'Microsoft announces quarterly earnings release date', category: 'company', related: 'MSFT' },
-  { headline: 'US SEC taps new enforcement chief amid questions over predecessor\'s exit', category: 'crypto', related: '' },
+  { headline: 'Jim Cramer\'s top 10 things to watch in the stock market Thursday', category: 'general', related: '' },
+  { headline: 'Strait of Hormuz is shut, must reopen without conditions, UAE oil giant ADNOC\'s CEO says', category: 'general', related: '' },
+  { headline: 'Iran\'s president says Israeli strikes on Lebanon render negotiations meaningless', category: 'general', related: '' },
+  { headline: 'Iran war doubles Russia\'s main oil revenue to $9 bln in April', category: 'general', related: '' },
+  { headline: 'Bitcoin Depot discloses $3.7M BTC theft in cybersecurity breach', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin\u2019s $80,000 bull bet just took over the market', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin analysts say this must happen for BTC price to continue rising', category: 'crypto', related: 'BTC' },
+  { headline: 'Bhutan moves a further $23M in Bitcoin as holdings drop by 70%', category: 'crypto', related: 'BTC' },
+  { headline: 'Meta\'s Spark model gets lavished with Wall Street praise', category: 'company', related: 'META' },
+  { headline: 'CoreWeave signs $21 billion AI cloud deal with Meta', category: 'company', related: 'META' },
+  { headline: 'Market Chatter: Tesla Developing Smaller, Cheaper Electric SUV', category: 'company', related: 'TSLA' },
+  { headline: 'EDGX launches first in-orbit demonstration of its AI computing system on SpaceX Transporter-16', category: 'company', related: 'NVDA' },
+  { headline: 'Crypto exchanges chase TradFi commodities market as pricing gaps persist', category: 'crypto', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
