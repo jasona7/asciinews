@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-09 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-10 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Jim Cramer\'s top 10 things to watch in the stock market Thursday', category: 'general', related: '' },
-  { headline: 'Strait of Hormuz is shut, must reopen without conditions, UAE oil giant ADNOC\'s CEO says', category: 'general', related: '' },
-  { headline: 'Iran\'s president says Israeli strikes on Lebanon render negotiations meaningless', category: 'general', related: '' },
-  { headline: 'Iran war doubles Russia\'s main oil revenue to $9 bln in April', category: 'general', related: '' },
-  { headline: 'Bitcoin Depot discloses $3.7M BTC theft in cybersecurity breach', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin\u2019s $80,000 bull bet just took over the market', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin analysts say this must happen for BTC price to continue rising', category: 'crypto', related: 'BTC' },
-  { headline: 'Bhutan moves a further $23M in Bitcoin as holdings drop by 70%', category: 'crypto', related: 'BTC' },
-  { headline: 'Meta\'s Spark model gets lavished with Wall Street praise', category: 'company', related: 'META' },
-  { headline: 'CoreWeave signs $21 billion AI cloud deal with Meta', category: 'company', related: 'META' },
-  { headline: 'Market Chatter: Tesla Developing Smaller, Cheaper Electric SUV', category: 'company', related: 'TSLA' },
-  { headline: 'EDGX launches first in-orbit demonstration of its AI computing system on SpaceX Transporter-16', category: 'company', related: 'NVDA' },
-  { headline: 'Crypto exchanges chase TradFi commodities market as pricing gaps persist', category: 'crypto', related: '' },
+  { headline: 'Cramer explains the divergence in tech stocks \u2013 and why software may continue to lag', category: 'general', related: '' },
+  { headline: 'Trump says Iran should not charge fees to tankers going through Strait of Hormuz', category: 'general', related: '' },
+  { headline: 'Saudi Arabia says attacks cut oil output and East-West Pipeline flow', category: 'general', related: '' },
+  { headline: '47% of college students have seriously considered changing majors due to AI: Survey', category: 'general', related: '' },
+  { headline: 'Bitcoin rally extends toward $73K despite concerning US economic data', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin tops $72,000, but Circle and Bullish drop sharply after downgrades', category: 'crypto', related: 'BTC' },
+  { headline: 'ETH valuation metric hits level not seen since 2022: Is rally to $2.5K next?', category: 'crypto', related: 'ETH' },
+  { headline: 'These 3 crypto stocks could actually beat bitcoin ETFs, says TD Cowen', category: 'crypto', related: 'BTC' },
+  { headline: 'US Treasury expands cybersecurity threat intel to crypto industry', category: 'crypto', related: '' },
+  { headline: 'Meta pulls ads aimed at recruiting plaintiffs for social media addiction lawsuits', category: 'company', related: 'META' },
+  { headline: 'Tesla vs. BYD: Only 1 Can Make You Rich Over the Next 5 Years', category: 'company', related: 'TSLA' },
+  { headline: 'Tesla Explores Cheaper EV to Broaden Market Reach', category: 'company', related: 'TSLA' },
+  { headline: 'Strategy\'s New Product Grew Faster Than The iPhone And Google Ads Combined', category: 'company', related: 'AAPL' },
 ];
 
 // Get date string in YYYY-MM-DD format
