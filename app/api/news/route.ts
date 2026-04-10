@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-10 01:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-10 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Cramer explains the divergence in tech stocks \u2013 and why software may continue to lag', category: 'general', related: '' },
-  { headline: 'Trump says Iran should not charge fees to tankers going through Strait of Hormuz', category: 'general', related: '' },
-  { headline: 'Saudi Arabia says attacks cut oil output and East-West Pipeline flow', category: 'general', related: '' },
-  { headline: '47% of college students have seriously considered changing majors due to AI: Survey', category: 'general', related: '' },
-  { headline: 'Bitcoin rally extends toward $73K despite concerning US economic data', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin tops $72,000, but Circle and Bullish drop sharply after downgrades', category: 'crypto', related: 'BTC' },
-  { headline: 'ETH valuation metric hits level not seen since 2022: Is rally to $2.5K next?', category: 'crypto', related: 'ETH' },
-  { headline: 'These 3 crypto stocks could actually beat bitcoin ETFs, says TD Cowen', category: 'crypto', related: 'BTC' },
-  { headline: 'US Treasury expands cybersecurity threat intel to crypto industry', category: 'crypto', related: '' },
-  { headline: 'Meta pulls ads aimed at recruiting plaintiffs for social media addiction lawsuits', category: 'company', related: 'META' },
-  { headline: 'Tesla vs. BYD: Only 1 Can Make You Rich Over the Next 5 Years', category: 'company', related: 'TSLA' },
-  { headline: 'Tesla Explores Cheaper EV to Broaden Market Reach', category: 'company', related: 'TSLA' },
-  { headline: 'Strategy\'s New Product Grew Faster Than The iPhone And Google Ads Combined', category: 'company', related: 'AAPL' },
+  { headline: 'Jim Cramer\'s top 10 things to watch in the stock market Friday', category: 'general', related: '' },
+  { headline: 'Shares gain as investor nerves ease before U.S.-Iran talks; oil set for weekly drop', category: 'general', related: '' },
+  { headline: 'Ceasefire sends dollar on weekly drop; US-Iran talks in focus', category: 'general', related: '' },
+  { headline: 'Keir Starmer: \'I\'m fed up\' with Trump and Putin affecting UK energy costs', category: 'general', related: '' },
+  { headline: 'Bitcoin gains after core CPI rose a less-than-forecast 0.2% in March', category: 'crypto', related: 'BTC' },
+  { headline: 'BlackRock\'s Bitcoin ETF inflows $269M, marking a 5-week high', category: 'crypto', related: 'BTC' },
+  { headline: 'XRP edges higher to $1.35 on breakout, but bullish momentum still lacks', category: 'crypto', related: 'XRP' },
+  { headline: 'Hong Kong grants first stablecoin licences to Anchorpoint and HSBC', category: 'crypto', related: '' },
+  { headline: 'Japan moves to classify cryptocurrencies as financial products', category: 'crypto', related: '' },
+  { headline: 'Big Tech puts financial heft behind next-gen nuclear power as AI demand surges', category: 'company', related: 'META' },
+  { headline: 'TSMC Tops Q1 Sales Target On Strong AI Chip Demand', category: 'company', related: 'AAPL' },
+  { headline: 'Apple leads global smartphone shipments in first quarter, Counterpoint says', category: 'company', related: 'AAPL' },
+  { headline: 'Anthropic Mythos Triggers Bessent, Powell\'s Meeting With Wall Street Banks to Assess Risks Posed by AI Model', category: 'company', related: 'MSFT' },
 ];
 
 // Get date string in YYYY-MM-DD format
