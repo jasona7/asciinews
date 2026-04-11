@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-11 01:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-11 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Cramer warns of \'incredibly overconfident\' market after U.S.-Iran ceasefire', category: 'general', related: '' },
-  { headline: 'US likely to extend Russian oil waiver to temper Iran war shock, sources say', category: 'general', related: '' },
-  { headline: 'US March budget deficit rises slightly to $164 billion as Iran war outlays lag', category: 'general', related: '' },
-  { headline: 'Sam Altman\'s house hit with Molotov cocktail, OpenAI San Francisco headquarters threatened', category: 'general', related: '' },
-  { headline: 'Bitcoin community weighs in on reports of Iran\'s crypto toll for oil ships', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin charts point to $80K in April: Here\'s how it may happen', category: 'crypto', related: 'BTC' },
-  { headline: 'Crypto Biz: Will Bitcoin secure safe passage through the Hormuz Strait?', category: 'crypto', related: 'BTC' },
-  { headline: 'Federal judge blocks Arizona from bringing criminal charges against Kalshi', category: 'crypto', related: '' },
-  { headline: 'CoreWeave lands multi-year agreement with Anthropic to run AI workloads', category: 'crypto', related: '' },
-  { headline: 'Stocks making big moves this week: Richardson Electronics, Tesla, C.H. Robinson', category: 'company', related: 'TSLA' },
-  { headline: 'Microsoft\'s New AI Alliances Reframe Patent, Security And Enterprise Growth Story', category: 'company', related: 'MSFT' },
-  { headline: 'Stock Market Today, April 10: Palantir Falls as AI Competition Pressures Valuation', category: 'company', related: 'MSFT' },
-  { headline: 'Wall Street Banks Try Out Anthropic\'s Mythos as US Urges', category: 'company', related: 'AAPL' },
+  { headline: 'Dow adds over 1,300 points in best day since April 2025 after Trump announces Iran ceasefire', category: 'general', related: '' },
+  { headline: 'S&P 500 notches seventh straight gain as stocks extend relief rally on ceasefire hopes', category: 'general', related: '' },
+  { headline: 'West Texas crude tumbles 16% to $94.41 after Iran ceasefire, biggest daily drop since 2020', category: 'general', related: '' },
+  { headline: 'Consumer sentiment hits record low as University of Michigan index falls to 47.6 in April', category: 'general', related: '' },
+  { headline: 'OpenAI plans U.S. IPO at up to $1 trillion valuation, will reserve shares for retail investors', category: 'general', related: '' },
+  { headline: 'Morgan Stanley launches Bitcoin ETF with predicted $5 billion in first-year AUM', category: 'crypto', related: 'BTC' },
+  { headline: 'Circle launches cirBTC as Bitcoin institutional adoption accelerates', category: 'crypto', related: 'BTC' },
+  { headline: 'Six major financial institutions join Pyth Network to distribute proprietary data onchain', category: 'crypto', related: '' },
+  { headline: 'Meta agrees to spend additional $21 billion with CoreWeave on top of prior $14.2B deal', category: 'company', related: 'META' },
+  { headline: 'Amazon cloud AI revenue tops $15B run rate; chip business Graviton and Trainium clears $20B', category: 'company', related: 'AMZN' },
+  { headline: 'Chipmakers rally: ASML, Applied Materials pop 9%, Intel gains 11% on ceasefire momentum', category: 'company', related: 'AMD' },
+  { headline: 'Software stocks hit on fears AI will disrupt SaaS business model', category: 'company', related: 'MSFT' },
+  { headline: 'CoreWeave lands multi-year AI cloud agreement with Anthropic, plans $3B debt raise', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
