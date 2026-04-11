@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-10 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-11 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Jim Cramer\'s top 10 things to watch in the stock market Friday', category: 'general', related: '' },
-  { headline: 'Shares gain as investor nerves ease before U.S.-Iran talks; oil set for weekly drop', category: 'general', related: '' },
-  { headline: 'Ceasefire sends dollar on weekly drop; US-Iran talks in focus', category: 'general', related: '' },
-  { headline: 'Keir Starmer: \'I\'m fed up\' with Trump and Putin affecting UK energy costs', category: 'general', related: '' },
-  { headline: 'Bitcoin gains after core CPI rose a less-than-forecast 0.2% in March', category: 'crypto', related: 'BTC' },
-  { headline: 'BlackRock\'s Bitcoin ETF inflows $269M, marking a 5-week high', category: 'crypto', related: 'BTC' },
-  { headline: 'XRP edges higher to $1.35 on breakout, but bullish momentum still lacks', category: 'crypto', related: 'XRP' },
-  { headline: 'Hong Kong grants first stablecoin licences to Anchorpoint and HSBC', category: 'crypto', related: '' },
-  { headline: 'Japan moves to classify cryptocurrencies as financial products', category: 'crypto', related: '' },
-  { headline: 'Big Tech puts financial heft behind next-gen nuclear power as AI demand surges', category: 'company', related: 'META' },
-  { headline: 'TSMC Tops Q1 Sales Target On Strong AI Chip Demand', category: 'company', related: 'AAPL' },
-  { headline: 'Apple leads global smartphone shipments in first quarter, Counterpoint says', category: 'company', related: 'AAPL' },
-  { headline: 'Anthropic Mythos Triggers Bessent, Powell\'s Meeting With Wall Street Banks to Assess Risks Posed by AI Model', category: 'company', related: 'MSFT' },
+  { headline: 'Cramer warns of \'incredibly overconfident\' market after U.S.-Iran ceasefire', category: 'general', related: '' },
+  { headline: 'US likely to extend Russian oil waiver to temper Iran war shock, sources say', category: 'general', related: '' },
+  { headline: 'US March budget deficit rises slightly to $164 billion as Iran war outlays lag', category: 'general', related: '' },
+  { headline: 'Sam Altman\'s house hit with Molotov cocktail, OpenAI San Francisco headquarters threatened', category: 'general', related: '' },
+  { headline: 'Bitcoin community weighs in on reports of Iran\'s crypto toll for oil ships', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin charts point to $80K in April: Here\'s how it may happen', category: 'crypto', related: 'BTC' },
+  { headline: 'Crypto Biz: Will Bitcoin secure safe passage through the Hormuz Strait?', category: 'crypto', related: 'BTC' },
+  { headline: 'Federal judge blocks Arizona from bringing criminal charges against Kalshi', category: 'crypto', related: '' },
+  { headline: 'CoreWeave lands multi-year agreement with Anthropic to run AI workloads', category: 'crypto', related: '' },
+  { headline: 'Stocks making big moves this week: Richardson Electronics, Tesla, C.H. Robinson', category: 'company', related: 'TSLA' },
+  { headline: 'Microsoft\'s New AI Alliances Reframe Patent, Security And Enterprise Growth Story', category: 'company', related: 'MSFT' },
+  { headline: 'Stock Market Today, April 10: Palantir Falls as AI Competition Pressures Valuation', category: 'company', related: 'MSFT' },
+  { headline: 'Wall Street Banks Try Out Anthropic\'s Mythos as US Urges', category: 'company', related: 'AAPL' },
 ];
 
 // Get date string in YYYY-MM-DD format
