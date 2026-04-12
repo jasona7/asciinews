@@ -12,21 +12,25 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-11 21:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-12 09:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'US-Iran talks pause for now, disagreements remain as ceasefire holds', category: 'general', related: '' },
-  { headline: 'Stocks gain on Iran ceasefire, plus 3 more things that drove last week\'s market', category: 'general', related: '' },
-  { headline: 'Consumer sentiment hits record low as University of Michigan index falls to 47.6 in April', category: 'general', related: '' },
-  { headline: 'Sam Altman\'s house hit with Molotov cocktail, OpenAI San Francisco headquarters threatened', category: 'general', related: '' },
-  { headline: 'Ceasefire sends dollar toward weekly drop with US-Iran talks in focus', category: 'general', related: '' },
-  { headline: 'SpaceX holds $603 million in bitcoin despite $5 billion loss stemming from xAI', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin price analysis sees new short squeeze as open interest nears $25B', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin, broader market flat as U.S.-Iran negotiations begin', category: 'crypto', related: 'BTC' },
-  { headline: 'Microsoft\'s Copilot Code Red: CEO Nadella deploys emergency overhaul to crush AI rivals', category: 'company', related: 'MSFT' },
-  { headline: 'Gary Black says Tesla\'s 8-week slide driven by disappointing deliveries, robotaxi doubts', category: 'company', related: 'TSLA' },
-  { headline: 'CoreWeave expands beyond Meta as Anthropic deal reshapes AI growth story', category: 'company', related: 'META' },
-  { headline: 'Andy Jassy announces wonderful news for Amazon stock investors', category: 'company', related: 'AMZN' },
-  { headline: 'Big Short Michael Burry sends signal on Nvidia stock', category: 'company', related: 'NVDA' },
+  { headline: 'US-Iran peace talks end without a deal as delegations leave Pakistan', category: 'general', related: '' },
+  { headline: 'Gulf stocks slide as US-Iran talks falter, ceasefire doubts resurface', category: 'general', related: '' },
+  { headline: 'US military \'setting conditions\' to clear mines from Strait of Hormuz', category: 'general', related: '' },
+  { headline: 'Iran aims to restore majority of refining capability within two months, oil ministry official says', category: 'general', related: '' },
+  { headline: 'Pakistan sends fighter jets to Saudi Arabia under mutual defence pact', category: 'general', related: '' },
+  { headline: 'Bitcoin and other cryptos fall as U.S., Iranian negotiators fail to reach war resolution', category: 'crypto', related: 'BTC' },
+  { headline: 'Commodity traders are getting debanked due to Iran war, pushing them to rely on stablecoins', category: 'crypto', related: '' },
+  { headline: 'XRP drops to $1.33 as bitcoin weakness pulls down majors', category: 'crypto', related: 'XRP' },
+  { headline: 'Bitcoin, Ether near levels that could signal trend reversal: Analyst', category: 'crypto', related: 'BTC' },
+  { headline: 'Musk\'s SpaceX holds $603 million in bitcoin despite $5 billion loss stemming from xAI', category: 'crypto', related: 'BTC' },
+  { headline: 'Tesla\'s Compact SUV Plan Tests Balance Between Volume Growth And Autonomy', category: 'company', related: 'TSLA' },
+  { headline: 'Microsoft: Azure Is Booming, But OpenAI And Copilot Are Quietly Capping The Upside', category: 'company', related: 'MSFT' },
+  { headline: 'TSMC\'s Record Q1 AI Revenue Puts Capex And Growth In Focus', category: 'company', related: 'AAPL' },
+  { headline: 'Will Meta Unity VR Deal Reshape Unity Software\'s Role in Immersive and AI-Powered Tools?', category: 'company', related: 'META' },
+  { headline: 'Walmart-owned Flipkart, Amazon are squeezing India\'s quick commerce startups', category: 'company', related: 'AMZN' },
+  { headline: 'Lawsuit Over Underage Gambling Tests Coinbase Compliance And Valuation Story', category: 'company', related: 'COIN' },
+  { headline: 'Are Netflix\'s Price Hikes Good News for Roku Investors?', category: 'company', related: 'NFLX' },
 ];
 
 // Get date string in YYYY-MM-DD format
