@@ -12,21 +12,21 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-11 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-11 21:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Dow adds over 1,300 points in best day since April 2025 after Trump announces Iran ceasefire', category: 'general', related: '' },
-  { headline: 'S&P 500 notches seventh straight gain as stocks extend relief rally on ceasefire hopes', category: 'general', related: '' },
-  { headline: 'West Texas crude tumbles 16% to $94.41 after Iran ceasefire, biggest daily drop since 2020', category: 'general', related: '' },
+  { headline: 'US-Iran talks pause for now, disagreements remain as ceasefire holds', category: 'general', related: '' },
+  { headline: 'Stocks gain on Iran ceasefire, plus 3 more things that drove last week\'s market', category: 'general', related: '' },
   { headline: 'Consumer sentiment hits record low as University of Michigan index falls to 47.6 in April', category: 'general', related: '' },
-  { headline: 'OpenAI plans U.S. IPO at up to $1 trillion valuation, will reserve shares for retail investors', category: 'general', related: '' },
-  { headline: 'Morgan Stanley launches Bitcoin ETF with predicted $5 billion in first-year AUM', category: 'crypto', related: 'BTC' },
-  { headline: 'Circle launches cirBTC as Bitcoin institutional adoption accelerates', category: 'crypto', related: 'BTC' },
-  { headline: 'Six major financial institutions join Pyth Network to distribute proprietary data onchain', category: 'crypto', related: '' },
-  { headline: 'Meta agrees to spend additional $21 billion with CoreWeave on top of prior $14.2B deal', category: 'company', related: 'META' },
-  { headline: 'Amazon cloud AI revenue tops $15B run rate; chip business Graviton and Trainium clears $20B', category: 'company', related: 'AMZN' },
-  { headline: 'Chipmakers rally: ASML, Applied Materials pop 9%, Intel gains 11% on ceasefire momentum', category: 'company', related: 'AMD' },
-  { headline: 'Software stocks hit on fears AI will disrupt SaaS business model', category: 'company', related: 'MSFT' },
-  { headline: 'CoreWeave lands multi-year AI cloud agreement with Anthropic, plans $3B debt raise', category: 'general', related: '' },
+  { headline: 'Sam Altman\'s house hit with Molotov cocktail, OpenAI San Francisco headquarters threatened', category: 'general', related: '' },
+  { headline: 'Ceasefire sends dollar toward weekly drop with US-Iran talks in focus', category: 'general', related: '' },
+  { headline: 'SpaceX holds $603 million in bitcoin despite $5 billion loss stemming from xAI', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin price analysis sees new short squeeze as open interest nears $25B', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin, broader market flat as U.S.-Iran negotiations begin', category: 'crypto', related: 'BTC' },
+  { headline: 'Microsoft\'s Copilot Code Red: CEO Nadella deploys emergency overhaul to crush AI rivals', category: 'company', related: 'MSFT' },
+  { headline: 'Gary Black says Tesla\'s 8-week slide driven by disappointing deliveries, robotaxi doubts', category: 'company', related: 'TSLA' },
+  { headline: 'CoreWeave expands beyond Meta as Anthropic deal reshapes AI growth story', category: 'company', related: 'META' },
+  { headline: 'Andy Jassy announces wonderful news for Amazon stock investors', category: 'company', related: 'AMZN' },
+  { headline: 'Big Short Michael Burry sends signal on Nvidia stock', category: 'company', related: 'NVDA' },
 ];
 
 // Get date string in YYYY-MM-DD format
