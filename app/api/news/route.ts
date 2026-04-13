@@ -12,23 +12,23 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-12 09:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-13 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'US-Iran peace talks end without a deal as delegations leave Pakistan', category: 'general', related: '' },
-  { headline: 'Gulf stocks slide as US-Iran talks falter, ceasefire doubts resurface', category: 'general', related: '' },
-  { headline: 'US military \'setting conditions\' to clear mines from Strait of Hormuz', category: 'general', related: '' },
-  { headline: 'Iran aims to restore majority of refining capability within two months, oil ministry official says', category: 'general', related: '' },
-  { headline: 'Pakistan sends fighter jets to Saudi Arabia under mutual defence pact', category: 'general', related: '' },
-  { headline: 'Bitcoin and other cryptos fall as U.S., Iranian negotiators fail to reach war resolution', category: 'crypto', related: 'BTC' },
-  { headline: 'Commodity traders are getting debanked due to Iran war, pushing them to rely on stablecoins', category: 'crypto', related: '' },
+  { headline: 'Dollar and oil rise, stocks slide as US-Iran peace talks collapse', category: 'general', related: '' },
+  { headline: 'Oil jumps 8% to above $100 ahead of US blockade on Strait of Hormuz', category: 'general', related: '' },
+  { headline: 'US military says it will start blockade of all ships going to and from Iran on Monday', category: 'general', related: '' },
+  { headline: 'Trump says gas prices may remain high through November midterm election', category: 'general', related: '' },
+  { headline: 'Why the stock market has stayed resilient despite the Iran war and software stock rout', category: 'general', related: '' },
+  { headline: 'Bitcoin price falls under $71K as US-Iran war tensions spark sell-off', category: 'crypto', related: 'BTC' },
+  { headline: 'BTC recovery fragile, Iran war fallout to \'dominate\' markets in 2026', category: 'crypto', related: 'BTC' },
+  { headline: 'Strategy\'s Michael Saylor signals impending Bitcoin purchase', category: 'crypto', related: 'BTC' },
+  { headline: 'Oil futures up 7% on Hyperliquid as Trump orders Naval blockade', category: 'crypto', related: '' },
   { headline: 'XRP drops to $1.33 as bitcoin weakness pulls down majors', category: 'crypto', related: 'XRP' },
-  { headline: 'Bitcoin, Ether near levels that could signal trend reversal: Analyst', category: 'crypto', related: 'BTC' },
-  { headline: 'Musk\'s SpaceX holds $603 million in bitcoin despite $5 billion loss stemming from xAI', category: 'crypto', related: 'BTC' },
-  { headline: 'Tesla\'s Compact SUV Plan Tests Balance Between Volume Growth And Autonomy', category: 'company', related: 'TSLA' },
-  { headline: 'Microsoft: Azure Is Booming, But OpenAI And Copilot Are Quietly Capping The Upside', category: 'company', related: 'MSFT' },
-  { headline: 'TSMC\'s Record Q1 AI Revenue Puts Capex And Growth In Focus', category: 'company', related: 'AAPL' },
-  { headline: 'Will Meta Unity VR Deal Reshape Unity Software\'s Role in Immersive and AI-Powered Tools?', category: 'company', related: 'META' },
-  { headline: 'Walmart-owned Flipkart, Amazon are squeezing India\'s quick commerce startups', category: 'company', related: 'AMZN' },
+  { headline: 'Nvidia Extends AI Data Center Reach With Vera Rubin And Micron Deal', category: 'company', related: 'NVDA' },
+  { headline: 'Tesla could crash 60%, JPMorgan warns with \'high caution\'', category: 'company', related: 'TSLA' },
+  { headline: 'Meta Platforms Finally Releases Muse Spark. Is the AI Model Worth the Wait?', category: 'company', related: 'META' },
+  { headline: 'Microsoft, Salesforce, ServiceNow Sell-Off Is Overdone: Dan Ives', category: 'company', related: 'MSFT' },
+  { headline: 'Meta Platforms: Unity and Meta Extends Multi-Year Platform Support and Enterprise Agreement', category: 'company', related: 'META' },
   { headline: 'Lawsuit Over Underage Gambling Tests Coinbase Compliance And Valuation Story', category: 'company', related: 'COIN' },
   { headline: 'Are Netflix\'s Price Hikes Good News for Roku Investors?', category: 'company', related: 'NFLX' },
 ];
