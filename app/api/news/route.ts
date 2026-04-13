@@ -12,25 +12,23 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-13 01:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-13 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Dollar and oil rise, stocks slide as US-Iran peace talks collapse', category: 'general', related: '' },
-  { headline: 'Oil jumps 8% to above $100 ahead of US blockade on Strait of Hormuz', category: 'general', related: '' },
-  { headline: 'US military says it will start blockade of all ships going to and from Iran on Monday', category: 'general', related: '' },
-  { headline: 'Trump says gas prices may remain high through November midterm election', category: 'general', related: '' },
-  { headline: 'Why the stock market has stayed resilient despite the Iran war and software stock rout', category: 'general', related: '' },
-  { headline: 'Bitcoin price falls under $71K as US-Iran war tensions spark sell-off', category: 'crypto', related: 'BTC' },
-  { headline: 'BTC recovery fragile, Iran war fallout to \'dominate\' markets in 2026', category: 'crypto', related: 'BTC' },
-  { headline: 'Strategy\'s Michael Saylor signals impending Bitcoin purchase', category: 'crypto', related: 'BTC' },
-  { headline: 'Oil futures up 7% on Hyperliquid as Trump orders Naval blockade', category: 'crypto', related: '' },
-  { headline: 'XRP drops to $1.33 as bitcoin weakness pulls down majors', category: 'crypto', related: 'XRP' },
-  { headline: 'Nvidia Extends AI Data Center Reach With Vera Rubin And Micron Deal', category: 'company', related: 'NVDA' },
-  { headline: 'Tesla could crash 60%, JPMorgan warns with \'high caution\'', category: 'company', related: 'TSLA' },
-  { headline: 'Meta Platforms Finally Releases Muse Spark. Is the AI Model Worth the Wait?', category: 'company', related: 'META' },
-  { headline: 'Microsoft, Salesforce, ServiceNow Sell-Off Is Overdone: Dan Ives', category: 'company', related: 'MSFT' },
-  { headline: 'Meta Platforms: Unity and Meta Extends Multi-Year Platform Support and Enterprise Agreement', category: 'company', related: 'META' },
-  { headline: 'Lawsuit Over Underage Gambling Tests Coinbase Compliance And Valuation Story', category: 'company', related: 'COIN' },
-  { headline: 'Are Netflix\'s Price Hikes Good News for Roku Investors?', category: 'company', related: 'NFLX' },
+  { headline: 'Wall St futures slip as failed US-Iran peace talks fuel investor angst', category: 'general', related: '' },
+  { headline: 'Iran\'s Hormuz gamble ushers in a tense new normal for Gulf energy', category: 'general', related: '' },
+  { headline: 'Indian shares slide as US to blockade Iran ports after failed peace talks', category: 'general', related: '' },
+  { headline: 'UK will not back blockade of Strait of Hormuz, PM Starmer says', category: 'general', related: '' },
+  { headline: 'China urges restraint over US blockade of Strait of Hormuz, backs talks', category: 'general', related: '' },
+  { headline: 'Strategy buys 13,927 bitcoin for $1 billion, entirely through STRC', category: 'crypto', related: 'BTC' },
+  { headline: 'Nigel Farage-backed Stack BTC adds $2.7M in Bitcoin to treasury', category: 'crypto', related: 'BTC' },
+  { headline: 'AI agents are set to power crypto payments, but a hidden flaw could expose wallets', category: 'crypto', related: '' },
+  { headline: 'South Korea says API crypto trading now makes up 30% of market', category: 'crypto', related: '' },
+  { headline: 'WLFI mints $25 million in fresh USD1 and burns $3 million, days after repayment claim', category: 'crypto', related: '' },
+  { headline: 'Apple Joins Project Glasswing As Mythos AI Raises New Valuation Questions', category: 'company', related: 'AAPL' },
+  { headline: 'Openai touts Amazon alliance in memo, says Microsoft has \'limited our ability\' to reach clients', category: 'company', related: 'MSFT' },
+  { headline: 'Meta Platforms urged by Philippines to rein in false content amid energy concerns', category: 'company', related: 'META' },
+  { headline: 'Ninepoint Partners launching expanded suite of single-stock ETFs', category: 'company', related: 'TSLA' },
+  { headline: 'TSMC likely to book fourth straight quarter of record profit on insatiable AI demand', category: 'company', related: 'AAPL' },
 ];
 
 // Get date string in YYYY-MM-DD format
