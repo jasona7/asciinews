@@ -12,23 +12,23 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-13 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-13 21:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Wall St futures slip as failed US-Iran peace talks fuel investor angst', category: 'general', related: '' },
-  { headline: 'Iran\'s Hormuz gamble ushers in a tense new normal for Gulf energy', category: 'general', related: '' },
-  { headline: 'Indian shares slide as US to blockade Iran ports after failed peace talks', category: 'general', related: '' },
-  { headline: 'UK will not back blockade of Strait of Hormuz, PM Starmer says', category: 'general', related: '' },
-  { headline: 'China urges restraint over US blockade of Strait of Hormuz, backs talks', category: 'general', related: '' },
-  { headline: 'Strategy buys 13,927 bitcoin for $1 billion, entirely through STRC', category: 'crypto', related: 'BTC' },
-  { headline: 'Nigel Farage-backed Stack BTC adds $2.7M in Bitcoin to treasury', category: 'crypto', related: 'BTC' },
-  { headline: 'AI agents are set to power crypto payments, but a hidden flaw could expose wallets', category: 'crypto', related: '' },
-  { headline: 'South Korea says API crypto trading now makes up 30% of market', category: 'crypto', related: '' },
-  { headline: 'WLFI mints $25 million in fresh USD1 and burns $3 million, days after repayment claim', category: 'crypto', related: '' },
-  { headline: 'Apple Joins Project Glasswing As Mythos AI Raises New Valuation Questions', category: 'company', related: 'AAPL' },
-  { headline: 'Openai touts Amazon alliance in memo, says Microsoft has \'limited our ability\' to reach clients', category: 'company', related: 'MSFT' },
-  { headline: 'Meta Platforms urged by Philippines to rein in false content amid energy concerns', category: 'company', related: 'META' },
-  { headline: 'Ninepoint Partners launching expanded suite of single-stock ETFs', category: 'company', related: 'TSLA' },
-  { headline: 'TSMC likely to book fourth straight quarter of record profit on insatiable AI demand', category: 'company', related: 'AAPL' },
+  { headline: 'Wall Street indexes gain as investors hold out hope for US-Iran resolution', category: 'general', related: '' },
+  { headline: 'Vance says US made a lot of progress in talks with Iran', category: 'general', related: '' },
+  { headline: 'Trump says Iran wants to make a deal', category: 'general', related: '' },
+  { headline: 'US details bounds of Hormuz blockade as at least two ships turn around', category: 'general', related: '' },
+  { headline: 'EU plans more fuel subsidies to tackle Iran war price spikes', category: 'general', related: '' },
+  { headline: 'Bitcoin reclaims $74K as spot ETF demand clashes with BTC miner sell pressure', category: 'crypto', related: 'BTC' },
+  { headline: 'Ether holders back in profit as ETH price aims for rally to $3K', category: 'crypto', related: 'ETH' },
+  { headline: 'Bitmine ramps up Ether buys, pushes holdings toward 5% of total supply', category: 'crypto', related: 'ETH' },
+  { headline: 'SEC proposes certain crypto interfaces don\'t need to register as brokers', category: 'crypto', related: '' },
+  { headline: 'Broadridge rolls out crypto, tokenized asset platform for Canada wealth managers', category: 'crypto', related: '' },
+  { headline: 'How Tesla Could Become the Most Valuable Company in the World', category: 'company', related: 'TSLA' },
+  { headline: 'Why Microsoft Stock Topped the Market Today', category: 'company', related: 'MSFT' },
+  { headline: 'Meta to Announce First Quarter 2026 Results', category: 'company', related: 'META' },
+  { headline: 'Omdia: China Smartphone Shipments Fell 1% in First Quarter of 2026 as Rising Costs Pushed Up Device Prices', category: 'company', related: 'AAPL' },
+  { headline: 'CVS Health Just Got a $13 Billion Reprieve. Here\'s Why the Stock Could Keep Climbing.', category: 'company', related: 'NVDA' },
 ];
 
 // Get date string in YYYY-MM-DD format
