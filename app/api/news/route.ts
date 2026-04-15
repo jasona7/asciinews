@@ -12,23 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-13 21:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-14 21:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Wall Street indexes gain as investors hold out hope for US-Iran resolution', category: 'general', related: '' },
-  { headline: 'Vance says US made a lot of progress in talks with Iran', category: 'general', related: '' },
-  { headline: 'Trump says Iran wants to make a deal', category: 'general', related: '' },
-  { headline: 'US details bounds of Hormuz blockade as at least two ships turn around', category: 'general', related: '' },
-  { headline: 'EU plans more fuel subsidies to tackle Iran war price spikes', category: 'general', related: '' },
-  { headline: 'Bitcoin reclaims $74K as spot ETF demand clashes with BTC miner sell pressure', category: 'crypto', related: 'BTC' },
-  { headline: 'Ether holders back in profit as ETH price aims for rally to $3K', category: 'crypto', related: 'ETH' },
-  { headline: 'Bitmine ramps up Ether buys, pushes holdings toward 5% of total supply', category: 'crypto', related: 'ETH' },
-  { headline: 'SEC proposes certain crypto interfaces don\'t need to register as brokers', category: 'crypto', related: '' },
-  { headline: 'Broadridge rolls out crypto, tokenized asset platform for Canada wealth managers', category: 'crypto', related: '' },
-  { headline: 'How Tesla Could Become the Most Valuable Company in the World', category: 'company', related: 'TSLA' },
-  { headline: 'Why Microsoft Stock Topped the Market Today', category: 'company', related: 'MSFT' },
-  { headline: 'Meta to Announce First Quarter 2026 Results', category: 'company', related: 'META' },
-  { headline: 'Omdia: China Smartphone Shipments Fell 1% in First Quarter of 2026 as Rising Costs Pushed Up Device Prices', category: 'company', related: 'AAPL' },
-  { headline: 'CVS Health Just Got a $13 Billion Reprieve. Here\'s Why the Stock Could Keep Climbing.', category: 'company', related: 'NVDA' },
+  { headline: 'Wall Street rallies on renewed hopes for US-Iran talks, earnings boost', category: 'general', related: '' },
+  { headline: 'IMF cuts growth outlook, warns world already drifting toward more adverse scenario', category: 'general', related: '' },
+  { headline: 'Exclusive: US will not renew waiver on Iranian oil as it mounts pressure on Tehran, sources say', category: 'general', related: '' },
+  { headline: 'UN\'s Guterres says highly probable Iran talks will restart', category: 'general', related: '' },
+  { headline: 'UK hit with big IMF growth downgrade as Iran war fuels inflation', category: 'general', related: '' },
+  { headline: 'Six ships turned around as part of Strait of Hormuz blockade, US military says', category: 'general', related: '' },
+  { headline: 'Bitcoin shows \'bull market behavior\' as chart pattern targets $90K', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin\'s $76,000 breakout fails but a rare signal is hinting at major market bottom', category: 'crypto', related: 'BTC' },
+  { headline: 'Goldman Sachs to use options strategy for planned Bitcoin income ETF', category: 'crypto', related: 'BTC' },
+  { headline: 'Rakuten to allow XRP to be used as payment method by its 44 million customers', category: 'crypto', related: 'XRP' },
+  { headline: 'Ethereum Foundation unveils $1M audit subsidy program to boost crypto security', category: 'crypto', related: 'ETH' },
+  { headline: 'Ether replays 2025 fractal that sparked 250% ETH price rally', category: 'crypto', related: 'ETH' },
+  { headline: 'WLFI may drop 20% as World Liberty Financial faces \'LUNA 2.0\' allegations', category: 'crypto', related: '' },
+  { headline: 'Broadcom Extends AI Deal With Meta. Chipmaker\'s CEO Hock Tan to Leave Meta Board.', category: 'company', related: 'META' },
+  { headline: 'Why Tesla (TSLA) Stock Is Up Today', category: 'company', related: 'TSLA' },
+  { headline: 'Visa deepens blockchain push with Tempo validator node launch', category: 'crypto', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
