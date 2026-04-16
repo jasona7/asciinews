@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-14 21:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-15 21:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Wall Street rallies on renewed hopes for US-Iran talks, earnings boost', category: 'general', related: '' },
-  { headline: 'IMF cuts growth outlook, warns world already drifting toward more adverse scenario', category: 'general', related: '' },
-  { headline: 'Exclusive: US will not renew waiver on Iranian oil as it mounts pressure on Tehran, sources say', category: 'general', related: '' },
-  { headline: 'UN\'s Guterres says highly probable Iran talks will restart', category: 'general', related: '' },
-  { headline: 'UK hit with big IMF growth downgrade as Iran war fuels inflation', category: 'general', related: '' },
-  { headline: 'Six ships turned around as part of Strait of Hormuz blockade, US military says', category: 'general', related: '' },
-  { headline: 'Bitcoin shows \'bull market behavior\' as chart pattern targets $90K', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin\'s $76,000 breakout fails but a rare signal is hinting at major market bottom', category: 'crypto', related: 'BTC' },
-  { headline: 'Goldman Sachs to use options strategy for planned Bitcoin income ETF', category: 'crypto', related: 'BTC' },
-  { headline: 'Rakuten to allow XRP to be used as payment method by its 44 million customers', category: 'crypto', related: 'XRP' },
-  { headline: 'Ethereum Foundation unveils $1M audit subsidy program to boost crypto security', category: 'crypto', related: 'ETH' },
-  { headline: 'Ether replays 2025 fractal that sparked 250% ETH price rally', category: 'crypto', related: 'ETH' },
-  { headline: 'WLFI may drop 20% as World Liberty Financial faces \'LUNA 2.0\' allegations', category: 'crypto', related: '' },
-  { headline: 'Broadcom Extends AI Deal With Meta. Chipmaker\'s CEO Hock Tan to Leave Meta Board.', category: 'company', related: 'META' },
-  { headline: 'Why Tesla (TSLA) Stock Is Up Today', category: 'company', related: 'TSLA' },
-  { headline: 'Visa deepens blockchain push with Tempo validator node launch', category: 'crypto', related: '' },
+  { headline: 'S&P 500 closes at record 7,022 as Nasdaq jumps 1.6% on strong bank earnings', category: 'general', related: '' },
+  { headline: 'Morgan Stanley crushes Q1 estimates with record $20.6B revenue and $3.43 EPS', category: 'general', related: '' },
+  { headline: 'IMF expects global trade growth to slow to 2.8% in 2026 as tariffs reshape supply chains', category: 'general', related: '' },
+  { headline: 'IMF forecasts global inflation to rise to 4.4% in 2026 on trade policy pressures', category: 'general', related: '' },
+  { headline: 'U.S. and Iran weigh second round of peace talks as WTI oil pulls back', category: 'general', related: '' },
+  { headline: 'MBA 30-year mortgage rate falls to 6.42%, lowest since early March', category: 'general', related: '' },
+  { headline: 'Bitcoin dips 3% to $74,287 as traders book profits after $75K rally', category: 'crypto', related: 'BTC' },
+  { headline: 'Goldman Sachs files for Bitcoin ETF using options strategy to generate monthly income', category: 'crypto', related: 'BTC' },
+  { headline: 'Ethereum on-chain activity surges with 82% jump in new users and record transaction volumes', category: 'crypto', related: 'ETH' },
+  { headline: 'Stablecoin supply hits all-time high of $180B as ETH/BTC ratio reaches 3-month peak', category: 'crypto', related: 'ETH' },
+  { headline: 'XRP climbs to $1.38 as SEC schedules CLARITY Act Roundtable for April 16', category: 'crypto', related: 'XRP' },
+  { headline: 'Solana rises 6.3% amid mysterious XRP tweet sparking cross-chain integration speculation', category: 'crypto', related: 'SOL' },
+  { headline: 'Nvidia extends longest winning streak since 2023, up 18% in ten sessions on AI demand', category: 'company', related: 'NVDA' },
+  { headline: 'AMD secures $60B infrastructure deal from Meta covering GPUs, CPUs, and custom silicon', category: 'company', related: 'AMD' },
+  { headline: 'Netflix set to report Q1 earnings as Goldman Sachs upgrades stock to Strong Buy', category: 'company', related: 'NFLX' },
+  { headline: 'Meta projected to surpass Google in global digital ad revenue by end of 2026', category: 'company', related: 'META' },
 ];
 
 // Get date string in YYYY-MM-DD format
