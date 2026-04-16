@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-15 21:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-16 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'S&P 500 closes at record 7,022 as Nasdaq jumps 1.6% on strong bank earnings', category: 'general', related: '' },
-  { headline: 'Morgan Stanley crushes Q1 estimates with record $20.6B revenue and $3.43 EPS', category: 'general', related: '' },
-  { headline: 'IMF expects global trade growth to slow to 2.8% in 2026 as tariffs reshape supply chains', category: 'general', related: '' },
-  { headline: 'IMF forecasts global inflation to rise to 4.4% in 2026 on trade policy pressures', category: 'general', related: '' },
-  { headline: 'U.S. and Iran weigh second round of peace talks as WTI oil pulls back', category: 'general', related: '' },
-  { headline: 'MBA 30-year mortgage rate falls to 6.42%, lowest since early March', category: 'general', related: '' },
-  { headline: 'Bitcoin dips 3% to $74,287 as traders book profits after $75K rally', category: 'crypto', related: 'BTC' },
-  { headline: 'Goldman Sachs files for Bitcoin ETF using options strategy to generate monthly income', category: 'crypto', related: 'BTC' },
-  { headline: 'Ethereum on-chain activity surges with 82% jump in new users and record transaction volumes', category: 'crypto', related: 'ETH' },
-  { headline: 'Stablecoin supply hits all-time high of $180B as ETH/BTC ratio reaches 3-month peak', category: 'crypto', related: 'ETH' },
-  { headline: 'XRP climbs to $1.38 as SEC schedules CLARITY Act Roundtable for April 16', category: 'crypto', related: 'XRP' },
-  { headline: 'Solana rises 6.3% amid mysterious XRP tweet sparking cross-chain integration speculation', category: 'crypto', related: 'SOL' },
-  { headline: 'Nvidia extends longest winning streak since 2023, up 18% in ten sessions on AI demand', category: 'company', related: 'NVDA' },
-  { headline: 'AMD secures $60B infrastructure deal from Meta covering GPUs, CPUs, and custom silicon', category: 'company', related: 'AMD' },
-  { headline: 'Netflix set to report Q1 earnings as Goldman Sachs upgrades stock to Strong Buy', category: 'company', related: 'NFLX' },
-  { headline: 'Meta projected to surpass Google in global digital ad revenue by end of 2026', category: 'company', related: 'META' },
+  { headline: 'Dollar inches higher as investors focus on path to Iran peace deal', category: 'general', related: '' },
+  { headline: 'Iran halts petrochemical exports until further notice as US-Iran talks continue', category: 'general', related: '' },
+  { headline: 'IMF flags tough trade-offs as governments ramp up defense spending globally', category: 'general', related: '' },
+  { headline: 'UK economy surged ahead of Iran war but energy shock to test resilience', category: 'general', related: '' },
+  { headline: 'UAE Fujairah marine fuel sales slump after US-Iran conflict disrupts activity', category: 'general', related: '' },
+  { headline: 'Pakistan says no dates set for second round of US-Iran talks', category: 'general', related: '' },
+  { headline: 'Bitcoin holds near $75,000 as funding rates hit most negative since 2023', category: 'crypto', related: 'BTC' },
+  { headline: 'Adam Back says Bitcoin post-quantum shift may reveal true Satoshi stash', category: 'crypto', related: 'BTC' },
+  { headline: 'Circle CEO sees tremendous opportunity for yuan stablecoin despite China curbs', category: 'crypto', related: 'ETH' },
+  { headline: 'Keep an eye on XRP, Plasma, DOGE as Bitcoin drifts sideways', category: 'crypto', related: 'XRP' },
+  { headline: 'French minister says new measures are coming after crypto kidnappings', category: 'crypto', related: '' },
+  { headline: 'Study finds almost no crypto protocols disclose market-maker terms', category: 'crypto', related: '' },
+  { headline: 'CoreWeave locks in $21 billion deal from Meta as AI infrastructure demand surges', category: 'company', related: 'META' },
+  { headline: 'ASML and TSMC tell the market AI spending is not slowing down', category: 'company', related: 'NVDA' },
+  { headline: 'SpaceX was buying Cybertrucks in bulk and Tesla did not disclose it', category: 'company', related: 'TSLA' },
+  { headline: 'S&P 500 and Nasdaq at highs led by Tesla and Robinhood as Dow futures rise', category: 'company', related: 'TSLA' },
 ];
 
 // Get date string in YYYY-MM-DD format
