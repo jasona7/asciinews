@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-16 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-17 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Dollar inches higher as investors focus on path to Iran peace deal', category: 'general', related: '' },
-  { headline: 'Iran halts petrochemical exports until further notice as US-Iran talks continue', category: 'general', related: '' },
-  { headline: 'IMF flags tough trade-offs as governments ramp up defense spending globally', category: 'general', related: '' },
-  { headline: 'UK economy surged ahead of Iran war but energy shock to test resilience', category: 'general', related: '' },
-  { headline: 'UAE Fujairah marine fuel sales slump after US-Iran conflict disrupts activity', category: 'general', related: '' },
-  { headline: 'Pakistan says no dates set for second round of US-Iran talks', category: 'general', related: '' },
-  { headline: 'Bitcoin holds near $75,000 as funding rates hit most negative since 2023', category: 'crypto', related: 'BTC' },
-  { headline: 'Adam Back says Bitcoin post-quantum shift may reveal true Satoshi stash', category: 'crypto', related: 'BTC' },
-  { headline: 'Circle CEO sees tremendous opportunity for yuan stablecoin despite China curbs', category: 'crypto', related: 'ETH' },
-  { headline: 'Keep an eye on XRP, Plasma, DOGE as Bitcoin drifts sideways', category: 'crypto', related: 'XRP' },
-  { headline: 'French minister says new measures are coming after crypto kidnappings', category: 'crypto', related: '' },
-  { headline: 'Study finds almost no crypto protocols disclose market-maker terms', category: 'crypto', related: '' },
-  { headline: 'CoreWeave locks in $21 billion deal from Meta as AI infrastructure demand surges', category: 'company', related: 'META' },
-  { headline: 'ASML and TSMC tell the market AI spending is not slowing down', category: 'company', related: 'NVDA' },
-  { headline: 'SpaceX was buying Cybertrucks in bulk and Tesla did not disclose it', category: 'company', related: 'TSLA' },
-  { headline: 'S&P 500 and Nasdaq at highs led by Tesla and Robinhood as Dow futures rise', category: 'company', related: 'TSLA' },
+  { headline: 'G7 finance chiefs push for lasting peace in Middle East, warn of war economic damage', category: 'general', related: '' },
+  { headline: 'US military locked and loaded to strike Iran power plants and energy industry if ordered', category: 'general', related: '' },
+  { headline: 'US to delay weapons deliveries to some European countries due to Iran war', category: 'general', related: '' },
+  { headline: 'Trump energy leaders to hold call with CEOs on Iran war', category: 'general', related: '' },
+  { headline: 'Latest bid to rein in Trump Iran war powers fails in US House', category: 'general', related: '' },
+  { headline: 'Kevin Warsh wants to lead a scandal-ridden Fed but his wealth is a complication', category: 'general', related: '' },
+  { headline: 'Bitcoin eyes $90K as whales absorb 20x daily BTC supply in 30 days', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin liquidations top $283M after short squeeze sends BTC price above $75K', category: 'crypto', related: 'BTC' },
+  { headline: 'Key Ethereum researcher Josh Stark leaves the Ethereum Foundation', category: 'crypto', related: 'ETH' },
+  { headline: 'Public crypto miners sold more BTC in Q1 2026 than all of 2025', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin funding rate stays negative even as BTC price trades above $75K', category: 'crypto', related: 'BTC' },
+  { headline: 'After Kalshi appeal prediction markets fight could head to US Supreme Court', category: 'crypto', related: '' },
+  { headline: 'Taiwan Semiconductor offers clue on what to expect from Nvidia in coming months', category: 'company', related: 'NVDA' },
+  { headline: 'Can Tesla Stock capitalize on market rally ahead of earnings', category: 'company', related: 'TSLA' },
+  { headline: 'Zuckerberg is dangerously close to cracking Google money machine', category: 'company', related: 'META' },
+  { headline: 'Tesla Cybertruck registrations show over 18 percent bought by Musk companies', category: 'company', related: 'TSLA' },
 ];
 
 // Get date string in YYYY-MM-DD format
