@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-17 01:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-17 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'G7 finance chiefs push for lasting peace in Middle East, warn of war economic damage', category: 'general', related: '' },
-  { headline: 'US military locked and loaded to strike Iran power plants and energy industry if ordered', category: 'general', related: '' },
-  { headline: 'US to delay weapons deliveries to some European countries due to Iran war', category: 'general', related: '' },
-  { headline: 'Trump energy leaders to hold call with CEOs on Iran war', category: 'general', related: '' },
-  { headline: 'Latest bid to rein in Trump Iran war powers fails in US House', category: 'general', related: '' },
-  { headline: 'Kevin Warsh wants to lead a scandal-ridden Fed but his wealth is a complication', category: 'general', related: '' },
-  { headline: 'Bitcoin eyes $90K as whales absorb 20x daily BTC supply in 30 days', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin liquidations top $283M after short squeeze sends BTC price above $75K', category: 'crypto', related: 'BTC' },
-  { headline: 'Key Ethereum researcher Josh Stark leaves the Ethereum Foundation', category: 'crypto', related: 'ETH' },
-  { headline: 'Public crypto miners sold more BTC in Q1 2026 than all of 2025', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin funding rate stays negative even as BTC price trades above $75K', category: 'crypto', related: 'BTC' },
-  { headline: 'After Kalshi appeal prediction markets fight could head to US Supreme Court', category: 'crypto', related: '' },
-  { headline: 'Taiwan Semiconductor offers clue on what to expect from Nvidia in coming months', category: 'company', related: 'NVDA' },
-  { headline: 'Can Tesla Stock capitalize on market rally ahead of earnings', category: 'company', related: 'TSLA' },
-  { headline: 'Zuckerberg is dangerously close to cracking Google money machine', category: 'company', related: 'META' },
-  { headline: 'Tesla Cybertruck registrations show over 18 percent bought by Musk companies', category: 'company', related: 'TSLA' },
+  { headline: 'Trump says Iran war should end soon, allies to meet on Strait of Hormuz', category: 'general', related: '' },
+  { headline: 'Hedge fund stock buying hits $86 billion as Iran peace hopes rise, Goldman data shows', category: 'general', related: '' },
+  { headline: 'Indian refiners pay for Iran oil in yuan via ICICI Bank, sources say', category: 'general', related: '' },
+  { headline: 'Gold holds steady, set for fourth weekly gain on US-Iran deal optimism', category: 'general', related: '' },
+  { headline: 'Indian shares log second weekly gains on US-Iran peace deal hopes', category: 'general', related: '' },
+  { headline: 'Some grocers are using AI to cut food waste and boost profit margins', category: 'general', related: '' },
+  { headline: 'Bitcoin stalls below $76,000 as sell wall caps rally despite rising derivatives activity', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin ceasefire boost is starting to fizzle out as investors look for real-world results', category: 'crypto', related: 'BTC' },
+  { headline: 'Ethereum just had its busiest quarter ever, capping a three-year comeback', category: 'crypto', related: 'ETH' },
+  { headline: 'Ethereum NFT platform Foundation shuts down after failed Blackdove sale', category: 'crypto', related: 'ETH' },
+  { headline: 'Russia-linked Grinex exchange halts operations after $13 million state-backed hack', category: 'crypto', related: '' },
+  { headline: 'The 4.5 signal: Why Glassnode RHODL ratio says the bitcoin bottom may be in', category: 'crypto', related: 'BTC' },
+  { headline: 'Nvidia: Jensen Huang says we should be selling chips to China', category: 'company', related: 'NVDA' },
+  { headline: 'How Tesla Stock is set to snap its losing streak', category: 'company', related: 'TSLA' },
+  { headline: 'Musk moving at light speed to sign up suppliers for $25B Terafab chip dream', category: 'company', related: 'TSLA' },
+  { headline: 'Stellantis and Microsoft sign five-year AI and cybersecurity deal', category: 'company', related: 'MSFT' },
 ];
 
 // Get date string in YYYY-MM-DD format
