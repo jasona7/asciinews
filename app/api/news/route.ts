@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-17 21:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-18 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'US to recover uranium from Iran at a leisurely pace, Trump tells Reuters', category: 'general', related: '' },
-  { headline: 'Ships test Strait of Hormuz after opening, seek assurances on safety', category: 'general', related: '' },
-  { headline: 'Wall Street indexes rally after Iran says Strait of Hormuz completely open', category: 'general', related: '' },
-  { headline: 'Banks weathered the storm of the Iran war. How did they do it and can they keep doing it?', category: 'general', related: '' },
-  { headline: 'S&P 500 posts weekly gain, closes at record high, as Iran reopens Strait of Hormuz', category: 'general', related: '' },
-  { headline: 'EU to push for jet fuel diversification as Iran war threatens supply', category: 'general', related: '' },
-  { headline: 'Crypto market liquidations hit $820M as Bitcoin price taps $78K', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin price quietly sets new 10-week high as trader sees $88K in weeks', category: 'crypto', related: 'BTC' },
-  { headline: 'Ether accumulation wallet balances increased by 33%: Is a rally to $3K next?', category: 'crypto', related: 'ETH' },
-  { headline: 'Russia introduces bill to criminalize unregistered crypto services', category: 'crypto', related: '' },
-  { headline: 'US Senator asks for Binance monitor update amid scrutiny of Iran sanctions', category: 'crypto', related: '' },
-  { headline: 'French finance minister backs euro-pegged stablecoins to compete with US', category: 'crypto', related: '' },
-  { headline: 'Texas Instruments Nvidia Robotics Partnership Puts Valuation And Growth In Focus', category: 'company', related: 'NVDA' },
-  { headline: 'Tesla Launches FSD Streaks: Is Self-Driving Software Being Gamified?', category: 'company', related: 'TSLA' },
-  { headline: 'Exclusive: Meta targets May 20 for first wave of layoffs; additional cuts later in 2026', category: 'company', related: 'META' },
-  { headline: 'Apple defeats bid for new Apple Watch import ban at US trade tribunal', category: 'company', related: 'AAPL' },
+  { headline: 'Nasdaq Composite notches 13th straight gain, longest winning streak since 1992', category: 'general', related: '' },
+  { headline: 'S&P 500 and Nasdaq notch fresh records as US-Iran diplomacy gains steam', category: 'general', related: '' },
+  { headline: 'Dow leaps 850 points as Strait of Hormuz reportedly reopens under ceasefire condition', category: 'general', related: '' },
+  { headline: 'Initial jobless claims fall to 207,000, better than expected', category: 'general', related: '' },
+  { headline: 'IMF warns Iran war could tip the world into recession amid global oil shortfall', category: 'general', related: '' },
+  { headline: 'Israel and Lebanon reach 10-day ceasefire agreement as Middle East diplomacy expands', category: 'general', related: '' },
+  { headline: 'Bitcoin holds above $76K as crypto market cap reaches $2.70 trillion', category: 'crypto', related: 'BTC' },
+  { headline: 'Goldman Sachs files for Bitcoin Premium Income ETF using covered-call strategy', category: 'crypto', related: 'BTC' },
+  { headline: 'Ethereum posts busiest quarter ever with 200.4M transactions in Q1 2026', category: 'crypto', related: 'ETH' },
+  { headline: 'XRP faces resistance at $1.45 as 60% of holders reach break-even selling wall', category: 'crypto', related: 'XRP' },
+  { headline: 'Russia-linked Grinex exchange halts operations after $13M state-backed hack', category: 'crypto', related: '' },
+  { headline: 'SEC CLARITY Act roundtable discusses regulatory framework for digital assets', category: 'crypto', related: '' },
+  { headline: 'Netflix shares drop 9% after Q1 earnings despite beating revenue at $12.25B', category: 'company', related: 'NFLX' },
+  { headline: 'NVIDIA rallies in April recovery, trading near $197.50 as AI demand holds', category: 'company', related: 'NVDA' },
+  { headline: 'Tesla Q1 deliveries miss estimates at 358,023 vehicles ahead of April 22 earnings', category: 'company', related: 'TSLA' },
+  { headline: 'Apple reports record iPhone revenue of $85.3B while keeping AI compute spending modest', category: 'company', related: 'AAPL' },
 ];
 
 // Get date string in YYYY-MM-DD format
