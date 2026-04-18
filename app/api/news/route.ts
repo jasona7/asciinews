@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-17 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-17 21:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Trump says Iran war should end soon, allies to meet on Strait of Hormuz', category: 'general', related: '' },
-  { headline: 'Hedge fund stock buying hits $86 billion as Iran peace hopes rise, Goldman data shows', category: 'general', related: '' },
-  { headline: 'Indian refiners pay for Iran oil in yuan via ICICI Bank, sources say', category: 'general', related: '' },
-  { headline: 'Gold holds steady, set for fourth weekly gain on US-Iran deal optimism', category: 'general', related: '' },
-  { headline: 'Indian shares log second weekly gains on US-Iran peace deal hopes', category: 'general', related: '' },
-  { headline: 'Some grocers are using AI to cut food waste and boost profit margins', category: 'general', related: '' },
-  { headline: 'Bitcoin stalls below $76,000 as sell wall caps rally despite rising derivatives activity', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitcoin ceasefire boost is starting to fizzle out as investors look for real-world results', category: 'crypto', related: 'BTC' },
-  { headline: 'Ethereum just had its busiest quarter ever, capping a three-year comeback', category: 'crypto', related: 'ETH' },
-  { headline: 'Ethereum NFT platform Foundation shuts down after failed Blackdove sale', category: 'crypto', related: 'ETH' },
-  { headline: 'Russia-linked Grinex exchange halts operations after $13 million state-backed hack', category: 'crypto', related: '' },
-  { headline: 'The 4.5 signal: Why Glassnode RHODL ratio says the bitcoin bottom may be in', category: 'crypto', related: 'BTC' },
-  { headline: 'Nvidia: Jensen Huang says we should be selling chips to China', category: 'company', related: 'NVDA' },
-  { headline: 'How Tesla Stock is set to snap its losing streak', category: 'company', related: 'TSLA' },
-  { headline: 'Musk moving at light speed to sign up suppliers for $25B Terafab chip dream', category: 'company', related: 'TSLA' },
-  { headline: 'Stellantis and Microsoft sign five-year AI and cybersecurity deal', category: 'company', related: 'MSFT' },
+  { headline: 'US to recover uranium from Iran at a leisurely pace, Trump tells Reuters', category: 'general', related: '' },
+  { headline: 'Ships test Strait of Hormuz after opening, seek assurances on safety', category: 'general', related: '' },
+  { headline: 'Wall Street indexes rally after Iran says Strait of Hormuz completely open', category: 'general', related: '' },
+  { headline: 'Banks weathered the storm of the Iran war. How did they do it and can they keep doing it?', category: 'general', related: '' },
+  { headline: 'S&P 500 posts weekly gain, closes at record high, as Iran reopens Strait of Hormuz', category: 'general', related: '' },
+  { headline: 'EU to push for jet fuel diversification as Iran war threatens supply', category: 'general', related: '' },
+  { headline: 'Crypto market liquidations hit $820M as Bitcoin price taps $78K', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitcoin price quietly sets new 10-week high as trader sees $88K in weeks', category: 'crypto', related: 'BTC' },
+  { headline: 'Ether accumulation wallet balances increased by 33%: Is a rally to $3K next?', category: 'crypto', related: 'ETH' },
+  { headline: 'Russia introduces bill to criminalize unregistered crypto services', category: 'crypto', related: '' },
+  { headline: 'US Senator asks for Binance monitor update amid scrutiny of Iran sanctions', category: 'crypto', related: '' },
+  { headline: 'French finance minister backs euro-pegged stablecoins to compete with US', category: 'crypto', related: '' },
+  { headline: 'Texas Instruments Nvidia Robotics Partnership Puts Valuation And Growth In Focus', category: 'company', related: 'NVDA' },
+  { headline: 'Tesla Launches FSD Streaks: Is Self-Driving Software Being Gamified?', category: 'company', related: 'TSLA' },
+  { headline: 'Exclusive: Meta targets May 20 for first wave of layoffs; additional cuts later in 2026', category: 'company', related: 'META' },
+  { headline: 'Apple defeats bid for new Apple Watch import ban at US trade tribunal', category: 'company', related: 'AAPL' },
 ];
 
 // Get date string in YYYY-MM-DD format
