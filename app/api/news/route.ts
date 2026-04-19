@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-18 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-19 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Nasdaq Composite notches 13th straight gain, longest winning streak since 1992', category: 'general', related: '' },
-  { headline: 'S&P 500 and Nasdaq notch fresh records as US-Iran diplomacy gains steam', category: 'general', related: '' },
-  { headline: 'Dow leaps 850 points as Strait of Hormuz reportedly reopens under ceasefire condition', category: 'general', related: '' },
-  { headline: 'Initial jobless claims fall to 207,000, better than expected', category: 'general', related: '' },
-  { headline: 'IMF warns Iran war could tip the world into recession amid global oil shortfall', category: 'general', related: '' },
-  { headline: 'Israel and Lebanon reach 10-day ceasefire agreement as Middle East diplomacy expands', category: 'general', related: '' },
-  { headline: 'Bitcoin holds above $76K as crypto market cap reaches $2.70 trillion', category: 'crypto', related: 'BTC' },
-  { headline: 'Goldman Sachs files for Bitcoin Premium Income ETF using covered-call strategy', category: 'crypto', related: 'BTC' },
-  { headline: 'Ethereum posts busiest quarter ever with 200.4M transactions in Q1 2026', category: 'crypto', related: 'ETH' },
-  { headline: 'XRP faces resistance at $1.45 as 60% of holders reach break-even selling wall', category: 'crypto', related: 'XRP' },
-  { headline: 'Russia-linked Grinex exchange halts operations after $13M state-backed hack', category: 'crypto', related: '' },
-  { headline: 'SEC CLARITY Act roundtable discusses regulatory framework for digital assets', category: 'crypto', related: '' },
-  { headline: 'Netflix shares drop 9% after Q1 earnings despite beating revenue at $12.25B', category: 'company', related: 'NFLX' },
-  { headline: 'NVIDIA rallies in April recovery, trading near $197.50 as AI demand holds', category: 'company', related: 'NVDA' },
-  { headline: 'Tesla Q1 deliveries miss estimates at 358,023 vehicles ahead of April 22 earnings', category: 'company', related: 'TSLA' },
-  { headline: 'Apple reports record iPhone revenue of $85.3B while keeping AI compute spending modest', category: 'company', related: 'AAPL' },
+  { headline: "Iran's navy tells ships Strait of Hormuz shut again, two vessels report gunfire", category: 'general', related: '' },
+  { headline: 'Two Indian-flagged ships attacked while crossing Strait of Hormuz, government confirms', category: 'general', related: '' },
+  { headline: 'US military prepares to board Iran-linked ships in coming days, WSJ reports', category: 'general', related: '' },
+  { headline: 'US forces turn 23 vessels back to Iran, enforcing blockade, military says', category: 'general', related: '' },
+  { headline: 'Iran war, $4 gas prices, took all the fun right out of the U.S. consumer economy', category: 'general', related: '' },
+  { headline: "Iran says no date set for next round of negotiations with US", category: 'general', related: '' },
+  { headline: "Iran tightens control of Strait of Hormuz, Trump warns against 'blackmail'", category: 'general', related: '' },
+  { headline: 'US to delay weapons deliveries to some European countries due to Iran war, sources say', category: 'general', related: '' },
+  { headline: 'Banks weathered the storm of the Iran war. How did they do it and can they keep doing it?', category: 'general', related: '' },
+  { headline: 'Bitcoin drops below $76K as crypto sells off amid Hormuz escalation', category: 'crypto', related: 'BTC' },
+  { headline: 'Ethereum slides to $2,351 as risk-off mood grips crypto markets', category: 'crypto', related: 'ETH' },
+  { headline: '"Code Red": Microsoft CEO Satya Nadella is reportedly leading an overhaul of Copilot', category: 'company', related: 'MSFT' },
+  { headline: "Musk toasts Tesla's US lead -- but BYD is 3x bigger globally", category: 'company', related: 'TSLA' },
+  { headline: 'Did Amazon just say checkmate to Nvidia? Custom AI chips challenge dominance', category: 'company', related: 'NVDA' },
+  { headline: 'Is it too late to consider Apple (AAPL) after its strong 1-year share price run?', category: 'company', related: 'AAPL' },
+  { headline: 'Broadcom expands partnership with Meta as AI infrastructure buildout accelerates', category: 'company', related: 'META' },
 ];
 
 // Get date string in YYYY-MM-DD format
