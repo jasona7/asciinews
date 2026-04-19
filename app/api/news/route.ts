@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-19 01:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-19 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: "Iran's navy tells ships Strait of Hormuz shut again, two vessels report gunfire", category: 'general', related: '' },
-  { headline: 'Two Indian-flagged ships attacked while crossing Strait of Hormuz, government confirms', category: 'general', related: '' },
+  { headline: 'Allies fear a rushed US-Iran framework deal could backfire, leaving technical deadlock', category: 'general', related: '' },
+  { headline: 'Strait of Hormuz blocked as gaps remain on Iran peace talks', category: 'general', related: '' },
+  { headline: 'Iran replenishes launchers at higher rate than pre-war, guards commander says', category: 'general', related: '' },
+  { headline: 'North Korea fires ballistic missiles again, flexing muscle amid Iran war', category: 'general', related: '' },
+  { headline: 'Bangladesh raises fuel prices as Iran war drives up costs', category: 'general', related: '' },
+  { headline: 'US renews Russian oil waiver after pressure from countries dealing with Iran war price shocks', category: 'general', related: '' },
+  { headline: "India flags 'deep concerns' over attack on two Indian ships in Strait of Hormuz", category: 'general', related: '' },
   { headline: 'US military prepares to board Iran-linked ships in coming days, WSJ reports', category: 'general', related: '' },
-  { headline: 'US forces turn 23 vessels back to Iran, enforcing blockade, military says', category: 'general', related: '' },
   { headline: 'Iran war, $4 gas prices, took all the fun right out of the U.S. consumer economy', category: 'general', related: '' },
-  { headline: "Iran says no date set for next round of negotiations with US", category: 'general', related: '' },
-  { headline: "Iran tightens control of Strait of Hormuz, Trump warns against 'blackmail'", category: 'general', related: '' },
-  { headline: 'US to delay weapons deliveries to some European countries due to Iran war, sources say', category: 'general', related: '' },
-  { headline: 'Banks weathered the storm of the Iran war. How did they do it and can they keep doing it?', category: 'general', related: '' },
-  { headline: 'Bitcoin drops below $76K as crypto sells off amid Hormuz escalation', category: 'crypto', related: 'BTC' },
-  { headline: 'Ethereum slides to $2,351 as risk-off mood grips crypto markets', category: 'crypto', related: 'ETH' },
-  { headline: '"Code Red": Microsoft CEO Satya Nadella is reportedly leading an overhaul of Copilot', category: 'company', related: 'MSFT' },
-  { headline: "Musk toasts Tesla's US lead -- but BYD is 3x bigger globally", category: 'company', related: 'TSLA' },
-  { headline: 'Did Amazon just say checkmate to Nvidia? Custom AI chips challenge dominance', category: 'company', related: 'NVDA' },
-  { headline: 'Is it too late to consider Apple (AAPL) after its strong 1-year share price run?', category: 'company', related: 'AAPL' },
-  { headline: 'Broadcom expands partnership with Meta as AI infrastructure buildout accelerates', category: 'company', related: 'META' },
+  { headline: 'Bitcoin price drops to $75K as new Hormuz closure puts focus on oil', category: 'crypto', related: 'BTC' },
+  { headline: 'Kelp restaking platform exploited, $293M drained in attack', category: 'crypto', related: 'ETH' },
+  { headline: 'Stock market records, Iran updates, and Tesla earnings: What to watch this week', category: 'company', related: 'TSLA' },
+  { headline: 'Apple among 15 companies to announce dividend increases in the second half of April', category: 'company', related: 'AAPL' },
+  { headline: 'Bernstein shares a 5+ year view on how AI might impact the software industry', category: 'company', related: 'MSFT' },
+  { headline: 'Meta layoffs and AI push reframe costs, margins and valuation story', category: 'company', related: 'META' },
+  { headline: 'Aluminum giant Alcoa to sell dormant smelter to Bitcoin miner NYDIG', category: 'company', related: 'NVDA' },
 ];
 
 // Get date string in YYYY-MM-DD format
