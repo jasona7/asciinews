@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-19 19:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-20 16:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Defense Stock Face-Off: Lockheed Martin vs. Howmet Aerospace -- Which Is the Better Buy Right Now?', category: 'company', related: 'NVDA' },
-  { headline: 'This Cryptocurrency Has Quietly Outperformed Bitcoin Over the Last Year', category: 'company', related: 'NVDA' },
-  { headline: "Apple\u2019s China iPhone Surge Reshapes Growth And Margin Questions For Investors", category: 'company', related: 'AAPL' },
-  { headline: "Looking For a Way to Profit from the SpaceX IPO? This Top AI Stock Owns a $100 Billion Stake in the Elon Musk-led Rocket and Satellite Leader.", category: 'company', related: 'AAPL' },
-  { headline: 'The $292 million Kelp exploit: how it happened, and what it means for DeFi', category: 'crypto', related: 'ETH' },
-  { headline: 'Oil jumps and stock futures slip as Iran tensions unsettle markets', category: 'general', related: '' },
-  { headline: 'Dow Jones Futures Fall, Oil Prices Jump; Trump Announces New Iran Talks With Hormuz Shut', category: 'company', related: 'TSLA' },
-  { headline: 'If Netflix Can Keep Winning on This Key Metric, the Stock Could Soar', category: 'company', related: 'NFLX' },
-  { headline: "Satya Nadella Praises 'World's Most Powerful' AI Data Center Going Live Early As Microsoft Accelerates Global AI Push Amid Concerns", category: 'company', related: 'MSFT' },
-  { headline: '80-year-old Home Depot rival closes hardware store, no bankruptcy', category: 'company', related: 'AMZN' },
-  { headline: 'Stablecoins not a threat to banks in the near-term: Moody\'s analyst', category: 'crypto', related: '' },
-  { headline: 'Here are things going right for stocks despite new Iran war setbacks', category: 'general', related: '' },
-  { headline: 'Prediction: It\'s Not Too Late to Buy Broadcom Stock After Another Win for the Company', category: 'company', related: 'META' },
-  { headline: 'Tesla Has Reclaimed Its Spot as the Leading Global EV Manufacturer, but Is the Stock a Buy?', category: 'company', related: 'TSLA' },
-  { headline: 'AMD: $600 Bullseye', category: 'company', related: 'AMD' },
-  { headline: 'Intel (INTC) Valuation Check After Google AI Pact And Terafab Participation', category: 'company', related: 'GOOGL' },
+  { headline: 'Dow Jones Futures Fall; Trump Says Talks, Iran Says No; Marvell Jumps, Tesla Earnings Due', category: 'company', related: 'NVDA' },
+  { headline: "AI Stocks: Google Makes 'Agentic Cloud' Pitch, Adobe Conference Takes Stage", category: 'company', related: 'NVDA' },
+  { headline: 'Stocks Down Pre-Bell Amid Renewed US-Iran Tensions', category: 'company', related: 'TSLA' },
+  { headline: 'Meta layoffs to begin May 20, cutting 8,000 workers', category: 'company', related: 'META' },
+  { headline: 'Nearly $1 billion in bitcoin ETF inflows power bull case as Kelp hack fuels DeFi jitters', category: 'crypto', related: 'BTC' },
+  { headline: 'Why Wall Street Loves Microsoft Stock Despite It Falling 23%', category: 'company', related: 'MSFT' },
+  { headline: 'Marvell shares gain on report of deal talks with Google to develop two AI chips', category: 'company', related: 'META' },
+  { headline: 'Bitcoin drops from recent highs as traders watch CME gap, DeFi hack fallout', category: 'crypto', related: 'BTC' },
+  { headline: 'Social Buzz: Wallstreetbets Stocks Mostly Lower Premarket Monday; AST SpaceMobile to Fall, Marvell to Rise', category: 'company', related: 'MSFT' },
+  { headline: 'Market Chatter: Apple Fails to Submit Financial Data in India Antitrust Case as Regulator Sets Final Hearing', category: 'company', related: 'AAPL' },
+  { headline: "AST SpaceMobile shares drop after its satellite is placed in wrong orbit by Bezos' Blue Origin", category: 'general', related: '' },
+  { headline: 'Coinbase rolls out UK crypto-backed loans as FCA shapes rules', category: 'crypto', related: '' },
+  { headline: 'Crypto fund inflows hit $1.4B in second-strongest week since January', category: 'crypto', related: '' },
+  { headline: 'LayerZero says Kelp setup caused exploit, as Aave loss questions mount', category: 'crypto', related: '' },
+  { headline: 'How Mastercard plans to settle card payments with stablecoins', category: 'crypto', related: '' },
+  { headline: 'American Airlines falls 3% premarket after dismissing United megamerger', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
