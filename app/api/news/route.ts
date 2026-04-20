@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-19 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-19 19:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Allies fear a rushed US-Iran framework deal could backfire, leaving technical deadlock', category: 'general', related: '' },
-  { headline: 'Strait of Hormuz blocked as gaps remain on Iran peace talks', category: 'general', related: '' },
-  { headline: 'Iran replenishes launchers at higher rate than pre-war, guards commander says', category: 'general', related: '' },
-  { headline: 'North Korea fires ballistic missiles again, flexing muscle amid Iran war', category: 'general', related: '' },
-  { headline: 'Bangladesh raises fuel prices as Iran war drives up costs', category: 'general', related: '' },
-  { headline: 'US renews Russian oil waiver after pressure from countries dealing with Iran war price shocks', category: 'general', related: '' },
-  { headline: "India flags 'deep concerns' over attack on two Indian ships in Strait of Hormuz", category: 'general', related: '' },
-  { headline: 'US military prepares to board Iran-linked ships in coming days, WSJ reports', category: 'general', related: '' },
-  { headline: 'Iran war, $4 gas prices, took all the fun right out of the U.S. consumer economy', category: 'general', related: '' },
-  { headline: 'Bitcoin price drops to $75K as new Hormuz closure puts focus on oil', category: 'crypto', related: 'BTC' },
-  { headline: 'Kelp restaking platform exploited, $293M drained in attack', category: 'crypto', related: 'ETH' },
-  { headline: 'Stock market records, Iran updates, and Tesla earnings: What to watch this week', category: 'company', related: 'TSLA' },
-  { headline: 'Apple among 15 companies to announce dividend increases in the second half of April', category: 'company', related: 'AAPL' },
-  { headline: 'Bernstein shares a 5+ year view on how AI might impact the software industry', category: 'company', related: 'MSFT' },
-  { headline: 'Meta layoffs and AI push reframe costs, margins and valuation story', category: 'company', related: 'META' },
-  { headline: 'Aluminum giant Alcoa to sell dormant smelter to Bitcoin miner NYDIG', category: 'company', related: 'NVDA' },
+  { headline: 'Defense Stock Face-Off: Lockheed Martin vs. Howmet Aerospace -- Which Is the Better Buy Right Now?', category: 'company', related: 'NVDA' },
+  { headline: 'This Cryptocurrency Has Quietly Outperformed Bitcoin Over the Last Year', category: 'company', related: 'NVDA' },
+  { headline: "Apple\u2019s China iPhone Surge Reshapes Growth And Margin Questions For Investors", category: 'company', related: 'AAPL' },
+  { headline: "Looking For a Way to Profit from the SpaceX IPO? This Top AI Stock Owns a $100 Billion Stake in the Elon Musk-led Rocket and Satellite Leader.", category: 'company', related: 'AAPL' },
+  { headline: 'The $292 million Kelp exploit: how it happened, and what it means for DeFi', category: 'crypto', related: 'ETH' },
+  { headline: 'Oil jumps and stock futures slip as Iran tensions unsettle markets', category: 'general', related: '' },
+  { headline: 'Dow Jones Futures Fall, Oil Prices Jump; Trump Announces New Iran Talks With Hormuz Shut', category: 'company', related: 'TSLA' },
+  { headline: 'If Netflix Can Keep Winning on This Key Metric, the Stock Could Soar', category: 'company', related: 'NFLX' },
+  { headline: "Satya Nadella Praises 'World's Most Powerful' AI Data Center Going Live Early As Microsoft Accelerates Global AI Push Amid Concerns", category: 'company', related: 'MSFT' },
+  { headline: '80-year-old Home Depot rival closes hardware store, no bankruptcy', category: 'company', related: 'AMZN' },
+  { headline: 'Stablecoins not a threat to banks in the near-term: Moody\'s analyst', category: 'crypto', related: '' },
+  { headline: 'Here are things going right for stocks despite new Iran war setbacks', category: 'general', related: '' },
+  { headline: 'Prediction: It\'s Not Too Late to Buy Broadcom Stock After Another Win for the Company', category: 'company', related: 'META' },
+  { headline: 'Tesla Has Reclaimed Its Spot as the Leading Global EV Manufacturer, but Is the Stock a Buy?', category: 'company', related: 'TSLA' },
+  { headline: 'AMD: $600 Bullseye', category: 'company', related: 'AMD' },
+  { headline: 'Intel (INTC) Valuation Check After Google AI Pact And Terafab Participation', category: 'company', related: 'GOOGL' },
 ];
 
 // Get date string in YYYY-MM-DD format
