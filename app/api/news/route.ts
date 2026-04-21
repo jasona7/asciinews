@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-21 01:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-21 13:05 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Apple CEO Tim Cook steps down: 7 big challenges for new CEO John Ternus', category: 'company', related: 'AAPL' },
-  { headline: 'Stock market today: Dow, S&P 500, and Nasdaq futures inch up amid Apple CEO change and Iran uncertainty', category: 'company', related: 'AAPL' },
-  { headline: 'Which AI Stock Is the Best Buy Today: Nvidia, Alphabet, or Palantir?', category: 'company', related: 'NVDA' },
-  { headline: 'Stock Market Today, April 20: BlackBerry Surges After QNX Expands Integration With Nvidia Edge AI Platform', category: 'company', related: 'NVDA' },
-  { headline: 'Tesla settles wrongful death lawsuit over crash that killed Florida teenager', category: 'company', related: 'TSLA' },
-  { headline: 'Did Ford CEO Jim Farley just take a shot at Tesla?', category: 'company', related: 'TSLA' },
-  { headline: 'Should You Sell Microsoft (MSFT) on AI Disruption Fears?', category: 'company', related: 'MSFT' },
-  { headline: 'Bank of America resets Microsoft stock forecast ahead of earnings', category: 'company', related: 'MSFT' },
-  { headline: 'Meta Platforms (META) Is Up 5.7% After AI-Focused Layoffs And Reorganization Plan - Has The Bull Case Changed?', category: 'company', related: 'META' },
-  { headline: 'Bitcoin bounces above $76,000 as DeFi suffers $14 billion exodus after KelpDAO hack', category: 'crypto', related: 'BTC' },
-  { headline: 'Ethereum whale opens $90M long bets as ETH price chart eyes $3.2K', category: 'crypto', related: 'ETH' },
-  { headline: 'Aave could face up to $230 million in losses after Kelp DAO bridge exploit triggers DeFi chaos', category: 'crypto', related: '' },
-  { headline: "North Korea's crypto heist playbook is expanding and DeFi keeps getting hit", category: 'crypto', related: '' },
-  { headline: "Last Week Tonight's John Oliver says he won't placate prediction markets users", category: 'crypto', related: '' },
-  { headline: 'Seized Iranian ship likely carrying equipment deemed dual-use by US, sources say - Reuters', category: 'general', related: '' },
-  { headline: 'Wall Street closes slightly down on renewed tensions between US, Iran - Reuters', category: 'general', related: '' },
+  { headline: 'Apple names John Ternus CEO as Tim Cook moves to chairman Sept. 1', category: 'company', related: 'AAPL' },
+  { headline: 'Tesla Q1 earnings tomorrow: Wall Street eyes $21.9B revenue, Terafab capex', category: 'company', related: 'TSLA' },
+  { headline: 'Italian court voids Netflix 2017-2024 price hikes, orders refunds up to €500', category: 'company', related: 'NFLX' },
+  { headline: 'AMD rallies to all-time high as chip demand momentum extends', category: 'company', related: 'AMD' },
+  { headline: 'Mizuho reiterates Nvidia outperform, sees 75% data-center AI share', category: 'company', related: 'NVDA' },
+  { headline: 'Coinbase and Bybit team up to tokenize US public and pre-IPO stocks', category: 'company', related: 'COIN' },
+  { headline: 'Meta pushes ahead with plan to cut 10% of workforce in first AI layoff wave', category: 'company', related: 'META' },
+  { headline: 'Wedbush: Ternus succession raises pressure on Apple WWDC AI delivery', category: 'company', related: 'AAPL' },
+  { headline: 'Bitcoin holds above $76K ahead of Fed chair Warsh confirmation hearing', category: 'crypto', related: 'BTC' },
+  { headline: 'Wrapped XRP goes live on Solana via Hex Trust and LayerZero', category: 'crypto', related: 'XRP' },
+  { headline: 'Spot XRP ETFs pull $55M weekly, strongest inflows of 2026', category: 'crypto', related: 'XRP' },
+  { headline: 'Ether lags bitcoin as ETH/BTC ratio bounces off 2026 lows', category: 'crypto', related: 'ETH' },
+  { headline: 'DeFi liquidity crunch drags on after $292M KelpDAO rsETH exploit', category: 'crypto', related: '' },
+  { headline: 'Stock futures rise as Trump signals US-Iran talks resume in Pakistan', category: 'general', related: '' },
+  { headline: 'CBP opens $166B tariff refund portal after Supreme Court ruling', category: 'general', related: '' },
+  { headline: 'Energy Secretary: US gas prices likely peaked, stay above $3 until 2027', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
