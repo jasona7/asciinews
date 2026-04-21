@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-20 16:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-21 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Dow Jones Futures Fall; Trump Says Talks, Iran Says No; Marvell Jumps, Tesla Earnings Due', category: 'company', related: 'NVDA' },
-  { headline: "AI Stocks: Google Makes 'Agentic Cloud' Pitch, Adobe Conference Takes Stage", category: 'company', related: 'NVDA' },
-  { headline: 'Stocks Down Pre-Bell Amid Renewed US-Iran Tensions', category: 'company', related: 'TSLA' },
-  { headline: 'Meta layoffs to begin May 20, cutting 8,000 workers', category: 'company', related: 'META' },
-  { headline: 'Nearly $1 billion in bitcoin ETF inflows power bull case as Kelp hack fuels DeFi jitters', category: 'crypto', related: 'BTC' },
-  { headline: 'Why Wall Street Loves Microsoft Stock Despite It Falling 23%', category: 'company', related: 'MSFT' },
-  { headline: 'Marvell shares gain on report of deal talks with Google to develop two AI chips', category: 'company', related: 'META' },
-  { headline: 'Bitcoin drops from recent highs as traders watch CME gap, DeFi hack fallout', category: 'crypto', related: 'BTC' },
-  { headline: 'Social Buzz: Wallstreetbets Stocks Mostly Lower Premarket Monday; AST SpaceMobile to Fall, Marvell to Rise', category: 'company', related: 'MSFT' },
-  { headline: 'Market Chatter: Apple Fails to Submit Financial Data in India Antitrust Case as Regulator Sets Final Hearing', category: 'company', related: 'AAPL' },
-  { headline: "AST SpaceMobile shares drop after its satellite is placed in wrong orbit by Bezos' Blue Origin", category: 'general', related: '' },
-  { headline: 'Coinbase rolls out UK crypto-backed loans as FCA shapes rules', category: 'crypto', related: '' },
-  { headline: 'Crypto fund inflows hit $1.4B in second-strongest week since January', category: 'crypto', related: '' },
-  { headline: 'LayerZero says Kelp setup caused exploit, as Aave loss questions mount', category: 'crypto', related: '' },
-  { headline: 'How Mastercard plans to settle card payments with stablecoins', category: 'crypto', related: '' },
-  { headline: 'American Airlines falls 3% premarket after dismissing United megamerger', category: 'general', related: '' },
+  { headline: 'Apple CEO Tim Cook steps down: 7 big challenges for new CEO John Ternus', category: 'company', related: 'AAPL' },
+  { headline: 'Stock market today: Dow, S&P 500, and Nasdaq futures inch up amid Apple CEO change and Iran uncertainty', category: 'company', related: 'AAPL' },
+  { headline: 'Which AI Stock Is the Best Buy Today: Nvidia, Alphabet, or Palantir?', category: 'company', related: 'NVDA' },
+  { headline: 'Stock Market Today, April 20: BlackBerry Surges After QNX Expands Integration With Nvidia Edge AI Platform', category: 'company', related: 'NVDA' },
+  { headline: 'Tesla settles wrongful death lawsuit over crash that killed Florida teenager', category: 'company', related: 'TSLA' },
+  { headline: 'Did Ford CEO Jim Farley just take a shot at Tesla?', category: 'company', related: 'TSLA' },
+  { headline: 'Should You Sell Microsoft (MSFT) on AI Disruption Fears?', category: 'company', related: 'MSFT' },
+  { headline: 'Bank of America resets Microsoft stock forecast ahead of earnings', category: 'company', related: 'MSFT' },
+  { headline: 'Meta Platforms (META) Is Up 5.7% After AI-Focused Layoffs And Reorganization Plan - Has The Bull Case Changed?', category: 'company', related: 'META' },
+  { headline: 'Bitcoin bounces above $76,000 as DeFi suffers $14 billion exodus after KelpDAO hack', category: 'crypto', related: 'BTC' },
+  { headline: 'Ethereum whale opens $90M long bets as ETH price chart eyes $3.2K', category: 'crypto', related: 'ETH' },
+  { headline: 'Aave could face up to $230 million in losses after Kelp DAO bridge exploit triggers DeFi chaos', category: 'crypto', related: '' },
+  { headline: "North Korea's crypto heist playbook is expanding and DeFi keeps getting hit", category: 'crypto', related: '' },
+  { headline: "Last Week Tonight's John Oliver says he won't placate prediction markets users", category: 'crypto', related: '' },
+  { headline: 'Seized Iranian ship likely carrying equipment deemed dual-use by US, sources say - Reuters', category: 'general', related: '' },
+  { headline: 'Wall Street closes slightly down on renewed tensions between US, Iran - Reuters', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
