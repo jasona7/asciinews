@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-21 13:05 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-22 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Apple names John Ternus CEO as Tim Cook moves to chairman Sept. 1', category: 'company', related: 'AAPL' },
-  { headline: 'Tesla Q1 earnings tomorrow: Wall Street eyes $21.9B revenue, Terafab capex', category: 'company', related: 'TSLA' },
-  { headline: 'Italian court voids Netflix 2017-2024 price hikes, orders refunds up to €500', category: 'company', related: 'NFLX' },
-  { headline: 'AMD rallies to all-time high as chip demand momentum extends', category: 'company', related: 'AMD' },
-  { headline: 'Mizuho reiterates Nvidia outperform, sees 75% data-center AI share', category: 'company', related: 'NVDA' },
-  { headline: 'Coinbase and Bybit team up to tokenize US public and pre-IPO stocks', category: 'company', related: 'COIN' },
-  { headline: 'Meta pushes ahead with plan to cut 10% of workforce in first AI layoff wave', category: 'company', related: 'META' },
-  { headline: 'Wedbush: Ternus succession raises pressure on Apple WWDC AI delivery', category: 'company', related: 'AAPL' },
-  { headline: 'Bitcoin holds above $76K ahead of Fed chair Warsh confirmation hearing', category: 'crypto', related: 'BTC' },
-  { headline: 'Wrapped XRP goes live on Solana via Hex Trust and LayerZero', category: 'crypto', related: 'XRP' },
-  { headline: 'Spot XRP ETFs pull $55M weekly, strongest inflows of 2026', category: 'crypto', related: 'XRP' },
-  { headline: 'Ether lags bitcoin as ETH/BTC ratio bounces off 2026 lows', category: 'crypto', related: 'ETH' },
-  { headline: 'DeFi liquidity crunch drags on after $292M KelpDAO rsETH exploit', category: 'crypto', related: '' },
-  { headline: 'Stock futures rise as Trump signals US-Iran talks resume in Pakistan', category: 'general', related: '' },
-  { headline: 'CBP opens $166B tariff refund portal after Supreme Court ruling', category: 'general', related: '' },
-  { headline: 'Energy Secretary: US gas prices likely peaked, stay above $3 until 2027', category: 'general', related: '' },
+  { headline: 'Apple slips 2% after Cook-Ternus transition as Wall Street digests surprise timing', category: 'company', related: 'AAPL' },
+  { headline: 'Tesla reports Q1 after bell Wednesday; 358K deliveries already miss 372K Street view', category: 'company', related: 'TSLA' },
+  { headline: 'Amazon to plow $25B more into Anthropic; Claude locks in $100B of AWS spend', category: 'company', related: 'AMZN' },
+  { headline: 'Alphabet Q1 earnings Wednesday after close; Street eyes Cloud reaccel, TPU progress', category: 'company', related: 'GOOGL' },
+  { headline: 'Nvidia slips 1% to $201 as macro fear clashes with unrelenting AI chip demand', category: 'company', related: 'NVDA' },
+  { headline: 'Microsoft climbs 1.8% to $425 as Citi turns bullish ahead of April 29 fiscal Q3', category: 'company', related: 'MSFT' },
+  { headline: 'Coinbase tumbles 6.4% as Barclays flags weak Q1 volumes, margin compression', category: 'company', related: 'COIN' },
+  { headline: 'BofA lifts Amazon target to $298, KeyBanc to $325 on $50B custom-silicon runway', category: 'company', related: 'AMZN' },
+  { headline: 'Bitcoin reclaims $76K late Tuesday as Trump extends Iran ceasefire at Pakistan request', category: 'crypto', related: 'BTC' },
+  { headline: 'BlackRock IBIT pulls $292M in single day as spot BTC ETFs log third weekly inflow', category: 'crypto', related: 'BTC' },
+  { headline: 'Ether hugs $2,325 as Fusaka PeerDAS rollup data capacity keeps L2 fees suppressed', category: 'crypto', related: 'ETH' },
+  { headline: 'Ripple unveils 2028 quantum-resistant XRPL roadmap, beating BTC and ETH deadlines', category: 'crypto', related: 'XRP' },
+  { headline: 'Spot Solana ETFs cross $900M cumulative inflows as Goldman discloses $108M stake', category: 'crypto', related: 'SOL' },
+  { headline: 'Dow drops 293 points as Iran ceasefire wobbles; Trump extends truce post-close', category: 'general', related: '' },
+  { headline: 'Warsh tells Senate he is no Trump "sock puppet"; Tillis still blocks Fed chair vote', category: 'general', related: '' },
+  { headline: 'Brent crude holds near $95 with Strait of Hormuz functionally closed, $100 in play', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
