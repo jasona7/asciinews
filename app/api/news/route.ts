@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-23 01:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-23 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Tesla beats Q1 EPS at $0.41 vs $0.37, revenue $22.4B tops $21.4B; shares fade as capex guide lifts to $25B', category: 'company', related: 'TSLA' },
-  { headline: 'Tesla Q1 deliveries of 358K miss view; inventory builds 50K units as energy storage slides 38% to 8.8 GWh', category: 'company', related: 'TSLA' },
-  { headline: 'Alphabet unveils McKinsey-Google Transformation Group at Cloud Next; two new TPUs and Merck drug-AI deal headline', category: 'company', related: 'GOOGL' },
-  { headline: 'Apple holds above $195 into Cloud Next week as Street leaves April 30 earnings estimates unchanged', category: 'company', related: 'AAPL' },
-  { headline: 'Nvidia pares premarket gain to flat as Brent back above $100 keeps macro risk-off bid on mega-cap tech', category: 'company', related: 'NVDA' },
-  { headline: 'Microsoft trades $428 into April 29 fiscal Q3; Street models Azure growth reaccel to 34-35% constant currency', category: 'company', related: 'MSFT' },
-  { headline: 'Amazon and Broadcom draw upgrades after Anthropic commits to Trainium2 clusters, AWS silicon roadmap through 2027', category: 'company', related: 'AMZN' },
-  { headline: 'Coinbase holds gains as GSR debuts actively-managed BESO ETF pairing BTC, ETH, SOL exposure with staking yield', category: 'company', related: 'COIN' },
-  { headline: 'Bitcoin holds $78K as BlackRock IBIT vacuums $906M in a week, crossing 800K BTC and 3.8% of circulating supply', category: 'crypto', related: 'BTC' },
-  { headline: 'Spot BTC ETFs log $996M weekly inflow, strongest seven-day stretch since mid-January as institutional bid returns', category: 'crypto', related: 'BTC' },
-  { headline: 'Ether climbs to $2,370, up 1.9% on 24h as GSR Core3 ETF and LayerZero bridge reform headlines drive rotation', category: 'crypto', related: 'ETH' },
-  { headline: 'XRP slips 0.2% to $1.43 as post-rally consolidation continues; CME open interest flattens after Tuesday highs', category: 'crypto', related: 'XRP' },
-  { headline: 'Solana flat near $87 as Drift and Kelp DAO exploits push April DeFi losses past $606M across 12 incidents', category: 'crypto', related: 'SOL' },
-  { headline: 'Iran fires on three ships in Strait of Hormuz and seizes MSC Francesca, Epaminondas despite Trump ceasefire extension', category: 'general', related: '' },
-  { headline: 'Brent crude tops $100 intraday, settles near $101.91 as Hormuz attacks reopen war premium; WTI follows higher', category: 'general', related: '' },
-  { headline: 'Tillis signals Warsh Fed chair vote possible if Congress opens own Powell probe and DOJ drops criminal inquiry', category: 'general', related: '' },
+  { headline: 'Tesla Q1 beat fades as Musk guides capex $5B above prior plan to $25B for AI, robotaxi and Optimus push', category: 'company', related: 'TSLA' },
+  { headline: 'Tesla gross margin jumps 478bps YoY to 21.1% on mix as 50K inventory build and 8.8 GWh storage drag sentiment', category: 'company', related: 'TSLA' },
+  { headline: 'Google Cloud debuts TPU 8t training pods scaling to 9,600 chips at 3x Ironwood, plus TPU 8i inference at 1,152 chips', category: 'company', related: 'GOOGL' },
+  { headline: 'Alphabet rolls out Gemini Enterprise Agent Platform and $750M AI adoption fund as Cloud Next targets Nvidia, AWS', category: 'company', related: 'GOOGL' },
+  { headline: 'Nvidia breaks out above $195 into bull flag near $202 as TPU 8t reveal tests custom silicon narrative', category: 'company', related: 'NVDA' },
+  { headline: 'Intel reports Q1 after the bell with Street at $0.01-0.02 EPS on $12.4B rev; stock up 74% YTD near $68 into print', category: 'company', related: 'INTC' },
+  { headline: 'IBM slides 6% afterhours despite Q1 beat at $1.91 EPS and $15.9B rev as full-year guide held and AI book omitted', category: 'company', related: 'IBM' },
+  { headline: 'ServiceNow dives 14% after Middle East deal delays clip subscription growth 75bps and margin guide eases', category: 'company', related: 'NOW' },
+  { headline: 'Coinbase jumps 5.9% as Nium USDC partnership, tGBP and DIEM listings offset NY AG suit moved to federal court', category: 'company', related: 'COIN' },
+  { headline: 'Bitcoin holds $77.8K, BTC/USDT down 0.6% on 24h as Strategy adds $2.54B lifting holdings past 815K BTC', category: 'crypto', related: 'BTC' },
+  { headline: 'Spot BTC ETFs extend inflow streak to five sessions with $238M added Monday as Saylor prints largest buy since 2024', category: 'crypto', related: 'BTC' },
+  { headline: 'Ether slides 3.2% to $2,328 on ETH/BTC weakness as rotation favors Bitcoin; 24h range $2,305-$2,424', category: 'crypto', related: 'ETH' },
+  { headline: 'XRP ETFs pull $55M over seven straight sessions, strongest week of 2026, as Wrapped XRP goes live on Solana via LayerZero', category: 'crypto', related: 'XRP' },
+  { headline: 'Solana fades 3% to $85.94 after tagging $89.33; DeFi TVL steady as wXRP bridge launch drives cross-chain volume', category: 'crypto', related: 'SOL' },
+  { headline: 'Iran seizes two more ships in Strait of Hormuz hours after Trump extends ceasefire, Brent settles $101.91 up 3%', category: 'general', related: '' },
+  { headline: 'AG Pirro vows appeal after Judge Boasberg blocks Powell subpoenas, starting May 4 clock as Powell term ends May 15', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
