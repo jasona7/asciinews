@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-22 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-23 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Tesla reports Q1 after Wednesday close; Street split on $21.4B vs $22.3B revenue guide', category: 'company', related: 'TSLA' },
-  { headline: 'Apple stabilizes above $195 Wednesday after 2% Ternus-transition drop, MS stays overweight', category: 'company', related: 'AAPL' },
-  { headline: 'Alphabet Q1 earnings Wednesday after bell; TPU v7 commentary, Cloud margin in focus', category: 'company', related: 'GOOGL' },
-  { headline: 'Nvidia bounces 1.4% premarket as Strait of Hormuz reopens and AI orderbook stays stretched', category: 'company', related: 'NVDA' },
-  { headline: 'Microsoft adds 0.9% to $429 on Citi upgrade, April 29 fiscal Q3 Azure growth debate', category: 'company', related: 'MSFT' },
-  { headline: 'Amazon target bumped to $298 at BofA after $50B custom-silicon and Anthropic expansion', category: 'company', related: 'AMZN' },
-  { headline: 'Meta rallies on Threads ad monetization beat; Reels CPM reportedly up 18% quarter-on-quarter', category: 'company', related: 'META' },
-  { headline: 'Coinbase climbs 4% with BTC back above $78K, erasing Tuesday Barclays downgrade loss', category: 'company', related: 'COIN' },
-  { headline: 'Bitcoin reclaims $78K after Strait of Hormuz reopens; Saylor adds 34,164 BTC to Strategy stack', category: 'crypto', related: 'BTC' },
-  { headline: 'Spot BTC ETFs log $238M inflow, fifth straight positive session as IBIT leads the tape', category: 'crypto', related: 'BTC' },
-  { headline: 'Ether jumps 4.2% to $2,405 as Fusaka blob-capacity upgrade ships to mainnet shadow fork', category: 'crypto', related: 'ETH' },
-  { headline: 'XRP tops $1.45 as wrapped XRP on Solana crosses $100M TVL in first week on LayerZero', category: 'crypto', related: 'XRP' },
-  { headline: 'Solana rallies 3.6% above $88 as spot SOL ETF net assets push through $1.1B threshold', category: 'crypto', related: 'SOL' },
-  { headline: 'Stock futures rebound Wednesday after Iran reopens Strait of Hormuz, ceasefire extended 72 hours', category: 'general', related: '' },
-  { headline: 'Brent crude slides 5% to $89 as Hormuz reopens; WTI back below $86 after Tuesday 4.5% spike', category: 'general', related: '' },
-  { headline: 'Warsh Fed chair vote slips to next week as Tillis holds out; Senate cloture attempt Thursday', category: 'general', related: '' },
+  { headline: 'Tesla beats Q1 EPS at $0.41 vs $0.37, revenue $22.4B tops $21.4B; shares fade as capex guide lifts to $25B', category: 'company', related: 'TSLA' },
+  { headline: 'Tesla Q1 deliveries of 358K miss view; inventory builds 50K units as energy storage slides 38% to 8.8 GWh', category: 'company', related: 'TSLA' },
+  { headline: 'Alphabet unveils McKinsey-Google Transformation Group at Cloud Next; two new TPUs and Merck drug-AI deal headline', category: 'company', related: 'GOOGL' },
+  { headline: 'Apple holds above $195 into Cloud Next week as Street leaves April 30 earnings estimates unchanged', category: 'company', related: 'AAPL' },
+  { headline: 'Nvidia pares premarket gain to flat as Brent back above $100 keeps macro risk-off bid on mega-cap tech', category: 'company', related: 'NVDA' },
+  { headline: 'Microsoft trades $428 into April 29 fiscal Q3; Street models Azure growth reaccel to 34-35% constant currency', category: 'company', related: 'MSFT' },
+  { headline: 'Amazon and Broadcom draw upgrades after Anthropic commits to Trainium2 clusters, AWS silicon roadmap through 2027', category: 'company', related: 'AMZN' },
+  { headline: 'Coinbase holds gains as GSR debuts actively-managed BESO ETF pairing BTC, ETH, SOL exposure with staking yield', category: 'company', related: 'COIN' },
+  { headline: 'Bitcoin holds $78K as BlackRock IBIT vacuums $906M in a week, crossing 800K BTC and 3.8% of circulating supply', category: 'crypto', related: 'BTC' },
+  { headline: 'Spot BTC ETFs log $996M weekly inflow, strongest seven-day stretch since mid-January as institutional bid returns', category: 'crypto', related: 'BTC' },
+  { headline: 'Ether climbs to $2,370, up 1.9% on 24h as GSR Core3 ETF and LayerZero bridge reform headlines drive rotation', category: 'crypto', related: 'ETH' },
+  { headline: 'XRP slips 0.2% to $1.43 as post-rally consolidation continues; CME open interest flattens after Tuesday highs', category: 'crypto', related: 'XRP' },
+  { headline: 'Solana flat near $87 as Drift and Kelp DAO exploits push April DeFi losses past $606M across 12 incidents', category: 'crypto', related: 'SOL' },
+  { headline: 'Iran fires on three ships in Strait of Hormuz and seizes MSC Francesca, Epaminondas despite Trump ceasefire extension', category: 'general', related: '' },
+  { headline: 'Brent crude tops $100 intraday, settles near $101.91 as Hormuz attacks reopen war premium; WTI follows higher', category: 'general', related: '' },
+  { headline: 'Tillis signals Warsh Fed chair vote possible if Congress opens own Powell probe and DOJ drops criminal inquiry', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
