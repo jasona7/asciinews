@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-23 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-24 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Tesla Q1 beat fades as Musk guides capex $5B above prior plan to $25B for AI, robotaxi and Optimus push', category: 'company', related: 'TSLA' },
-  { headline: 'Tesla gross margin jumps 478bps YoY to 21.1% on mix as 50K inventory build and 8.8 GWh storage drag sentiment', category: 'company', related: 'TSLA' },
-  { headline: 'Google Cloud debuts TPU 8t training pods scaling to 9,600 chips at 3x Ironwood, plus TPU 8i inference at 1,152 chips', category: 'company', related: 'GOOGL' },
-  { headline: 'Alphabet rolls out Gemini Enterprise Agent Platform and $750M AI adoption fund as Cloud Next targets Nvidia, AWS', category: 'company', related: 'GOOGL' },
-  { headline: 'Nvidia breaks out above $195 into bull flag near $202 as TPU 8t reveal tests custom silicon narrative', category: 'company', related: 'NVDA' },
-  { headline: 'Intel reports Q1 after the bell with Street at $0.01-0.02 EPS on $12.4B rev; stock up 74% YTD near $68 into print', category: 'company', related: 'INTC' },
-  { headline: 'IBM slides 6% afterhours despite Q1 beat at $1.91 EPS and $15.9B rev as full-year guide held and AI book omitted', category: 'company', related: 'IBM' },
-  { headline: 'ServiceNow dives 14% after Middle East deal delays clip subscription growth 75bps and margin guide eases', category: 'company', related: 'NOW' },
-  { headline: 'Coinbase jumps 5.9% as Nium USDC partnership, tGBP and DIEM listings offset NY AG suit moved to federal court', category: 'company', related: 'COIN' },
-  { headline: 'Bitcoin holds $77.8K, BTC/USDT down 0.6% on 24h as Strategy adds $2.54B lifting holdings past 815K BTC', category: 'crypto', related: 'BTC' },
-  { headline: 'Spot BTC ETFs extend inflow streak to five sessions with $238M added Monday as Saylor prints largest buy since 2024', category: 'crypto', related: 'BTC' },
-  { headline: 'Ether slides 3.2% to $2,328 on ETH/BTC weakness as rotation favors Bitcoin; 24h range $2,305-$2,424', category: 'crypto', related: 'ETH' },
-  { headline: 'XRP ETFs pull $55M over seven straight sessions, strongest week of 2026, as Wrapped XRP goes live on Solana via LayerZero', category: 'crypto', related: 'XRP' },
-  { headline: 'Solana fades 3% to $85.94 after tagging $89.33; DeFi TVL steady as wXRP bridge launch drives cross-chain volume', category: 'crypto', related: 'SOL' },
-  { headline: 'Iran seizes two more ships in Strait of Hormuz hours after Trump extends ceasefire, Brent settles $101.91 up 3%', category: 'general', related: '' },
-  { headline: 'AG Pirro vows appeal after Judge Boasberg blocks Powell subpoenas, starting May 4 clock as Powell term ends May 15', category: 'general', related: '' },
+  { headline: 'Tesla closes down 3.6% at $373.60 as Musk raises 2026 capex $5B to $25B for AI and Optimus; 50K inventory build weighs', category: 'company', related: 'TSLA' },
+  { headline: 'Tesla Q1 EPS $0.41 tops $0.36 on $22.4B rev +16% YoY; gross margin 21.1% up 478bps, storage margin record 39.5%', category: 'company', related: 'TSLA' },
+  { headline: 'Intel Q1 smashes Street at $0.29 adj EPS vs $0.01 on $13.6B rev; data center +22%, AI mix 60% of sales, stock +20% AH', category: 'company', related: 'INTC' },
+  { headline: 'Intel guides Q2 rev $13.8-14.8B, EPS $0.20 vs $0.09 Street as Xeon ramp and process nodes extend sixth straight beat', category: 'company', related: 'INTC' },
+  { headline: 'Meta confirms 10% workforce cut, 8,000 jobs starting May 20, as 2026 capex guide reaches $135B on AI infra push', category: 'company', related: 'META' },
+  { headline: 'IBM tumbles ~9% despite Q1 beat at $1.91 EPS on $15.92B rev as unchanged FY26 guide and AI book silence spark sell', category: 'company', related: 'IBM' },
+  { headline: 'ServiceNow craters 18%, worst day on record, as CFO flags Middle East conservatism on subscription guide despite beat', category: 'company', related: 'NOW' },
+  { headline: 'Nvidia unveils open-source Ising quantum AI models as HBM supplier says AI memory demand still outstripping capacity', category: 'company', related: 'NVDA' },
+  { headline: 'Texas Instruments surges 18%, best day since Oct 2000, as analog recovery and China demand lift FY26 guide', category: 'company', related: 'TXN' },
+  { headline: 'Bitcoin steadies near $78.3K, down 0.11% on 24h, as IBIT pulls $246.9M and FBTC adds $56.7M to extend inflow streak', category: 'crypto', related: 'BTC' },
+  { headline: 'Bitmine discloses 4.98M ETH treasury worth $11.5B, buying 101,627 ETH last week in largest 7-day accumulation of 2026', category: 'crypto', related: 'ETH' },
+  { headline: 'Ether holds $2,329, off 1.8% on 24h, as institutional accumulation targets $2,500 resistance; $2,285-$2,373 session range', category: 'crypto', related: 'ETH' },
+  { headline: 'XRP trades $1.44, up 0.7% on 24h, after MACD flips bullish; seven spot ETFs book $55.2M weekly inflows, biggest of 2026', category: 'crypto', related: 'XRP' },
+  { headline: 'Solana steady at $86.11, off 0.8% on 24h, holding ascending channel as wXRP bridge on LayerZero drives cross-chain flow', category: 'crypto', related: 'SOL' },
+  { headline: 'Brent tops $105 as Iran refuses to reopen Strait of Hormuz under US naval blockade; top negotiator Ghalibaf resigns', category: 'general', related: '' },
+  { headline: 'S&P 500 -0.41% to 7,108, Nasdaq -0.89% to 24,438 as software rout from IBM, ServiceNow and Iran oil jolt hit risk', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
