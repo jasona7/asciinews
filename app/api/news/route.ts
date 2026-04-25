@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-24 13:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-25 01:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Tesla closes down 3.6% at $373.60 as Musk raises 2026 capex $5B to $25B for AI and Optimus; 50K inventory build weighs', category: 'company', related: 'TSLA' },
-  { headline: 'Tesla Q1 EPS $0.41 tops $0.36 on $22.4B rev +16% YoY; gross margin 21.1% up 478bps, storage margin record 39.5%', category: 'company', related: 'TSLA' },
-  { headline: 'Intel Q1 smashes Street at $0.29 adj EPS vs $0.01 on $13.6B rev; data center +22%, AI mix 60% of sales, stock +20% AH', category: 'company', related: 'INTC' },
-  { headline: 'Intel guides Q2 rev $13.8-14.8B, EPS $0.20 vs $0.09 Street as Xeon ramp and process nodes extend sixth straight beat', category: 'company', related: 'INTC' },
-  { headline: 'Meta confirms 10% workforce cut, 8,000 jobs starting May 20, as 2026 capex guide reaches $135B on AI infra push', category: 'company', related: 'META' },
-  { headline: 'IBM tumbles ~9% despite Q1 beat at $1.91 EPS on $15.92B rev as unchanged FY26 guide and AI book silence spark sell', category: 'company', related: 'IBM' },
-  { headline: 'ServiceNow craters 18%, worst day on record, as CFO flags Middle East conservatism on subscription guide despite beat', category: 'company', related: 'NOW' },
-  { headline: 'Nvidia Vera Rubin HBM4 rollout accelerates as SK Hynix locks 70% of initial volume and Micron HBM4 debuts with 60% capacity jump', category: 'company', related: 'NVDA' },
-  { headline: 'Alphabet, Microsoft, Meta and Amazon all report April 29 as Mag7 AI capex trajectory faces its biggest test of 2026', category: 'company', related: 'GOOGL' },
-  { headline: 'Bitcoin steadies near $78.3K, up 0.49% on 24h, as IBIT nears $64B cumulative inflows with spot BTC ETFs logging $411M daily net-in led by BlackRock $214M', category: 'crypto', related: 'BTC' },
-  { headline: 'Bitmine discloses 4.98M ETH treasury worth $11.5B, buying 101,627 ETH last week in largest 7-day accumulation of 2026', category: 'crypto', related: 'ETH' },
-  { headline: 'Ether holds $2,325, off 0.27% on 24h, as institutional accumulation targets $2,500 resistance; ETH spot ETFs still -$130M YTD despite Bitmine buys', category: 'crypto', related: 'ETH' },
-  { headline: 'XRP trades $1.43, up 1.13% on 24h, after MACD flips bullish; seven spot ETFs book $55.2M weekly inflows, biggest of 2026', category: 'crypto', related: 'XRP' },
-  { headline: 'Solana steady at $86.25, up 0.31% on 24h, holding ascending channel as wXRP bridge on LayerZero drives cross-chain flow', category: 'crypto', related: 'SOL' },
-  { headline: 'Brent crude surges past $107 as US-Iran Hormuz standoff holds; Iran FM heads to Pakistan for talks amid ongoing naval blockade', category: 'general', related: '' },
-  { headline: 'S&P 500 -0.41% to 7,108, Nasdaq -0.89% to 24,438 as software rout from IBM, ServiceNow and Iran oil jolt hit risk', category: 'general', related: '' },
+  { headline: 'Intel rockets 23.6% to $82.55 in best session since 1987, finally clearing 2000 dot-com peak after Q1 $0.29 EPS vs $0.01 and $13.6B rev blowout', category: 'company', related: 'INTC' },
+  { headline: 'Nvidia retakes $5 trillion market cap, +5% to $209.58 on 192M shares as Intel print confirms AI data center demand still accelerating', category: 'company', related: 'NVDA' },
+  { headline: 'AMD surges ~12% to fresh all-time high alongside Nvidia as Philadelphia Semiconductor Index logs 18-day win streak, +4.32% Friday for record run', category: 'company', related: 'AMD' },
+  { headline: 'Tesla rebounds 0.69% to $376.30 after Thursday 3.6% slide, as Street digests $25B 2026 capex hike for AI and Optimus build-out', category: 'company', related: 'TSLA' },
+  { headline: 'Apple trades $270.12 ahead of April 30 Q2 print as Tim Cook September exit and John Ternus succession dominate sell-side previews', category: 'company', related: 'AAPL' },
+  { headline: 'Microsoft, Alphabet, Meta and Amazon all report April 29 with $146B MSFT FY26 capex and $115-135B Meta guide making AI ROI the central question', category: 'company', related: 'MSFT' },
+  { headline: 'Meta consensus pegs Q1 adj EPS $7.51 on $55.5B rev +31% YoY into April 29 print, with 2026 capex range $115-135B and AI infra trajectory in focus', category: 'company', related: 'META' },
+  { headline: 'Coinbase trades $199.76 as exchange elevates XRP to bitcoin/ether tier and preps May 1 trade-at-settlement futures launch into Q1 print', category: 'company', related: 'COIN' },
+  { headline: 'Alphabet eyed into April 29 print as new AI chip lineup positions Google to take TPU share from Nvidia in hyperscaler workloads', category: 'company', related: 'GOOGL' },
+  { headline: 'Bitcoin slips to $77,508, off 1.09% on 24h, as derivatives unwind cools momentum even as spot BTC ETFs log 8 straight inflow days totaling $2.1B', category: 'crypto', related: 'BTC' },
+  { headline: 'BlackRock IBIT books $167M Friday inflow, now holds 806,700 BTC or roughly 3.8% of supply as cumulative spot ETF net-in tops $58B since launch', category: 'crypto', related: 'BTC' },
+  { headline: 'Ether eases to $2,318, down 0.46% on 24h, holding above $2,300 as Bitmine 4.98M ETH treasury anchors institutional bid into May rally setup', category: 'crypto', related: 'ETH' },
+  { headline: 'XRP trades $1.4346, off 0.28% on 24h, after Coinbase tier-one classification puts asset on equal footing with BTC and ETH for institutional flow', category: 'crypto', related: 'XRP' },
+  { headline: 'Solana steady at $86.32, up 0.24% on 24h, as wrapped XRP launch on Solana via LayerZero deepens cross-chain liquidity and bridge activity', category: 'crypto', related: 'SOL' },
+  { headline: 'S&P 500 +0.80% to 7,165 record, Nasdaq +1.63% to 24,837 record as Intel blowout ignites SOX 4.32%; Dow lags -0.16% to 49,231', category: 'general', related: '' },
+  { headline: 'Brent crude climbs 2.2% to $107.38 as Hormuz blockade holds and US-Iran talks shift to Pakistan; IEA chief calls it biggest energy security threat in history', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
