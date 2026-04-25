@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-25 01:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-25 13:00 UTC)
 const FALLBACK_NEWS = [
-  { headline: 'Intel rockets 23.6% to $82.55 in best session since 1987, finally clearing 2000 dot-com peak after Q1 $0.29 EPS vs $0.01 and $13.6B rev blowout', category: 'company', related: 'INTC' },
-  { headline: 'Nvidia retakes $5 trillion market cap, +5% to $209.58 on 192M shares as Intel print confirms AI data center demand still accelerating', category: 'company', related: 'NVDA' },
-  { headline: 'AMD surges ~12% to fresh all-time high alongside Nvidia as Philadelphia Semiconductor Index logs 18-day win streak, +4.32% Friday for record run', category: 'company', related: 'AMD' },
-  { headline: 'Tesla rebounds 0.69% to $376.30 after Thursday 3.6% slide, as Street digests $25B 2026 capex hike for AI and Optimus build-out', category: 'company', related: 'TSLA' },
-  { headline: 'Apple trades $270.12 ahead of April 30 Q2 print as Tim Cook September exit and John Ternus succession dominate sell-side previews', category: 'company', related: 'AAPL' },
-  { headline: 'Microsoft, Alphabet, Meta and Amazon all report April 29 with $146B MSFT FY26 capex and $115-135B Meta guide making AI ROI the central question', category: 'company', related: 'MSFT' },
-  { headline: 'Meta consensus pegs Q1 adj EPS $7.51 on $55.5B rev +31% YoY into April 29 print, with 2026 capex range $115-135B and AI infra trajectory in focus', category: 'company', related: 'META' },
-  { headline: 'Coinbase trades $199.76 as exchange elevates XRP to bitcoin/ether tier and preps May 1 trade-at-settlement futures launch into Q1 print', category: 'company', related: 'COIN' },
-  { headline: 'Alphabet eyed into April 29 print as new AI chip lineup positions Google to take TPU share from Nvidia in hyperscaler workloads', category: 'company', related: 'GOOGL' },
-  { headline: 'Bitcoin slips to $77,508, off 1.09% on 24h, as derivatives unwind cools momentum even as spot BTC ETFs log 8 straight inflow days totaling $2.1B', category: 'crypto', related: 'BTC' },
-  { headline: 'BlackRock IBIT books $167M Friday inflow, now holds 806,700 BTC or roughly 3.8% of supply as cumulative spot ETF net-in tops $58B since launch', category: 'crypto', related: 'BTC' },
-  { headline: 'Ether eases to $2,318, down 0.46% on 24h, holding above $2,300 as Bitmine 4.98M ETH treasury anchors institutional bid into May rally setup', category: 'crypto', related: 'ETH' },
-  { headline: 'XRP trades $1.4346, off 0.28% on 24h, after Coinbase tier-one classification puts asset on equal footing with BTC and ETH for institutional flow', category: 'crypto', related: 'XRP' },
-  { headline: 'Solana steady at $86.32, up 0.24% on 24h, as wrapped XRP launch on Solana via LayerZero deepens cross-chain liquidity and bridge activity', category: 'crypto', related: 'SOL' },
-  { headline: 'S&P 500 +0.80% to 7,165 record, Nasdaq +1.63% to 24,837 record as Intel blowout ignites SOX 4.32%; Dow lags -0.16% to 49,231', category: 'general', related: '' },
-  { headline: 'Brent crude climbs 2.2% to $107.38 as Hormuz blockade holds and US-Iran talks shift to Pakistan; IEA chief calls it biggest energy security threat in history', category: 'general', related: '' },
+  { headline: 'Nvidia consolidates above $5T market cap at $209.58 as BofA hikes 2026 chip TAM forecast to $1.3T, naming NVDA top driver alongside Broadcom, Marvell and AMD', category: 'company', related: 'NVDA' },
+  { headline: 'Intel digests 23.6% Friday rip with $82.55 close as Q2 guide $13.8-14.8B rev and $0.20 EPS vs $0.09 consensus reframes foundry turnaround into multi-quarter story', category: 'company', related: 'INTC' },
+  { headline: 'AMD closes $347.77 +13.9% as CPU/GPU ratio thesis flips from 1:8 toward 1:1 on AI agent workloads, with SOX 18-day win streak now most stretched vs 200DMA since June 2000', category: 'company', related: 'AMD' },
+  { headline: 'Tesla settles $376.30 into weekend after Q1 print of $0.41 adj EPS vs $0.37 on $22.39B rev (miss vs $22.64B), with $25B 2026 capex hike and Optimus ramp setting Monday tone', category: 'company', related: 'TSLA' },
+  { headline: 'Apple holds $270.12 with five sessions to April 30 Q2 print; sell-side previews split between Cook September exit overhang and 18% Services growth as offset to China softness', category: 'company', related: 'AAPL' },
+  { headline: 'Microsoft into Wednesday April 29 print with consensus $3.42 EPS on $73.8B rev as Street probes $146B FY26 capex against Azure AI revenue acceleration past 35%', category: 'company', related: 'MSFT' },
+  { headline: 'Meta Q1 consensus $7.51 EPS / $55.5B rev +31% YoY ahead of April 29 close as $115-135B 2026 capex range and Llama 4 monetization framing dominate buy-side notes', category: 'company', related: 'META' },
+  { headline: 'Amazon April 29 print pegged at $1.38 EPS on $158B rev with AWS growth re-acceleration and $125B 2026 capex the swing factors after Microsoft and Google print same evening', category: 'company', related: 'AMZN' },
+  { headline: 'Alphabet into April 29 close as new TPU v7 lineup positions Google to lift hyperscaler chip share past 15%; Search ad rev resilience versus AI Overviews remains the bear case', category: 'company', related: 'GOOGL' },
+  { headline: 'Coinbase $199.76 into Thursday Q1 print as XRP tier-one classification flows through trading take rates and May 1 trade-at-settlement futures launch nears go-live', category: 'company', related: 'COIN' },
+  { headline: 'Bitcoin $77,573 on weekend tape, range $77,262-$78,480 last 24h, as IBIT Friday $167M inflow caps eighth straight day of net-in totaling $2.1B; spot ETF cumulative tops $58B', category: 'crypto', related: 'BTC' },
+  { headline: 'Ether $2,314 trades down 0.61% on 24h, holding $2,300 floor as Bitmine 4.98M ETH treasury and 8.2% staking yield underpin institutional bid into May FOMC setup', category: 'crypto', related: 'ETH' },
+  { headline: 'XRP $1.4292 fades 0.37% on 24h after midweek $1.45 high, as Coinbase tier-one inclusion and Solana wrapped-XRP via LayerZero deepen cross-venue liquidity profile', category: 'crypto', related: 'XRP' },
+  { headline: 'Solana $86.41 flat on 24h, range $85.54-$86.96, as wrapped-XRP launch via LayerZero pushes weekly bridge volume past $480M and Jito MEV tips reach 14-week high', category: 'crypto', related: 'SOL' },
+  { headline: 'S&P 500 closed Friday +0.80% to 7,165 record, Nasdaq +1.63% to 24,837 record, Dow -0.16% to 49,231; weekly: SPX +0.6%, NDX +1.5%, INDU -0.4% into Big Tech earnings week', category: 'general', related: '' },
+  { headline: 'Brent settles $105.30 Friday after intraday $107 print, up 16% on the week as US-Iran Hormuz blockade enters day 12 and Trump signals no rush to end standoff', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
