@@ -12,24 +12,24 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-26 01:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-26 13:00 UTC)
 const FALLBACK_NEWS = [
   { headline: 'Nvidia closes Friday $208.27 +4.32% to retake $5T cap as Intel data-center beat lifts AI chip read-through; Motley Fool flags 1,100% post-ChatGPT run into May 27 print', category: 'company', related: 'NVDA' },
   { headline: 'Intel digests $85+ premarket print after Q1 $13.6B rev (+7% YoY) tops Street, 18A "high-volume ready" with PowerVia/RibbonFET, but foundry still bleeds $2.4B operating loss', category: 'company', related: 'INTC' },
   { headline: 'AMD closes $341.62 +11.83% Friday on no-news rip as analyst hikes target to $375 citing OpenAI 6GW Instinct deal and MI400 H2 ramp; Q1 print May 5 with 32% YoY rev guide', category: 'company', related: 'AMD' },
-  { headline: 'Tesla -7% on the week into weekend after Q1 print and $25B 2026 capex guide (3x historical); Optimus V3 mid-year debut, July-August mass production, robotaxi adds Dallas/Houston', category: 'company', related: 'TSLA' },
+  { headline: 'Tesla -7% on the week into weekend after Q1 print and $25B 2026 capex guide (3x historical); Optimus Fremont line ramps late July/August on 10,000-part BOM, robotaxi adds Dallas/Houston', category: 'company', related: 'TSLA' },
   { headline: 'Apple into Thursday April 30 Q2 print with consensus rev $109.3B, Services ~$30B at 70% gross margin; Greater China +30% sustainability and Section 301 supply-chain probe in focus', category: 'company', related: 'AAPL' },
-  { headline: 'Microsoft into Wednesday April 29 FY26 Q3 print as Street probes Azure 37-38% constant-currency guide vs 39% Q2 print; FY26 capex tracking $104B, FCF margin compressing to 21.5%', category: 'company', related: 'MSFT' },
-  { headline: 'Meta Q1 consensus $6.63 EPS / $55.4B rev (guide $53.5-56.5B) ahead of April 29 close as $115-135B 2026 capex range, Llama 5 enterprise traction and "Avocado" frontier model dominate', category: 'company', related: 'META' },
-  { headline: 'Amazon April 29 print pegged at $1.63 EPS / $177.2B rev (+13% YoY) with BofA/KeyBanc forecasting AWS reaccel to 28-30% from Q4 24%; $200B 2026 capex (+60% YoY) the swing factor', category: 'company', related: 'AMZN' },
-  { headline: 'Alphabet into April 29 print at $2.68 EPS / $106.88B rev consensus, GCP 2026 estimate lifted 5% to $84.8B (+44%); $175-185B capex doubles 2025 spend on Broadcom TPU and Cadence/Marvell tie-ups', category: 'company', related: 'GOOGL' },
-  { headline: 'Bitcoin $77,503 on Sunday tape, range $77,141-$77,885 last 24h, as April spot ETF inflows hit $2.43B (best run since Oct 2025) with IBIT absorbing 91% of April 13-17 net flow; AUM $105.3B', category: 'crypto', related: 'BTC' },
-  { headline: 'Ether $2,314.56 flat on 24h, holding $2,300 floor as staking ratio hits record 32.33% (39M ETH locked, $90.3B) and BlackRock ETHB pulls $311M cumulative since March debut', category: 'crypto', related: 'ETH' },
-  { headline: 'XRP $1.4203 fades 0.90% on 24h after $1.4376 high, Coinbase XRP/USD volume $103M/24h as wXRP via LayerZero/Hex Trust crosses $100M Solana liquidity in first weeks of bridge live', category: 'crypto', related: 'XRP' },
-  { headline: 'Solana $86.05 -0.22% on 24h, range $85.55-$86.80, as wrapped-XRP via LayerZero OFT lands on chain and validator MEV fee tips push weekly bridge throughput past prior records', category: 'crypto', related: 'SOL' },
-  { headline: 'S&P 500 closed Friday +0.80% to 7,165.08 record, Nasdaq +1.63% to 24,836.60 record on Intel 23% rip and Nvidia $5T retake; weekly: SPX +0.6%, NDX +1.5% into Big Tech earnings week', category: 'general', related: '' },
-  { headline: 'Brent settles Friday $105.30 (+0.25% on day, +16% on week) after $106+ intraday print as US-Iran Hormuz standoff drags into ceasefire-extension uncertainty; Hormuz still carries ~20% global oil/LNG', category: 'general', related: '' },
-  { headline: 'DXY rides winning streak near 98.70 into weekend on stronger US data and Mideast bid; EUR/USD pivots at 1.1813/26 (1.618% ext of March advance), USD/JPY firm despite EUR/GBP rallies, FOMC May 6-7 ahead', category: 'general', related: '' },
+  { headline: 'Microsoft into Wednesday April 29 FY26 Q3 print at $4.04 EPS / $81.4B rev consensus (+16/17% YoY); Azure constant-currency guide and FY26 ~$146B AI/cloud capex envelope drive Street debate', category: 'company', related: 'MSFT' },
+  { headline: 'Meta Q1 consensus pushed to $7.51 EPS / $55.5B rev (+31% YoY) ahead of April 29 close as $115-135B 2026 capex, Llama 5 enterprise traction and "Avocado" frontier model anchor narrative', category: 'company', related: 'META' },
+  { headline: 'Amazon April 29 print pegged at $2.11 EPS / $177.2B rev (+14% YoY) with BofA/KeyBanc forecasting AWS reaccel to 28-30% from Q4 24%; $200B 2026 capex (+60% YoY) the swing factor', category: 'company', related: 'AMZN' },
+  { headline: 'Alphabet April 29 print at $2.83 EPS / $107B rev consensus (+11% YoY), GCP estimate lifted 5% to $84.8B (+44%); $175-185B FY26 capex doubles 2025 spend on Broadcom TPU and Cadence/Marvell tie-ups', category: 'company', related: 'GOOGL' },
+  { headline: 'Bitcoin $77,851 on Sunday Asia tape, 24h range $77,141-$78,221 (+0.36%), as April spot ETF inflows hit $2.43B (best run since Oct 2025) with IBIT absorbing 91% of April 13-17 net flow; AUM $105.3B', category: 'crypto', related: 'BTC' },
+  { headline: 'Ether $2,330.51 +0.71% on 24h, reclaiming $2,300 floor as staking ratio hits record 32.33% (39M ETH locked, $90.3B) and BlackRock ETHB pulls $311M cumulative since March debut', category: 'crypto', related: 'ETH' },
+  { headline: 'XRP $1.4245 -0.31% on 24h, range $1.4180-$1.4324 as Coinbase XRP/USD volume holds $100M+/24h and wXRP via LayerZero/Hex Trust pushes past $100M Solana liquidity in first weeks of bridge live', category: 'crypto', related: 'XRP' },
+  { headline: 'Solana $86.08 -0.38% on 24h, range $85.55-$86.76, as wrapped-XRP via LayerZero OFT lands on chain and validator MEV fee tips push weekly bridge throughput past prior records', category: 'crypto', related: 'SOL' },
+  { headline: 'S&P 500 closed Friday +0.80% to 7,165.08 record, Nasdaq +1.63% to 24,836.60 record on Intel 23% rip and Nvidia $5T retake; weekly: SPX +0.6%, NDX +1.5% into 5-of-Mag-7 earnings week', category: 'general', related: '' },
+  { headline: 'Witkoff and Kushner land in Pakistan Saturday for direct US-Iran Hormuz talks as Brent settles Friday $105.33 (+16% on week) and Iranian negotiator Qalibaf ties full ceasefire to Navy blockade lift', category: 'general', related: '' },
+  { headline: 'FOMC May 6-7 in focus with CME FedWatch at 55% odds of a cut; March SEP keeps one 2026 cut, with Feb core PCE 3.0% and total PCE 2.8% staff estimate complicating dovish path into Big Tech print week', category: 'general', related: '' },
 ];
 
 // Get date string in YYYY-MM-DD format
