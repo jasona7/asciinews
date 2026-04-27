@@ -12,7 +12,7 @@ const CACHE_DURATION = 5 * 60 * 1000;
 // Key tickers to fetch company-specific news for
 const KEY_TICKERS = ['NVDA', 'AAPL', 'TSLA', 'MSFT', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'COIN'];
 
-// Fallback headlines when API fails or no key (updated 2026-04-27 01:00 UTC)
+// Fallback headlines when API fails or no key (updated 2026-04-27 13:00 UTC)
 const FALLBACK_NEWS = [
   { headline: 'Nvidia carries $5T cap into Sunday futures session after Friday +4.32% close to $208.27 on Intel data-center read-through; Mag-7 hyperscaler capex commentary at Wed April 29 prints sets up May 27 NVDA tape', category: 'company', related: 'NVDA' },
   { headline: 'Intel +24% Friday (best session since 1987) after Q1 $13.6B rev (+7% YoY) tops Street, 18A "high-volume ready" with PowerVia/RibbonFET; foundry still bleeds $2.4B operating loss but bookings inflect', category: 'company', related: 'INTC' },
@@ -23,11 +23,11 @@ const FALLBACK_NEWS = [
   { headline: 'Meta into April 29 close at $8.15 EPS / $58.4B rev consensus (+1.6/20.7% YoY); $115-135B 2026 capex, Llama 5 enterprise traction and "Avocado" frontier model anchor the narrative', category: 'company', related: 'META' },
   { headline: 'Amazon April 29 print at $2.11 EPS / $177.2B rev (+14% YoY) consensus with BofA/KeyBanc forecasting AWS reaccel to 28-30% from Q4 24%; $200B 2026 capex (+60% YoY) the swing factor', category: 'company', related: 'AMZN' },
   { headline: 'Alphabet April 29 print at $2.83 EPS / $107B rev consensus (+11% YoY), GCP estimate lifted 5% to $84.8B (+44%); $175-185B FY26 capex doubles 2025 spend on Broadcom TPU and Cadence/Marvell tie-ups', category: 'company', related: 'GOOGL' },
-  { headline: 'Bitcoin rips to $79,418 on Sunday Asia tape (+2.47% 24h, range $77,321-$79,431) as US spot BTC ETFs notch 8 straight inflow days totaling $2.1B through April 23; "True Market Mean" reclaim at $78,100', category: 'crypto', related: 'BTC' },
-  { headline: 'Ether $2,399.67 +3.67% 24h, reclaiming $2,400 handle for first time since Hormuz selloff as staking ratio holds record 32.33% (39M ETH locked) and BlackRock ETHB cumulative inflows extend past $311M', category: 'crypto', related: 'ETH' },
-  { headline: 'XRP $1.4435 +1.61% on 24h, range $1.4180-$1.4435 as Coinbase XRP/USD volume holds $100M+/24h and wXRP via LayerZero/Hex Trust pushes past $100M Solana liquidity since bridge live', category: 'crypto', related: 'XRP' },
-  { headline: 'Solana $87.73 +1.99% on 24h, range $85.83-$87.73, as wrapped-XRP via LayerZero OFT lands on chain and validator MEV fee tips push weekly bridge throughput past prior records', category: 'crypto', related: 'SOL' },
-  { headline: 'US futures open lower Sunday night with Dow -130 (-0.2%), SPX -0.3%, NDX -0.3% as Iran talks unravel; SOX index riding 18-session win streak +50% YTD into 4-of-Mag-7 Wednesday print', category: 'general', related: '' },
+  { headline: 'Bitcoin pulls back to $77,679 on Monday Asia/Europe tape (-0.20% 24h, $79,491 high) after US spot BTC ETFs notch 4th straight weekly inflow at +$824M (Apr 20-24), IBIT alone +$733M; total ETF AUM tops $102B', category: 'crypto', related: 'BTC' },
+  { headline: 'Ether $2,314.42 -0.64% on 24h, range $2,309-$2,405 as risk-off Monday tape pares Friday rally; staking ratio holds 32.33% (39M ETH locked) and BlackRock ETHB cumulative inflows extend past $311M into Mag-7 earnings week', category: 'crypto', related: 'ETH' },
+  { headline: 'XRP $1.4119 -0.91% on 24h, range $1.4101-$1.4467 as Monday session unwinds weekend bid; Coinbase XRP/USD volume holds $100M+/24h and wXRP via LayerZero/Hex Trust pushes past $100M Solana liquidity since bridge live', category: 'crypto', related: 'XRP' },
+  { headline: 'Solana $85.13 -1.12% on 24h, range $84.91-$88.07, giving back weekend gains as Mag-7 print week opens risk-off; wrapped-XRP via LayerZero OFT lands on chain and validator MEV fee tips push weekly bridge throughput past prior records', category: 'crypto', related: 'SOL' },
+  { headline: 'Monday Apr 27 earnings docket front-loads pre-Mag-7 week with Verizon, Nucor, Domino\'s, Public Storage, AvalonBay, Cincinnati Financial, UHS and Ventas reporting; Intel-Tesla 14A/Terafab foundry partnership stays in focus after Friday +25% INTC rip', category: 'general', related: '' },
   { headline: 'Trump cancels Witkoff/Kushner Pakistan trip Saturday, says Iran sent "much better" proposal within 10 minutes; Brent +2% Sunday to $107.89 and WTI to $96.63 after IRGC boards two cargo ships near Hormuz', category: 'general', related: '' },
   { headline: 'FOMC May 6-7 in focus with CME FedWatch pricing 100% hold and 8% odds of a 2026 hike as Hormuz oil shock complicates the dovish path; Iran FM Araghchi shuttles Islamabad-Moscow as Pakistan races to revive talks', category: 'general', related: '' },
 ];
