@@ -12,12 +12,12 @@ const CRYPTO_SYMBOLS = {
   XRP: 'BINANCE:XRPUSDT',
 };
 
-// Fallback quotes (updated 2026-05-17 01:00 UTC)
+// Fallback quotes (updated 2026-05-17 13:00 UTC)
 const FALLBACK_QUOTES = [
-  { symbol: 'BTC', name: 'Bitcoin', price: 78002.89, change: -1108.24, changePercent: -1.40 },
-  { symbol: 'ETH', name: 'Ethereum', price: 2178.35, change: -48.59, changePercent: -2.18 },
-  { symbol: 'SOL', name: 'Solana', price: 86.20, change: -3.03, changePercent: -3.40 },
-  { symbol: 'XRP', name: 'XRP', price: 1.4121, change: -0.0221, changePercent: -1.54 },
+  { symbol: 'BTC', name: 'Bitcoin', price: 78307.62, change: 289.31, changePercent: 0.37 },
+  { symbol: 'ETH', name: 'Ethereum', price: 2192.28, change: 15.43, changePercent: 0.71 },
+  { symbol: 'SOL', name: 'Solana', price: 86.66, change: 0.40, changePercent: 0.46 },
+  { symbol: 'XRP', name: 'XRP', price: 1.4227, change: 0.0121, changePercent: 0.86 },
 ];
 
 const CRYPTO_NAMES: Record<string, string> = {
