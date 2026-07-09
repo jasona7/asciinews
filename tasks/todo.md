@@ -70,9 +70,15 @@ route already maintains its own in-memory cache (15 min / 5 min) — that is the
 caching layer. Verified by restoring the poisoned cache and confirming the fixed code returns live
 prices anyway.
 
-This also explains why the site's `source: "fallback"` data has been so carefully hand-maintained:
-the live path was quietly broken. Vercel's Data Cache persists across deployments, so this fix takes
-effect on deploy without a manual cache purge.
+**Scope of the impact — do not overstate.** Checked production *before* deploying: `asciinews.vercel.app`
+was serving live, correct prices (BTC 62,163.59) on the old code. So this was **not** a live production
+outage. The 6-month-stale reproduction was local, where `.next/cache/fetch-cache` had persisted on disk
+since 2026-01-14. Vercel's build cache behaves differently and prod was evidently repopulating.
+
+The fix is still worth it: a `revalidate: 31536000` entry sitting under a route whose whole purpose is
+live prices is a latent trap that depends on cache-lifetime behavior nobody controls, and it fails
+*silently* (`source` still reads `"finnhub"`). Making the intent explicit costs one option object.
+Verified post-deploy: prod still serves live prices, homepage 200.
 
 ### Verification performed
 - [x] `npm run build` green (twice: after content, after fix)
