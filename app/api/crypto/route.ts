@@ -12,12 +12,13 @@ const CRYPTO_SYMBOLS = {
   XRP: 'BINANCE:XRPUSDT',
 };
 
-// Fallback quotes (updated 2026-07-08 00:00 UTC — live levels, aggregate spot, cohort turns risk-off into Wednesday overnight)
+// Fallback quotes (updated 2026-07-09 00:00 UTC — live Binance spot, cohort red across the board
+// in an Iran-war risk-off; SOL worst at -3.52%, Fear & Greed 20 "extreme fear")
 const FALLBACK_QUOTES = [
-  { symbol: 'BTC', name: 'Bitcoin', price: 63303.38, change: -717.40, changePercent: -1.12 },
-  { symbol: 'ETH', name: 'Ethereum', price: 1770.77, change: -27.70, changePercent: -1.54 },
-  { symbol: 'SOL', name: 'Solana', price: 80.56, change: -1.34, changePercent: -1.64 },
-  { symbol: 'XRP', name: 'XRP', price: 1.1119, change: -0.0332, changePercent: -2.90 },
+  { symbol: 'BTC', name: 'Bitcoin', price: 62252.95, change: -1081.01, changePercent: -1.71 },
+  { symbol: 'ETH', name: 'Ethereum', price: 1742.71, change: -28.67, changePercent: -1.62 },
+  { symbol: 'SOL', name: 'Solana', price: 77.77, change: -2.84, changePercent: -3.52 },
+  { symbol: 'XRP', name: 'XRP', price: 1.0907, change: -0.0212, changePercent: -1.91 },
 ];
 
 const CRYPTO_NAMES: Record<string, string> = {
@@ -34,8 +35,12 @@ const CACHE_DURATION = 15 * 60 * 1000; // 15 minutes in ms
 
 async function fetchQuote(ticker: string, finnhubSymbol: string): Promise<any> {
   try {
+    // `cache: 'no-store'` is required. Without it Next's Data Cache stores these
+    // quotes with a 1-year revalidate and serves months-old prices forever. The
+    // 15-minute in-memory cache above is the only caching layer we want here.
     const response = await fetch(
-      `https://finnhub.io/api/v1/quote?symbol=${finnhubSymbol}&token=${FINNHUB_API_KEY}`
+      `https://finnhub.io/api/v1/quote?symbol=${finnhubSymbol}&token=${FINNHUB_API_KEY}`,
+      { cache: 'no-store' }
     );
     if (!response.ok) return null;
     const data = await response.json();
