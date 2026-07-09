@@ -12,13 +12,14 @@ const CRYPTO_SYMBOLS = {
   XRP: 'BINANCE:XRPUSDT',
 };
 
-// Fallback quotes (updated 2026-07-09 00:00 UTC — live Binance spot, cohort red across the board
-// in an Iran-war risk-off; SOL worst at -3.52%, Fear & Greed 20 "extreme fear")
+// Fallback quotes (updated 2026-07-09 12:00 UTC — live Binance spot, cohort steadies off the
+// overnight lows despite Iran firing on US targets in the Gulf; BTC leads back above $62.7K,
+// ETH the only major still red, Fear & Greed 22 "extreme fear")
 const FALLBACK_QUOTES = [
-  { symbol: 'BTC', name: 'Bitcoin', price: 62252.95, change: -1081.01, changePercent: -1.71 },
-  { symbol: 'ETH', name: 'Ethereum', price: 1742.71, change: -28.67, changePercent: -1.62 },
-  { symbol: 'SOL', name: 'Solana', price: 77.77, change: -2.84, changePercent: -3.52 },
-  { symbol: 'XRP', name: 'XRP', price: 1.0907, change: -0.0212, changePercent: -1.91 },
+  { symbol: 'BTC', name: 'Bitcoin', price: 62776.16, change: 548.12, changePercent: 0.88 },
+  { symbol: 'ETH', name: 'Ethereum', price: 1743.56, change: -2.73, changePercent: -0.16 },
+  { symbol: 'SOL', name: 'Solana', price: 77.62, change: 0.16, changePercent: 0.21 },
+  { symbol: 'XRP', name: 'XRP', price: 1.0931, change: 0.0072, changePercent: 0.66 },
 ];
 
 const CRYPTO_NAMES: Record<string, string> = {
