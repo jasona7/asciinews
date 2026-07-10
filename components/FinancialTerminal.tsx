@@ -358,18 +358,13 @@ export default function FinancialASCIITerminal() {
       setNews(combined);
       setIdx(0);
     } catch(e) {
-      setError('FEED INTERRUPTED - USING CACHE');
-      setCryptoLastUpdated(new Date());
+      setError('FEED INTERRUPTED - LIVE DATA UNAVAILABLE');
+      // Carries no prices or headlines by design: this renders only when both /api/news and
+      // /api/crypto are unreachable, so there is nothing to report. A placeholder that states
+      // no facts cannot go stale or publish a number that was never true.
       setNews([
-        {type:'news',headline:'NVDA surges 8% as AI chip demand hits all-time high',category:'bullish',tickers:['NVDA']},
-        {type:'quote',headline:'BTC ▲ 2.54%',category:'crypto',tickers:['BTC'],quote:{symbol:'BTC',name:'Bitcoin',price:94521,change:2340,changePercent:2.54}},
-        {type:'news',headline:'Federal Reserve hints at potential rate cut in March',category:'macro',tickers:[]},
-        {type:'news',headline:'AAPL announces record $110B buyback program',category:'earnings',tickers:['AAPL']},
-        {type:'quote',headline:'ETH ▼ 1.37%',category:'crypto',tickers:['ETH'],quote:{symbol:'ETH',name:'Ethereum',price:3245.50,change:-45.20,changePercent:-1.37}},
-        {type:'news',headline:'AMZN AWS revenue beats estimates by 15%',category:'earnings',tickers:['AMZN']},
-        {type:'news',headline:'TSLA shares drop 5% on delivery miss',category:'bearish',tickers:['TSLA']},
-        {type:'quote',headline:'SOL ▲ 4.75%',category:'crypto',tickers:['SOL'],quote:{symbol:'SOL',name:'Solana',price:187.25,change:8.50,changePercent:4.75}},
-        {type:'news',headline:'MSFT Azure growth accelerates to 31% YoY',category:'bullish',tickers:['MSFT']}
+        {type:'news',headline:'FEED INTERRUPTED — UNABLE TO REACH THE NEWS AND QUOTE SERVICES',category:'macro',tickers:[]},
+        {type:'news',headline:'NO LIVE PRICES OR HEADLINES ARE AVAILABLE — RETRYING AUTOMATICALLY',category:'macro',tickers:[]},
       ]);
     }
     setLoading(false);
