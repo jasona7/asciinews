@@ -12,16 +12,17 @@ const CRYPTO_SYMBOLS = {
   XRP: 'BINANCE:XRPUSDT',
 };
 
-// Fallback quotes (updated 2026-07-10 00:00 UTC — one atomic live Binance spot snapshot,
-// t=1783642141 → 2026-07-10 00:09:01 UTC. Whole cohort green: BTC broke $63K after Trump said
-// Iran "wants to make a deal", ETH/SOL/XRP tag along, Fear & Greed still 23 "extreme fear".
+// Fallback quotes (updated 2026-07-10 12:00 UTC — one atomic live Binance spot snapshot,
+// t=1783685005 → 2026-07-10 12:03:25 UTC, identical across all four symbols. Whole cohort green
+// and stronger than twelve hours earlier: BTC cleared $64K, ETH leads at +3.27% after being flat
+// at 00:09 UTC. Every changePercent below reconciles against d/pc to four decimals.
 // Take all four from a SINGLE poll: the daily candle rolls at 00:00 UTC, so `o`/`pc` reset and
 // changePercent swings ~0.15pp between polls while price barely moves.)
 const FALLBACK_QUOTES = [
-  { symbol: 'BTC', name: 'Bitcoin', price: 63188, change: 990, changePercent: 1.59 },
-  { symbol: 'ETH', name: 'Ethereum', price: 1743.02, change: 1.04, changePercent: 0.06 },
-  { symbol: 'SOL', name: 'Solana', price: 77.94, change: 0.22, changePercent: 0.28 },
-  { symbol: 'XRP', name: 'XRP', price: 1.0923, change: 0.0018, changePercent: 0.17 },
+  { symbol: 'BTC', name: 'Bitcoin', price: 64386.01, change: 1646.01, changePercent: 2.62 },
+  { symbol: 'ETH', name: 'Ethereum', price: 1799.87, change: 57.04, changePercent: 3.27 },
+  { symbol: 'SOL', name: 'Solana', price: 79.24, change: 1.66, changePercent: 2.14 },
+  { symbol: 'XRP', name: 'XRP', price: 1.1112, change: 0.018, changePercent: 1.65 },
 ];
 
 const CRYPTO_NAMES: Record<string, string> = {
